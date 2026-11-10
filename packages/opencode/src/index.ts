@@ -30,7 +30,13 @@ function booleanOption(value: unknown): boolean | undefined {
 function isStoredCatalog(value: unknown): value is StoredCatalog {
   if (!value || typeof value !== "object") return false;
   const catalog = value as Partial<StoredCatalog>;
-  return catalog.schemaVersion === 1 && Array.isArray(catalog.models);
+  return (
+    catalog.schemaVersion === 1 &&
+    typeof catalog.catalogVersion === "string" &&
+    typeof catalog.refreshAfterSeconds === "number" &&
+    typeof catalog.fetchedAt === "number" &&
+    Array.isArray(catalog.models)
+  );
 }
 
 function resolveApiKey(option: unknown, optionEnv: unknown): string {
