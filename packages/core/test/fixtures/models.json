@@ -1,0 +1,1192 @@
+[
+  {
+    "id": "claude-sonnet-5-5",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-sonnet-5",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-sonnet-4-6",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-fable-5-2",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-fable-5-1",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-fable-5",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-opus-5-5",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-opus-5",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-opus-4-8",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-opus-4-7",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-haiku-5-5",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "claude-haiku-4-5-20251001",
+    "group": "Anthropic",
+    "endpoints": [
+      "/messages"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "gpt-6-astra",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-6.1-sol",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-6.1-terra",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-6-sol",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-6-luna",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-5.6-sol",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-5.6-terra",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-5.6-luna",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "gpt-5.5",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "gpt-5.4",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "gpt-5.3-codex",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "gpt-5.4-mini",
+    "group": "OpenAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "deepseek/deepseek-v4-pro",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "off",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "deepseek/deepseek-v4-flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "off",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "deepseek/deepseek-v4-flash-vision-exp",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "off",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "deepseek/deepseek-v4-flash-fast",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "deepseek/deepseek-v4.1-flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "off",
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "deepseek/deepseek-v4.1-flash-fast",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "off",
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "deepseek/deepseek-v4.1-flash-ultrafast",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "off",
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "moonshotai/Kimi-K3.1-Pro",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "moonshotai/Kimi-K3",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "moonshotai/Kimi-K2.7-Code",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "moonshotai/Kimi-K2.7-Code-Highspeed",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "moonshotai/Kimi-K2.6",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "moonshotai/Kimi-K2.5",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "z-ai/glm-5.3-flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "z-ai/glm-5.3-flashx",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "zai-org/GLM-5.3",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "zai-org/GLM-5.2",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "high",
+      "max"
+    ]
+  },
+  {
+    "id": "zai-org/GLM-5.2-Fast",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "zai-org/GLM-5.1",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "zai-org/GLM-5",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "minimax/minimax-m3.1-flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "MiniMaxAI/MiniMax-M3",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "MiniMaxAI/MiniMax-M2.7",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "MiniMaxAI/MiniMax-M2.5",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "ornith/ornith-1.5-122b",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "xiaomi/mimo-v2.6-pro",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "xiaomi/mimo-v2.6-flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "Qwen/Qwen3.8-Omni-Flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "Qwen/Qwen3.8-Max-Prime",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "Qwen/Qwen3.8-Max-0902",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "Qwen/Qwen3.8-Max",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "Qwen/Qwen3.8-27B",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "Qwen/Qwen3.8-Flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "Qwen/Qwen3.7-Max",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "Qwen/Qwen3.7-Plus",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "Qwen/Qwen3.7-Flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "Qwen/Qwen3.6-Max-Preview",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "Qwen/Qwen3.6-Plus",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "meituan/LongCat-2.0",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "stepfun/Step-5-Preview",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "stepfun/Step-3.7-Flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "stepfun/Step-3.5-Flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "tencent/hy3-paid",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "tencent/hy4-preview",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "google/gemini-4-argon",
+    "group": "Google",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "google/gemini-3.8-flash",
+    "group": "Google",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "google/gemini-3.7-flash",
+    "group": "Google",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "google/gemini-3.6-flash",
+    "group": "Google",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "google/gemini-3.5-flash",
+    "group": "Google",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "google/gemini-3.5-flash-lite",
+    "group": "Google",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "google/gemini-3.1-flash-lite",
+    "group": "Google",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "sakana/fugu-ultra",
+    "group": "Sakana",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "nvidia/nemotron-3-ultra-550b-a55b",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "nvidia/nemotron-3.5-super-vl",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "thinkingmachines/inkling",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "thinkingmachines/inkling-small",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": []
+  },
+  {
+    "id": "stealth/glyph-cluster:free",
+    "group": "Stealth",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "stealth/crouton-alpha",
+    "group": "Stealth",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "inclusionai/ling-3.1-flash",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "inclusionai/ling-3.1-flash-1019",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "meta/muse-spark-1.1",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "meta/muse-spark-1.2",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "meta/muse-spark-1.2-contributor",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "meta/muse-spark-1.3",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "meta/muse-spark-1.3-contributor",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "meta/muse-spark-open",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "meta/muse-wonder-1.0",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "meta/muse-ember",
+    "group": "Meta",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ]
+  },
+  {
+    "id": "xai/grok-4.5",
+    "group": "xAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  },
+  {
+    "id": "xai/grok-4.6",
+    "group": "xAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "xai/grok-4.7",
+    "group": "xAI",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ]
+  },
+  {
+    "id": "mistral/mistral-large-4",
+    "group": "Open Source",
+    "endpoints": [
+      "/chat/completions",
+      "/responses"
+    ],
+    "efforts": [
+      "low",
+      "medium",
+      "high"
+    ]
+  }
+]

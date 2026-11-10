@@ -1,0 +1,25 @@
+{
+  "name": "commandcode-integrations",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "pnpm@12.18.0",
+  "scripts": {
+    "check": "pnpm -r check && tsc -p tsconfig.scripts.json",
+    "test": "pnpm -r test",
+    "verify:live": "node --experimental-strip-types scripts/verify-live.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  },
+  "pnpm": {
+    "ignoredBuiltDependencies": [
+      "@google/genai",
+      "protobufjs"
+    ]
+  }
+}
