@@ -78,3 +78,8 @@ test("key files need a path and at least one field", () => {
 		validatePack({ ...basePack(), auth: { kind: "bearer", keyFiles: [{ path: "/tmp/a.json", keys: ["apiKey"] }] } }),
 	);
 });
+
+test("a default thinking format must be one Pi can send", () => {
+	assert.throws(() => validatePack({ ...basePack(), defaultThinkingFormat: "claude-adaptive" }), /not a Pi format/);
+	assert.doesNotThrow(() => validatePack({ ...basePack(), defaultThinkingFormat: "openai" }));
+});

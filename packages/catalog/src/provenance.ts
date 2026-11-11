@@ -93,7 +93,7 @@ function mergeFacts(pack: Pack, record: RawRecord): MergedFacts | undefined {
 		output: firstDefined(curated.output, catalog.output),
 		tools: firstDefined(catalog.tools, curated.tools),
 		reasoning: catalog.reasoning === true || curated.reasoning === true,
-		thinkingFormat: firstDefined(catalog.thinkingFormat, curated.thinkingFormat),
+		thinkingFormat: firstDefined(catalog.thinkingFormat, curated.thinkingFormat, pack.defaultThinkingFormat),
 		thinkingCanDisable: firstDefined(catalog.thinkingCanDisable, curated.thinkingCanDisable),
 		efforts: firstDefined(curated.efforts, catalog.efforts),
 		api: firstDefined(catalog.api, curated.api),

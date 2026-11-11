@@ -256,3 +256,11 @@ test("a normalize hook can set the wire api from the raw record", () => {
 	const models = buildModels(pack, [{ id: "a", protocol: "anthropic-messages" }]);
 	assert.equal(models[0]?.api, "anthropic-messages");
 });
+
+test("a pack default thinking format fills a silent catalog", () => {
+	const pack = definePack({ ...tierA(), defaultThinkingFormat: "openai" });
+	const model = buildModels(pack, [{ id: "chat-plain" }]).find((entry) => entry.id === "chat-plain");
+	assert.equal(model?.thinking.format, "openai");
+	const silent = buildModels(tierA(), [{ id: "chat-plain" }]).find((entry) => entry.id === "chat-plain");
+	assert.equal(silent?.thinking.format, undefined);
+});

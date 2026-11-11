@@ -123,6 +123,11 @@ export interface Pack {
 	 * effort matrix or evidence log.
 	 */
 	thinkingFormatOverrides?: Record<string, string>;
+	/**
+	 * Thinking format to assume when a model declares none. Only for providers whose
+	 * route is known to take `reasoning_effort`, with evidence in the repo.
+	 */
+	defaultThinkingFormat?: string;
 	/** Curated overrides keyed by model id. `cost` here beats models.dev. */
 	curated?: Record<string, Partial<ModelFacts>>;
 	brands?: Record<string, string>;
@@ -169,6 +174,9 @@ export function validatePack(pack: Pack): void {
 	for (const file of pack.auth?.keyFiles ?? []) {
 		if (file.path.trim().length === 0) throw new Error(`pack "${pack.id}": auth.keyFiles needs a path`);
 		if (file.keys.length === 0) throw new Error(`pack "${pack.id}": auth.keyFiles needs at least one key field`);
+	}
+	if (pack.defaultThinkingFormat !== undefined && !PI_THINKING_FORMATS.has(pack.defaultThinkingFormat)) {
+		throw new Error(`pack "${pack.id}": defaultThinkingFormat "${pack.defaultThinkingFormat}" is not a Pi format`);
 	}
 	for (const [declared, mapped] of Object.entries(pack.thinkingFormatOverrides ?? {})) {
 		if (declared.trim().length === 0) {
