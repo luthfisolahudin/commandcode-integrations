@@ -55,6 +55,9 @@ export const commandCodePack = definePack({
 		displayName: ["name"],
 	},
 	filter: { nonChatPattern: "(^|[-_/])(embed|embedding|rerank)([-_/]|$)", dropOffline: true },
+	// CommandCode never names its thinking format, but both `/chat/completions` and
+	// `/messages` take an effort value; see docs/EVIDENCE.md.
+	defaultThinkingFormat: "openai",
 	fallback: FALLBACK.map((id) => ({ id })),
 	curated,
 	defaults: { contextWindow: 128_000, maxOutput: 32_768 },
