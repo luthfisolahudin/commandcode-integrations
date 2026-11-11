@@ -47,7 +47,14 @@ for (const pack of packs) {
 		for (const model of pi) {
 			assert.equal(model.provider, pack.id);
 			assert.equal(model.baseUrl, pack.baseUrl);
-			assert.equal(model.api, "openai-completions");
+			// A provider may route each model to a different wire api, so assert that the
+			// projection agrees with the model rather than that it is the default.
+			const source = models.find((entry) => entry.id === model.id);
+			assert.equal(model.api, source?.api ?? "openai-completions", `${model.id} api`);
+			assert.ok(
+				["openai-completions", "anthropic-messages", "openai-responses"].includes(model.api),
+				`${model.id} api is one this adapter can drive`,
+			);
 			assert.ok(model.contextWindow > 0, `${model.id} context`);
 			assert.ok(model.maxTokens > 0, `${model.id} maxTokens`);
 			assert.ok(model.maxTokens <= model.contextWindow, `${model.id} output exceeds context`);
