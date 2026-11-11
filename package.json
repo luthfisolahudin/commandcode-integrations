@@ -32,7 +32,7 @@
     "sync:template": "node packages/cli/src/commands/sync-template.ts",
     "init": "node packages/cli/src/commands/init.ts",
     "pricing": "node packages/cli/src/commands/pricing.ts",
-    "verify:live": "node packages/provider/verify-live.ts"
+    "verify:live": "node verify-live.ts"
   },
   "devDependencies": {
     "@earendil-works/pi-ai": "catalog:",

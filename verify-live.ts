@@ -8,7 +8,7 @@
  */
 import { resolveApiKey } from "@luthfisolahudin/commandcode-integrations-catalog";
 
-import { commandCodePack, mergeCatalog, type ClientCatalog, type PublicModel } from "./src/index.ts";
+import { commandCodePack, mergeCatalog, type ClientCatalog, type PublicModel } from "./packages/provider/src/index.ts";
 
 const base = commandCodePack.baseUrl.replace(/\/+$/, "");
 const key = resolveApiKey(commandCodePack);
