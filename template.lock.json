@@ -1,6 +1,6 @@
 {
   "template": "luthfisolahudin/ai-provider-integrations-template",
-  "version": "v0.9.2",
+  "version": "v0.9.3",
   "packSchemaVersion": 1,
   "identity": {
     "name": "commandcode-integrations",
@@ -21,5 +21,6 @@
   ],
   "deleted": [
     "examples/**"
-  ]
+  ],
+  "commit": "9e2158a4d6ac7b4bde2aeb9eeae99ae10352acb0"
 }
