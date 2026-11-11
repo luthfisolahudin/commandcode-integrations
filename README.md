@@ -1,122 +1,77 @@
 # CommandCode integrations
 
-CommandCode model catalog and provider integration for OpenCode and Pi.
+Live model discovery and OpenAI Chat Completions for [CommandCode](https://commandcode.ai),
+shared by Pi and OpenCode. The catalog is read from CommandCode's Provider API; no
+model list is maintained by hand.
 
-The integration uses CommandCode's Provider API and the client model catalog. It does not emulate the CommandCode CLI, its `/alpha/generate` transport, or its harness features.
+Built on [`ai-provider-integrations-template`](https://github.com/luthfisolahudin/ai-provider-integrations-template):
+the engine, both adapters, the checks and the docs come from there, and this repo
+owns only the CommandCode surface.
 
-## Packages
+This integration uses CommandCode's **Provider API**. It does not emulate the CLI,
+its `/alpha/generate` transport, its tool aliases, or its harness features.
 
-| Package | Purpose |
+## What this repo owns
+
+| Path | Contents |
 |---|---|
-| `packages/core` | Host-neutral catalog, protocol routing, thinking maps, pricing, and auth |
-| `packages/opencode` | OpenCode provider plugin |
-| `packages/pi` | Pi provider extension |
+| `packages/provider/src/catalog.ts` | the two-view catalog merge, protocol routing, pricing |
+| `packages/provider/src/pack.ts` | pack definition, discovery hook, credential fallback |
+| `packages/provider/src/curated.ts` | (empty — the catalog declares everything) |
+| `packages/provider/src/effort.ts` | (empty — the catalog declares the effort levels) |
+| `packages/provider/src/invariants.ts` | (empty — routing is verified live, not per model) |
+| `packages/provider/fixtures/` | the two captured catalog views and their merge |
+| `packages/pi`, `packages/opencode` | shims over the shared adapters, keeping documented paths |
+| `verify-live.ts` | one tiny request per wire protocol, with status and reasoning tokens |
 
-Design: [docs/design.md](docs/design.md)
+## Install
+
+### Pi
+
+```jsonc
+// ~/.pi/agent/settings.json
+{ "extensions": ["<path-to-checkout>/packages/pi/src/index.ts"] }
+```
+
+### OpenCode
+
+```jsonc
+// opencode.json
+{ "plugins": ["file://<path-to-checkout>/packages/opencode/src/index.ts"] }
+```
+
+Both paths are shims that re-export the shared adapters, so an existing
+configuration keeps working. Paths are placeholders: an absolute path is
+machine-specific. See `docs/INSTALL.md`.
+
+Authentication, in order: `COMMANDCODE_API_KEY`, then
+`~/.pi/agent/commandcode/auth.json`, then `~/.commandcode/auth.json`. One key only.
+
+## Verify
+
+```sh
+task setup
+task check            # typecheck, unit tests, conformance, invariants, doctor
+task check:catalog    # project the merged fixture, assert the invariants
+task report --write   # regenerate docs/PROVIDERS.md
+task pricing          # print the T3 Code price block for this provider
+pnpm verify:live      # one request per wire protocol against the API
+```
 
 ## Routing
 
-The policy is chat-first for reliability:
+Chat-first:
 
-- Claude models use Anthropic Messages (`/messages`).
-- Every non-Claude model with `/chat/completions` uses OpenAI Chat Completions.
-- OpenAI Responses is used only when Chat is not supported, or when a generated protocol cache marks Chat as broken.
-
-The current visible catalog resolves to:
-
-| Protocol | Models |
-|---|---:|
-| Anthropic Messages | 12 |
-| OpenAI Chat Completions | 85 |
-| OpenAI Responses | 0 |
-
-Model capabilities, effort levels, and pricing come from `GET /provider/v1/models?view=client`. Endpoint support comes from `GET /provider/v1/models` (`supported_endpoints`). Effort levels are not probed at runtime.
-
-## OpenCode
-
-Add the local package to `opencode.json`:
-
-```json
-{
-  "$schema": "https://opencode.ai/config.json",
-  "plugins": [
-    {
-      "package": "file:///path/to/commandcode-integrations/packages/opencode",
-      "options": {
-        "providerID": "commandcode",
-        "apiKeyEnv": "COMMANDCODE_API_KEY"
-      }
-    }
-  ]
-}
-```
-
-Options:
-
-| Option | Default | Purpose |
+| Model | Route | Why |
 |---|---|---|
-| `providerID` | `commandcode` | Provider ID |
-| `name` | `Command Code` | Display name |
-| `baseURL` | `https://api.commandcode.ai/provider/v1` | Provider API base URL |
-| `apiKeyEnv` | `COMMANDCODE_API_KEY` | Environment variable containing the key |
-| `apiKey` | unset | Literal key, if not using an environment variable |
-| `includeHidden` | `false` | Include hidden/free catalog entries |
-| `defaultMaxOutput` | `32768` | Output limit when the catalog does not declare one |
+| Claude | Anthropic Messages | adaptive thinking and effort live there |
+| everything else | OpenAI Chat Completions | 72 models list both routes; chat answered for all |
+| Responses-only | OpenAI Responses | no visible model needs it today |
 
-The plugin owns the provider inventory. Remove any hardcoded CommandCode model block from `opencode.json`.
-
-## Pi
-
-Load the extension directly:
-
-```bash
-pi --no-extensions -e /path/to/commandcode-integrations/packages/pi/src/index.ts --list-models commandcode
-```
-
-Or install it through Pi's normal extension/package flow. The extension registers a native provider with Pi's built-in `openai-completions`, `openai-responses`, and `anthropic-messages` implementations.
-
-Pi persists the refreshed model inventory through `createProvider`. The factory also loads a cached baseline so `pi --list-models` works before the first network refresh.
-
-## Authentication
-
-The shared resolver checks, in order:
-
-1. `COMMANDCODE_API_KEY`.
-2. `~/.pi/agent/commandcode/auth.json` (`apiKey` or first `apiKeys` entry).
-3. `~/.commandcode/auth.json` (`apiKey`).
-
-Single key only. No key pool, rotation, or cooldown state.
-
-Optional environment variables:
-
-- `COMMANDCODE_BASE_URL` overrides the Provider API base URL.
-- `COMMANDCODE_CACHE_PATH` overrides the catalog cache path.
-
-## Development
-
-```bash
-pnpm install
-pnpm check
-pnpm test
-```
-
-Live verification, using the key from the auth resolver:
-
-```bash
-pnpm verify:live
-```
-
-Live verification prints model IDs, protocol, status, and reasoning-token counts. It never prints the API key.
-
-## Security
-
-Do not commit API keys, `.env` files, auth files, or personal data.
-
-- The repository contains no credentials.
-- Verification reads the key from the environment or the local auth files.
-- Logs and errors omit the key.
-- See [SECURITY.md](SECURITY.md) for reporting.
+A `403` is plan gating, not a routing failure. `hidden` models are dropped before a
+picker sees them; `reasoningEfforts` from the catalog drive the effort menu, and a
+model with none gets no menu.
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT.
