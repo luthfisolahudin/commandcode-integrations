@@ -1,0 +1,11 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["github>luthfisolahudin/renovate-config"],
+  "packageRules": [
+    {
+      "description": "Host SDKs move with the installed harnesses; bump deliberately.",
+      "matchPackageNames": ["@earendil-works/**", "@opencode/**"],
+      "minimumReleaseAge": "1 day"
+    }
+  ]
+}

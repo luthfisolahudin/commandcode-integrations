@@ -1,10 +1,26 @@
 packages:
-  - packages/*
+  - "packages/*"
+  - "adapters/*"
+  - "examples/*"
+
+# One version per dependency for the whole workspace. Package manifests reference
+# these with "catalog:" so a host SDK bump is a one-line change here, not a sweep
+# across every package.json.
+catalog:
+  "@earendil-works/pi-ai": "^1.5.2"
+  "@earendil-works/pi-coding-agent": "^1.5.2"
+  "@opencode/ai": "^2.2.7"
+  "@opencode/plugin": "^2.2.7"
+  "@types/node": "^24.10.1"
+  typescript: "^5.9.3"
+
+# Host SDKs are pinned to the versions the local harnesses run, and their
+# releases are often younger than pnpm's default cooldown. Everything else
+# respects it; long-term upgrades are gated by Renovate's 7-day cooldown.
+minimumReleaseAgeExclude:
+  - "@earendil-works/*"
+  - "@opencode/*"
 
 allowBuilds:
-  '@google/genai': false
+  "@google/genai": false
   protobufjs: false
-
-overrides:
-  glob: 14.0.2
-  minimatch: 11.0.1

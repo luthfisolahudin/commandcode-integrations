@@ -1,0 +1,47 @@
+name: check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 12.18.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Check
+        run: pnpm check
+
+      - name: Conformance
+        run: pnpm conformance
+
+      - name: Symlink pair survived checkout
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $modes = git ls-files -s CLAUDE.md, .claude/skills
+          if ($modes -notmatch '120000') {
+            Write-Error "CLAUDE.md / .claude/skills were checked out as regular files. Symlink support is required."
+            exit 1
+          }

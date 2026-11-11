@@ -1,0 +1,2720 @@
+{
+  "object": "list",
+  "data": [
+    {
+      "id": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 2000000,
+        "output": 10000000,
+        "cacheRead": 100000,
+        "cacheWrite": 2500000
+      }
+    },
+    {
+      "id": "claude-sonnet-5",
+      "name": "Claude Sonnet 5",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 2000000,
+        "output": 10000000,
+        "cacheRead": 200000,
+        "cacheWrite": 2500000
+      }
+    },
+    {
+      "id": "claude-sonnet-4-6",
+      "name": "Claude Sonnet 4.6",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 3000000,
+        "output": 15000000,
+        "cacheRead": 300000,
+        "cacheWrite": 3750000
+      }
+    },
+    {
+      "id": "claude-fable-5-2",
+      "name": "Claude Fable 5.2",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 8000000,
+        "output": 40000000,
+        "cacheRead": 200000,
+        "cacheWrite": 10000000
+      }
+    },
+    {
+      "id": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 10000000,
+        "output": 50000000,
+        "cacheRead": 250000,
+        "cacheWrite": 12500000
+      }
+    },
+    {
+      "id": "claude-fable-5",
+      "name": "Claude Fable 5",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 10000000,
+        "output": 50000000,
+        "cacheRead": 1000000,
+        "cacheWrite": 12500000
+      }
+    },
+    {
+      "id": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 4000000,
+        "output": 20000000,
+        "cacheRead": 200000,
+        "cacheWrite": 5000000
+      }
+    },
+    {
+      "id": "claude-opus-5",
+      "name": "Claude Opus 5",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 5000000,
+        "output": 25000000,
+        "cacheRead": 500000,
+        "cacheWrite": 6250000
+      }
+    },
+    {
+      "id": "claude-opus-4-8",
+      "name": "Claude Opus 4.8",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 5000000,
+        "output": 25000000,
+        "cacheRead": 500000,
+        "cacheWrite": 6250000
+      }
+    },
+    {
+      "id": "claude-opus-4-7",
+      "name": "Claude Opus 4.7",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 5000000,
+        "output": 25000000,
+        "cacheRead": 500000,
+        "cacheWrite": 6250000
+      }
+    },
+    {
+      "id": "claude-haiku-5-5",
+      "name": "Claude Haiku 5.5",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 100000,
+        "output": 500000,
+        "cacheRead": 10000,
+        "cacheWrite": 125000
+      }
+    },
+    {
+      "id": "claude-haiku-4-5-20251001",
+      "name": "Claude Haiku 4.5",
+      "context_length": 200000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/messages"
+      ],
+      "protocol": "anthropic-messages",
+      "protocolReason": "anthropic-model",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 1000000,
+        "output": 5000000,
+        "cacheRead": 100000,
+        "cacheWrite": 1250000
+      }
+    },
+    {
+      "id": "gpt-6-astra",
+      "name": "GPT-6 Astra",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 10000000,
+        "output": 50000000,
+        "cacheRead": 1000000,
+        "cacheWrite": 12500000
+      }
+    },
+    {
+      "id": "gpt-6.1-sol",
+      "name": "GPT-6.1 Sol",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-max",
+      "pricing": {
+        "input": 2000000,
+        "output": 10000000,
+        "cacheRead": 100000,
+        "cacheWrite": 2500000
+      }
+    },
+    {
+      "id": "gpt-6.1-terra",
+      "name": "GPT-6.1 Terra",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 1000000,
+        "output": 5000000,
+        "cacheRead": 50000,
+        "cacheWrite": 1250000
+      }
+    },
+    {
+      "id": "gpt-6-sol",
+      "name": "GPT-6 Sol",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 2000000,
+        "output": 10000000,
+        "cacheRead": 200000,
+        "cacheWrite": 2500000
+      }
+    },
+    {
+      "id": "gpt-6-luna",
+      "name": "GPT-6 Luna",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 100000,
+        "output": 500000,
+        "cacheRead": 10000,
+        "cacheWrite": 125000
+      }
+    },
+    {
+      "id": "gpt-5.6-sol",
+      "name": "GPT-5.6 Sol",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 5000000,
+        "output": 30000000,
+        "cacheRead": 500000,
+        "cacheWrite": 6250000
+      }
+    },
+    {
+      "id": "gpt-5.6-terra",
+      "name": "GPT-5.6 Terra",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 2000000,
+        "output": 12000000,
+        "cacheRead": 200000,
+        "cacheWrite": 2500000
+      }
+    },
+    {
+      "id": "gpt-5.6-luna",
+      "name": "GPT-5.6 Luna",
+      "context_length": 1050000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 200000,
+        "output": 1200000,
+        "cacheRead": 20000,
+        "cacheWrite": 250000
+      }
+    },
+    {
+      "id": "gpt-5.5",
+      "name": "GPT-5.5",
+      "context_length": 400000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 5000000,
+        "output": 30000000,
+        "cacheRead": 500000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "gpt-5.4",
+      "name": "GPT-5.4",
+      "context_length": 400000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 2500000,
+        "output": 15000000,
+        "cacheRead": 250000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "gpt-5.3-codex",
+      "name": "GPT-5.3 Codex",
+      "context_length": 400000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 2000000,
+        "output": 8000000,
+        "cacheRead": 500000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "gpt-5.4-mini",
+      "name": "GPT-5.4 Mini",
+      "context_length": 400000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 750000,
+        "output": 4500000,
+        "cacheRead": 75000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek V4 Pro (latest)",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "off",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 660000,
+        "output": 1980000,
+        "cacheRead": 22000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash",
+      "name": "DeepSeek V4 Flash (latest)",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "off",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 150000,
+        "output": 600000,
+        "cacheRead": 3000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "name": "DeepSeek V4 Flash Vision (exp)",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "off",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 150000,
+        "output": 600000,
+        "cacheRead": 3000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4-flash-fast",
+      "name": "DeepSeek V4 Flash Fast",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 280000,
+        "output": 560000,
+        "cacheRead": 70000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "name": "DeepSeek V4.1 Flash (latest)",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 150000,
+        "output": 600000,
+        "cacheRead": 3000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash-fast",
+      "name": "DeepSeek V4.1 Flash Fast (latest)",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 160000,
+        "output": 580000,
+        "cacheRead": 16000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash-ultrafast",
+      "name": "DeepSeek V4.1 Flash Ultrafast",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 2400000,
+        "output": 9600000,
+        "cacheRead": 48000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "moonshotai/Kimi-K3.1-Pro",
+      "name": "Kimi K3.1 Pro",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 2000000,
+        "output": 10000000,
+        "cacheRead": 200000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "moonshotai/Kimi-K3",
+      "name": "Kimi K3",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 3000000,
+        "output": 15000000,
+        "cacheRead": 300000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "moonshotai/Kimi-K2.7-Code",
+      "name": "Kimi K2.7 Code",
+      "context_length": 256000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 950000,
+        "output": 4000000,
+        "cacheRead": 190000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "moonshotai/Kimi-K2.7-Code-Highspeed",
+      "name": "Kimi K2.7 Code HighSpeed",
+      "context_length": 262000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1900000,
+        "output": 8000000,
+        "cacheRead": 380000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "moonshotai/Kimi-K2.6",
+      "name": "Kimi K2.6",
+      "context_length": 256000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 950000,
+        "output": 4000000,
+        "cacheRead": 160000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "moonshotai/Kimi-K2.5",
+      "name": "Kimi K2.5",
+      "context_length": 256000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 600000,
+        "output": 3000000,
+        "cacheRead": 100000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "z-ai/glm-5.3-flash",
+      "name": "GLM-5.3 Flash",
+      "context_length": 1048576,
+      "maxOutputTokens": 131072,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 150000,
+        "output": 500000,
+        "cacheRead": 30000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "z-ai/glm-5.3-flashx",
+      "name": "GLM-5.3 FlashX",
+      "context_length": 1000000,
+      "maxOutputTokens": 131072,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 370000,
+        "output": 1250000,
+        "cacheRead": 75000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "zai-org/GLM-5.3",
+      "name": "GLM-5.3",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1400000,
+        "output": 4400000,
+        "cacheRead": 260000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "zai-org/GLM-5.2",
+      "name": "GLM-5.2",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "high",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1400000,
+        "output": 4400000,
+        "cacheRead": 260000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "zai-org/GLM-5.2-Fast",
+      "name": "GLM-5.2 Fast",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 3000000,
+        "output": 10250000,
+        "cacheRead": 500000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "zai-org/GLM-5.1",
+      "name": "GLM-5.1",
+      "context_length": 200000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1400000,
+        "output": 4400000,
+        "cacheRead": 260000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "zai-org/GLM-5",
+      "name": "GLM-5",
+      "context_length": 200000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1000000,
+        "output": 3200000,
+        "cacheRead": 200000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "minimax/minimax-m3.1-flash",
+      "name": "MiniMax M3.1 Flash",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 150000,
+        "output": 600000,
+        "cacheRead": 15000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "MiniMaxAI/MiniMax-M3",
+      "name": "MiniMax M3",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 300000,
+        "output": 1200000,
+        "cacheRead": 60000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "MiniMaxAI/MiniMax-M2.7",
+      "name": "MiniMax M2.7",
+      "context_length": 200000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 300000,
+        "output": 1200000,
+        "cacheRead": 60000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "MiniMaxAI/MiniMax-M2.5",
+      "name": "MiniMax M2.5",
+      "context_length": 200000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 300000,
+        "output": 1200000,
+        "cacheRead": 30000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "ornith/ornith-1.5-122b",
+      "name": "Ornith 1.5 122B",
+      "context_length": 262144,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 160000,
+        "output": 640000,
+        "cacheRead": 20000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-pro",
+      "name": "MiMo V2.6 Pro",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 435000,
+        "output": 870000,
+        "cacheRead": 3600,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+      "name": "MiMo V2.6 Pro UltraSpeed",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 4350000,
+        "output": 8700000,
+        "cacheRead": 36000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "xiaomi/mimo-v2.6-flash",
+      "name": "MiMo V2.6 Flash",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 140000,
+        "output": 280000,
+        "cacheRead": 2800,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.8-Omni-Flash",
+      "name": "Qwen 3.8 Omni Flash",
+      "context_length": 1000000,
+      "maxOutputTokens": 131072,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 150000,
+        "output": 470000,
+        "cacheRead": 16000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.8-Max-Prime",
+      "name": "Qwen 3.8 Max Prime",
+      "context_length": 1000000,
+      "maxOutputTokens": 131072,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 4000000,
+        "output": 12000000,
+        "cacheRead": 500000,
+        "cacheWrite": 5000000
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.8-Max-0902",
+      "name": "Qwen 3.8 Max 0902",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 2000000,
+        "output": 6000000,
+        "cacheRead": 250000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.8-Max",
+      "name": "Qwen 3.8 Max",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 2000000,
+        "output": 6000000,
+        "cacheRead": 250000,
+        "cacheWrite": 2500000
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.8-27B",
+      "name": "Qwen 3.8 27B",
+      "context_length": 262144,
+      "maxOutputTokens": 32768,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 400000,
+        "output": 3000000,
+        "cacheRead": 40000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.8-Flash",
+      "name": "Qwen 3.8 Flash",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 160000,
+        "output": 470000,
+        "cacheRead": 16000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.7-Max",
+      "name": "Qwen 3.7 Max",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 2500000,
+        "output": 7500000,
+        "cacheRead": 500000,
+        "cacheWrite": 3130000
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.7-Plus",
+      "name": "Qwen 3.7 Plus",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 400000,
+        "output": 1600000,
+        "cacheRead": 80000,
+        "cacheWrite": 500000
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.7-Flash",
+      "name": "Qwen 3.7 Flash",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 30000,
+        "output": 130000,
+        "cacheRead": 6000,
+        "cacheWrite": 38000
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.6-Max-Preview",
+      "name": "Qwen 3.6 Max Preview",
+      "context_length": 200000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1300000,
+        "output": 7800000,
+        "cacheRead": 260000,
+        "cacheWrite": 1630000
+      }
+    },
+    {
+      "id": "Qwen/Qwen3.6-Plus",
+      "name": "Qwen 3.6 Plus",
+      "context_length": 200000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 500000,
+        "output": 3000000,
+        "cacheRead": 100000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meituan/LongCat-2.0",
+      "name": "LongCat 2.0",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 300000,
+        "output": 1200000,
+        "cacheRead": 6000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "stepfun/Step-5-Preview",
+      "name": "Step 5 Preview",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1000000,
+        "output": 2700000,
+        "cacheRead": 50000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "stepfun/Step-3.7-Flash",
+      "name": "Step 3.7 Flash",
+      "context_length": 256000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 200000,
+        "output": 1150000,
+        "cacheRead": 40000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "stepfun/Step-3.5-Flash",
+      "name": "Step 3.5 Flash",
+      "context_length": 262144,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 90000,
+        "output": 300000,
+        "cacheRead": 20000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "tencent/hy3-paid",
+      "name": "Tencent Hy3",
+      "context_length": 262144,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 140000,
+        "output": 580000,
+        "cacheRead": 35000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "tencent/hy4-preview",
+      "name": "Tencent Hy4 Preview",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 834000,
+        "output": 2501000,
+        "cacheRead": 42000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "google/gemini-4-carbon",
+      "name": "Gemini 4 Carbon",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 2000000,
+        "output": 10000000,
+        "cacheRead": 100000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "google/gemini-4-argon",
+      "name": "Gemini 4 Argon",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 2000000,
+        "output": 10000000,
+        "cacheRead": 100000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "google/gemini-3.8-flash",
+      "name": "Gemini 3.8 Flash",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 1500000,
+        "output": 7500000,
+        "cacheRead": 150000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "google/gemini-3.7-flash",
+      "name": "Gemini 3.7 Flash",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 1500000,
+        "output": 7500000,
+        "cacheRead": 150000,
+        "cacheWrite": 83340
+      }
+    },
+    {
+      "id": "google/gemini-3.6-flash",
+      "name": "Gemini 3.6 Flash",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 1500000,
+        "output": 7500000,
+        "cacheRead": 150000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "google/gemini-3.5-flash",
+      "name": "Gemini 3.5 Flash",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 1500000,
+        "output": 9000000,
+        "cacheRead": 150000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "google/gemini-3.5-flash-lite",
+      "name": "Gemini 3.5 Flash Lite",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 300000,
+        "output": 2500000,
+        "cacheRead": 30000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "google/gemini-3.1-flash-lite",
+      "name": "Gemini 3.1 Flash Lite",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 250000,
+        "output": 1500000,
+        "cacheRead": 30000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "sakana/fugu-ultra",
+      "name": "Fugu Ultra",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-provider",
+      "pricing": {
+        "input": 5000000,
+        "output": 30000000,
+        "cacheRead": 500000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "name": "Nemotron 3 Ultra",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 600000,
+        "output": 2400000,
+        "cacheRead": 120000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "nvidia/nemotron-3.5-super-vl",
+      "name": "Nemotron 3.5 Super VL",
+      "context_length": 262144,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 200000,
+        "output": 500000,
+        "cacheRead": 40000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "thinkingmachines/inkling",
+      "name": "Inkling",
+      "context_length": 256000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1000000,
+        "output": 4050000,
+        "cacheRead": 170000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "thinkingmachines/inkling-small",
+      "name": "Inkling Small",
+      "context_length": 1000000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 500000,
+        "output": 1200000,
+        "cacheRead": 100000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "stealth/glyph-cluster:free",
+      "name": "Glyph Cluster",
+      "context_length": 256000,
+      "maxOutputTokens": 256000,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go"
+    },
+    {
+      "id": "inclusionai/ling-3.1-flash",
+      "name": "Ling 3.1 Flash",
+      "context_length": 262144,
+      "maxOutputTokens": 32768,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 300000,
+        "output": 900000,
+        "cacheRead": 60000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "inclusionai/ling-3.1-flash-1019",
+      "name": "Ling 3.1 Flash 1019",
+      "context_length": 1000000,
+      "maxOutputTokens": 262144,
+      "inputModalities": [
+        "text"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 300000,
+        "output": 900000,
+        "cacheRead": 60000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-spark-1.1",
+      "name": "Muse Spark 1.1",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-pro",
+      "pricing": {
+        "input": 1250000,
+        "output": 4250000,
+        "cacheRead": 150000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-spark-1.2",
+      "name": "Muse Spark 1.2",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 1250000,
+        "output": 4250000,
+        "cacheRead": 150000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-spark-1.2-contributor",
+      "name": "Muse Spark 1.2 Contributor",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 100000,
+        "output": 200000,
+        "cacheRead": 2000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-spark-1.3",
+      "name": "Muse Spark 1.3",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 1250000,
+        "output": 4250000,
+        "cacheRead": 150000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-spark-1.3-contributor",
+      "name": "Muse Spark 1.3 Contributor",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 100000,
+        "output": 200000,
+        "cacheRead": 2000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-spark-open",
+      "name": "Muse Spark Open",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1250000,
+        "output": 4250000,
+        "cacheRead": 150000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-wonder-1.0",
+      "name": "Muse Wonder",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-max",
+      "pricing": {
+        "input": 4000000,
+        "output": 20000000,
+        "cacheRead": 200000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "meta/muse-ember",
+      "name": "Muse Ember",
+      "context_length": 1048576,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 100000,
+        "output": 500000,
+        "cacheRead": 4000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "xai/grok-4.5",
+      "name": "Grok 4.5",
+      "context_length": 500000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 2000000,
+        "output": 6000000,
+        "cacheRead": 500000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "xai/grok-4.6",
+      "name": "Grok 4.6",
+      "context_length": 500000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 2000000,
+        "output": 6000000,
+        "cacheRead": 500000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "xai/grok-4.7",
+      "name": "Grok 4.7",
+      "context_length": 500000,
+      "maxOutputTokens": null,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-goat",
+      "pricing": {
+        "input": 2000000,
+        "output": 6000000,
+        "cacheRead": 500000,
+        "cacheWrite": 0
+      }
+    },
+    {
+      "id": "mistral/mistral-large-4",
+      "name": "Mistral Large 4",
+      "context_length": 524288,
+      "maxOutputTokens": 262144,
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "supported_endpoints": [
+        "/chat/completions",
+        "/responses"
+      ],
+      "protocol": "openai-completions",
+      "protocolReason": "chat-supported",
+      "hidden": false,
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 1360000,
+        "output": 4179999.9999999995,
+        "cacheRead": 140000,
+        "cacheWrite": 0
+      }
+    }
+  ]
+}

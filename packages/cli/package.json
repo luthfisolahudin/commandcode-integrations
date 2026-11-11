@@ -1,0 +1,17 @@
+{
+  "name": "@luthfisolahudin/commandcode-integrations-cli",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "dependencies": {
+    "@luthfisolahudin/commandcode-integrations-catalog": "workspace:*",
+    "@luthfisolahudin/commandcode-integrations-contract": "workspace:*",
+    "@luthfisolahudin/commandcode-integrations-provider": "workspace:*"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  }
+}

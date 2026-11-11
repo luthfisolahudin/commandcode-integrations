@@ -1,0 +1,17 @@
+{
+  "name": "@luthfisolahudin/commandcode-integrations-conformance",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@luthfisolahudin/commandcode-integrations-opencode": "workspace:*",
+    "@luthfisolahudin/commandcode-integrations-pi": "workspace:*",
+    "@luthfisolahudin/commandcode-integrations-catalog": "workspace:*",
+    "@luthfisolahudin/commandcode-integrations-cli": "workspace:*",
+    "@luthfisolahudin/commandcode-integrations-contract": "workspace:*",
+    "@luthfisolahudin/commandcode-integrations-provider": "workspace:*"
+  }
+}

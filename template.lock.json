@@ -1,0 +1,25 @@
+{
+  "template": "luthfisolahudin/ai-provider-integrations-template",
+  "version": "v0.9.2",
+  "packSchemaVersion": 1,
+  "identity": {
+    "name": "commandcode-integrations",
+    "description": "CommandCode model catalog integration for OpenCode and Pi with live model discovery"
+  },
+  "owned": [
+    "README.md",
+    "LICENSE",
+    "SECURITY.md",
+    "packages/provider/**",
+    "packages/pi/**",
+    "packages/opencode/**",
+    "docs/EVIDENCE.md",
+    "docs/PROVIDERS.md",
+    "docs/REPO.md",
+    "package.json#name",
+    "package.json#description"
+  ],
+  "deleted": [
+    "examples/**"
+  ]
+}

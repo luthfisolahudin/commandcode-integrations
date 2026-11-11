@@ -1,0 +1,8 @@
+[tools]
+task = "3.54.0"
+
+# Node and pnpm come from the idiomatic version files:
+#   .node-version                       -> node
+#   package.json#devEngines.packageManager -> pnpm (version + integrity hash)
+[settings]
+idiomatic_version_file_enable_tools = ["node", "pnpm"]

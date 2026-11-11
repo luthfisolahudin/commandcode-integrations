@@ -1,0 +1,67 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Install dependencies from the lockfile
+    cmds:
+      - pnpm install --frozen-lockfile
+
+  check:
+    desc: Typecheck, unit tests, boundary check, and doctor
+    cmds:
+      - pnpm check
+
+  typecheck:
+    desc: Typecheck every package with one tsconfig
+    cmds:
+      - pnpm typecheck
+
+  test:
+    desc: Run package test suites
+    cmds:
+      - pnpm test:packages
+
+  conformance:
+    desc: Cross-cutting suite (projections, invariants, skills, AGENTS)
+    cmds:
+      - pnpm conformance
+
+  check:catalog:
+    desc: Validate the live catalog against curated invariants
+    cmds:
+      - pnpm check:catalog
+
+  report:
+    desc: Regenerate docs/PROVIDERS.md from the current catalog
+    cmds:
+      - pnpm report
+
+  pricing:
+    desc: Emit or apply the T3 Code pricing block for this repo
+    cmds:
+      - pnpm pricing
+
+  doctor:
+    desc: Verify repo invariants (symlinks, AGENTS.md, skills, pack shape)
+    cmds:
+      - pnpm doctor
+
+  probe:effort:
+    desc: Measure thinking/effort behaviour for one model
+    cmds:
+      - pnpm probe:effort
+
+  probe:routes:
+    desc: Check which wire routes a provider exposes
+    cmds:
+      - pnpm probe:routes
+
+  sync:template:
+    desc: Merge a template tag into this repo
+    cmds:
+      - pnpm sync:template
+
+  init:
+    desc: Turn this template into a provider repo
+    cmds:
+      - pnpm init

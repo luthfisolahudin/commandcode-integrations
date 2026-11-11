@@ -1,0 +1,4202 @@
+{
+  "catalogVersion": "b787063039eb4a47da76c74379dd177365b0ee57541e63a80b1ed316d8db36e8",
+  "data": [
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-prefix-bound-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "best combo of speed & intelligence (recommended)",
+        "group": "Anthropic",
+        "label": "Claude Sonnet 5.5",
+        "notice": null,
+        "order": 69
+      },
+      "id": "claude-sonnet-5-5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Claude Sonnet 5.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "cacheWrite1hCost": 4,
+        "cacheWriteCost": 2.5,
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-interleaved-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "prev Sonnet, still fast & capable",
+        "group": "Anthropic",
+        "label": "Claude Sonnet 5",
+        "notice": null,
+        "order": 70
+      },
+      "id": "claude-sonnet-5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Claude Sonnet 5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "cacheWrite1hCost": 4,
+        "cacheWriteCost": 2.5,
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [
+        "claude-sonnet-4-20250514",
+        "claude-sonnet-4-5-20250929"
+      ],
+      "behaviorProfile": "anthropic-interleaved-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "older Sonnet, still fast & capable",
+        "group": "Anthropic",
+        "label": "Claude Sonnet 4.6",
+        "notice": null,
+        "order": 71
+      },
+      "id": "claude-sonnet-4-6",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Claude Sonnet 4.6",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.3,
+        "cacheWrite1hCost": 6,
+        "cacheWriteCost": 3.75,
+        "inputCost": 3,
+        "outputCost": 15
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-prefix-bound-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "most capable for demanding reasoning & long-horizon agents",
+        "group": "Anthropic",
+        "label": "Claude Fable 5.2",
+        "notice": null,
+        "order": 72
+      },
+      "id": "claude-fable-5-2",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Claude Fable 5.2",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "cacheWrite1hCost": 16,
+        "cacheWriteCost": 10,
+        "inputCost": 8,
+        "outputCost": 40
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-prefix-bound-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "prev Fable, still strong for deep reasoning & agents",
+        "group": "Anthropic",
+        "label": "Claude Fable 5.1",
+        "notice": null,
+        "order": 73
+      },
+      "id": "claude-fable-5-1",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Claude Fable 5.1",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.25,
+        "cacheWrite1hCost": 20,
+        "cacheWriteCost": 12.5,
+        "inputCost": 10,
+        "outputCost": 50
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-interleaved-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "older Fable for deep reasoning & agents",
+        "group": "Anthropic",
+        "label": "Claude Fable 5",
+        "notice": null,
+        "order": 74
+      },
+      "id": "claude-fable-5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Claude Fable 5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 1,
+        "cacheWrite1hCost": 20,
+        "cacheWriteCost": 12.5,
+        "inputCost": 10,
+        "outputCost": 50
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-prefix-bound-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "most intelligent Opus for agents and coding",
+        "group": "Anthropic",
+        "label": "Claude Opus 5.5",
+        "notice": null,
+        "order": 75
+      },
+      "id": "claude-opus-5-5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Claude Opus 5.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "cacheWrite1hCost": 8,
+        "cacheWriteCost": 5,
+        "inputCost": 4,
+        "outputCost": 20
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-interleaved-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "prev flagship, still strong for agents and coding",
+        "group": "Anthropic",
+        "label": "Claude Opus 5",
+        "notice": null,
+        "order": 76
+      },
+      "id": "claude-opus-5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Claude Opus 5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWrite1hCost": 10,
+        "cacheWriteCost": 6.25,
+        "inputCost": 5,
+        "outputCost": 25
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-interleaved-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "older Opus, still strong for agents and coding",
+        "group": "Anthropic",
+        "label": "Claude Opus 4.8",
+        "notice": null,
+        "order": 77
+      },
+      "id": "claude-opus-4-8",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Claude Opus 4.8",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWrite1hCost": 10,
+        "cacheWriteCost": 6.25,
+        "inputCost": 5,
+        "outputCost": 25
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [
+        "claude-opus-4-5-20251101",
+        "claude-opus-4-6"
+      ],
+      "behaviorProfile": "anthropic-interleaved-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "older Opus, still strong for agents and coding",
+        "group": "Anthropic",
+        "label": "Claude Opus 4.7",
+        "notice": null,
+        "order": 78
+      },
+      "id": "claude-opus-4-7",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Claude Opus 4.7",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWrite1hCost": 10,
+        "cacheWriteCost": 6.25,
+        "inputCost": 5,
+        "outputCost": 25
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "anthropic-prefix-bound-forced-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "fastest & most compact, great for quick tasks",
+        "group": "Anthropic",
+        "label": "Claude Haiku 5.5",
+        "notice": null,
+        "order": 79
+      },
+      "id": "claude-haiku-5-5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Claude Haiku 5.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.01,
+        "cacheWrite1hCost": 0.2,
+        "cacheWriteCost": 0.125,
+        "contextTiers": [
+          {
+            "maxContext": 100000,
+            "rates": {
+              "cacheReadCost": 0.01,
+              "cacheWrite1hCost": 0.2,
+              "cacheWriteCost": 0.125,
+              "inputCost": 0.1,
+              "outputCost": 0.5
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.05,
+              "cacheWrite1hCost": 1,
+              "cacheWriteCost": 0.625,
+              "inputCost": 0.5,
+              "outputCost": 2.5
+            }
+          }
+        ],
+        "inputCost": 0.1,
+        "outputCost": 0.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [
+        "claude-haiku-4-5"
+      ],
+      "behaviorProfile": "anthropic-interleaved-v1",
+      "category": "premium",
+      "context_length": 200000,
+      "display": {
+        "badge": null,
+        "description": "prev Haiku, still fast for quick tasks",
+        "group": "Anthropic",
+        "label": "Claude Haiku 4.5",
+        "notice": null,
+        "order": 80
+      },
+      "id": "claude-haiku-4-5-20251001",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Claude Haiku 4.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "cacheWrite1hCost": 2,
+        "cacheWriteCost": 1.25,
+        "inputCost": 1,
+        "outputCost": 5
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "most capable OpenAI model for demanding reasoning & agents",
+        "group": "OpenAI",
+        "label": "GPT-6 Astra",
+        "notice": null,
+        "order": 81
+      },
+      "id": "gpt-6-astra",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "GPT-6 Astra",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 1,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 12.5,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 1,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 12.5,
+              "inputCost": 10,
+              "outputCost": 50
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 2,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 25,
+              "inputCost": 20,
+              "outputCost": 75
+            }
+          }
+        ],
+        "inputCost": 10,
+        "outputCost": 50
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "near-Astra performance for complex work at a lower cost",
+        "group": "OpenAI",
+        "label": "GPT-6.1 Sol",
+        "notice": null,
+        "order": 82
+      },
+      "id": "gpt-6.1-sol",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-max",
+      "name": "GPT-6.1 Sol",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 2.5,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.1,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 2.5,
+              "inputCost": 2,
+              "outputCost": 10
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.2,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 5,
+              "inputCost": 4,
+              "outputCost": 15
+            }
+          }
+        ],
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "fast, efficient model for visual reasoning, computer use & writing",
+        "group": "OpenAI",
+        "label": "GPT-6.1 Terra",
+        "notice": null,
+        "order": 83
+      },
+      "id": "gpt-6.1-terra",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-6.1 Terra",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.05,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 1.25,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.05,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 1.25,
+              "inputCost": 1,
+              "outputCost": 5
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.1,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 2.5,
+              "inputCost": 2,
+              "outputCost": 7.5
+            }
+          }
+        ],
+        "inputCost": 1,
+        "outputCost": 5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "built for complex coding & agentic workflows",
+        "group": "OpenAI",
+        "label": "GPT-6 Sol",
+        "notice": null,
+        "order": 84
+      },
+      "id": "gpt-6-sol",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-6 Sol",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 2.5,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.2,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 2.5,
+              "inputCost": 2,
+              "outputCost": 10
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.4,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 5,
+              "inputCost": 4,
+              "outputCost": 15
+            }
+          }
+        ],
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "most efficient OpenAI model for focused, high-volume tasks",
+        "group": "OpenAI",
+        "label": "GPT-6 Luna",
+        "notice": null,
+        "order": 85
+      },
+      "id": "gpt-6-luna",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "GPT-6 Luna",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.01,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 0.125,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.01,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 0.125,
+              "inputCost": 0.1,
+              "outputCost": 0.5
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.02,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 0.25,
+              "inputCost": 0.2,
+              "outputCost": 0.75
+            }
+          }
+        ],
+        "inputCost": 0.1,
+        "outputCost": 0.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "frontier model for complex professional work",
+        "group": "OpenAI",
+        "label": "GPT-5.6 Sol",
+        "notice": null,
+        "order": 86
+      },
+      "id": "gpt-5.6-sol",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "GPT-5.6 Sol",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWriteCost": 6.25,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.5,
+              "cacheWriteCost": 6.25,
+              "inputCost": 5,
+              "outputCost": 30
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 1,
+              "cacheWriteCost": 12.5,
+              "inputCost": 10,
+              "outputCost": 45
+            }
+          }
+        ],
+        "inputCost": 5,
+        "outputCost": 30
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "balances intelligence and cost",
+        "group": "OpenAI",
+        "label": "GPT-5.6 Terra",
+        "notice": null,
+        "order": 87
+      },
+      "id": "gpt-5.6-terra",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-5.6 Terra",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "cacheWriteCost": 2.5,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.2,
+              "cacheWriteCost": 2.5,
+              "inputCost": 2,
+              "outputCost": 12
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.4,
+              "cacheWriteCost": 5,
+              "inputCost": 4,
+              "outputCost": 18
+            }
+          }
+        ],
+        "inputCost": 2,
+        "outputCost": 12
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "optimized for cost-sensitive workloads",
+        "group": "OpenAI",
+        "label": "GPT-5.6 Luna",
+        "notice": null,
+        "order": 88
+      },
+      "id": "gpt-5.6-luna",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "GPT-5.6 Luna",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.02,
+        "cacheWriteCost": 0.25,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.02,
+              "cacheWriteCost": 0.25,
+              "inputCost": 0.2,
+              "outputCost": 1.2
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.04,
+              "cacheWriteCost": 0.5,
+              "inputCost": 0.4,
+              "outputCost": 1.8
+            }
+          }
+        ],
+        "inputCost": 0.2,
+        "outputCost": 1.2
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 400000,
+      "display": {
+        "badge": null,
+        "description": "latest frontier model for general complex work",
+        "group": "OpenAI",
+        "label": "GPT-5.5",
+        "notice": null,
+        "order": 89
+      },
+      "id": "gpt-5.5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-5.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 0,
+        "inputCost": 5,
+        "outputCost": 30
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 400000,
+      "display": {
+        "badge": null,
+        "description": "frontier model for general complex work",
+        "group": "OpenAI",
+        "label": "GPT-5.4",
+        "notice": null,
+        "order": 90
+      },
+      "id": "gpt-5.4",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-5.4",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.25,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 0,
+        "inputCost": 2.5,
+        "outputCost": 15
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 400000,
+      "display": {
+        "badge": null,
+        "description": "frontier coding model",
+        "group": "OpenAI",
+        "label": "GPT-5.3 Codex",
+        "notice": null,
+        "order": 91
+      },
+      "id": "gpt-5.3-codex",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-5.3 Codex",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 0,
+        "inputCost": 2,
+        "outputCost": 8
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 400000,
+      "display": {
+        "badge": null,
+        "description": "fast, cost-effective model for everyday tasks",
+        "group": "OpenAI",
+        "label": "GPT-5.4 Mini",
+        "notice": null,
+        "order": 92
+      },
+      "id": "gpt-5.4-mini",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-5.4 Mini",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.075,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 0,
+        "inputCost": 0.75,
+        "outputCost": 4.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": "free",
+        "description": "frontier coding, agents & native multimodality",
+        "group": "Open Source",
+        "label": "MiniMax M3",
+        "notice": null,
+        "order": 0
+      },
+      "hidden": true,
+      "id": "MiniMaxAI/MiniMax-M3-Free",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M3",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.06,
+        "inputCost": 0.3,
+        "outputCost": 1.2
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "hybrid-attention long-context reasoning",
+        "group": "Open Source",
+        "label": "DeepSeek V4 Pro (latest)",
+        "notice": null,
+        "order": 1
+      },
+      "id": "deepseek/deepseek-v4-pro",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "DeepSeek V4 Pro (latest)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.022,
+        "inputCost": 0.66,
+        "outputCost": 1.98
+      },
+      "reasoningEfforts": [
+        "off",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "fast hybrid-attention reasoning",
+        "group": "Open Source",
+        "label": "DeepSeek V4 Flash (latest)",
+        "notice": null,
+        "order": 2
+      },
+      "id": "deepseek/deepseek-v4-flash",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "DeepSeek V4 Flash (latest)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.003,
+        "inputCost": 0.15,
+        "outputCost": 0.6
+      },
+      "reasoningEfforts": [
+        "off",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "fast hybrid-attention reasoning with vision",
+        "group": "Open Source",
+        "label": "DeepSeek V4 Flash Vision (exp)",
+        "notice": null,
+        "order": 3
+      },
+      "id": "deepseek/deepseek-v4-flash-vision-exp",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "DeepSeek V4 Flash Vision (exp)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.003,
+        "inputCost": 0.15,
+        "outputCost": 0.6
+      },
+      "reasoningEfforts": [
+        "off",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "low-latency V4 Flash deployment",
+        "group": "Open Source",
+        "label": "DeepSeek V4 Flash Fast",
+        "notice": null,
+        "order": 4
+      },
+      "id": "deepseek/deepseek-v4-flash-fast",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "DeepSeek V4 Flash Fast",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.07,
+        "inputCost": 0.28,
+        "outputCost": 0.56
+      },
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "V4.1 hybrid-attention reasoning with vision",
+        "group": "Open Source",
+        "label": "DeepSeek V4.1 Flash (latest)",
+        "notice": null,
+        "order": 5
+      },
+      "id": "deepseek/deepseek-v4.1-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "DeepSeek V4.1 Flash (latest)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.003,
+        "inputCost": 0.15,
+        "outputCost": 0.6
+      },
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "High throughput V4.1 Flash",
+        "group": "Open Source",
+        "label": "DeepSeek V4.1 Flash Fast (latest)",
+        "notice": null,
+        "order": 6
+      },
+      "id": "deepseek/deepseek-v4.1-flash-fast",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "DeepSeek V4.1 Flash Fast (latest)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.016,
+        "inputCost": 0.16,
+        "outputCost": 0.58
+      },
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "Accelerated V4.1 Flash",
+        "group": "Open Source",
+        "label": "DeepSeek V4.1 Flash Ultrafast",
+        "notice": null,
+        "order": 7
+      },
+      "id": "deepseek/deepseek-v4.1-flash-ultrafast",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "DeepSeek V4.1 Flash Ultrafast",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.048,
+        "inputCost": 2.4,
+        "outputCost": 9.6
+      },
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "frontier reasoning & agentic coding with 1M context",
+        "group": "Open Source",
+        "label": "Kimi K3.1 Pro",
+        "notice": null,
+        "order": 8
+      },
+      "id": "moonshotai/Kimi-K3.1-Pro",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Kimi K3.1 Pro",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "long-horizon coding & knowledge work with 1M context",
+        "group": "Open Source",
+        "label": "Kimi K3",
+        "notice": null,
+        "order": 9
+      },
+      "id": "moonshotai/Kimi-K3",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Kimi K3",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.3,
+        "inputCost": 3,
+        "outputCost": 15
+      },
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 256000,
+      "display": {
+        "badge": null,
+        "description": "improved long-horizon coding with vision",
+        "group": "Open Source",
+        "label": "Kimi K2.7 Code",
+        "notice": null,
+        "order": 10
+      },
+      "id": "moonshotai/Kimi-K2.7-Code",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Kimi K2.7 Code",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.19,
+        "inputCost": 0.95,
+        "outputCost": 4
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 262000,
+      "display": {
+        "badge": null,
+        "description": "high-speed long-horizon coding with vision",
+        "group": "Open Source",
+        "label": "Kimi K2.7 Code HighSpeed",
+        "notice": null,
+        "order": 11
+      },
+      "id": "moonshotai/Kimi-K2.7-Code-Highspeed",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Kimi K2.7 Code HighSpeed",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.38,
+        "inputCost": 1.9,
+        "outputCost": 8
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 256000,
+      "display": {
+        "badge": null,
+        "description": "long-horizon coding with vision",
+        "group": "Open Source",
+        "label": "Kimi K2.6",
+        "notice": null,
+        "order": 12
+      },
+      "id": "moonshotai/Kimi-K2.6",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Kimi K2.6",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.16,
+        "inputCost": 0.95,
+        "outputCost": 4
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 256000,
+      "display": {
+        "badge": null,
+        "description": "multimodal frontend coding",
+        "group": "Open Source",
+        "label": "Kimi K2.5",
+        "notice": null,
+        "order": 13
+      },
+      "id": "moonshotai/Kimi-K2.5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Kimi K2.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "inputCost": 0.6,
+        "outputCost": 3
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "fast, affordable GLM coding with 1M context",
+        "group": "Open Source",
+        "label": "GLM-5.3 Flash",
+        "notice": null,
+        "order": 14
+      },
+      "id": "z-ai/glm-5.3-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 131072,
+      "minimumPlan": "individual-go",
+      "name": "GLM-5.3 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.03,
+        "inputCost": 0.15,
+        "outputCost": 0.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "high-speed GLM-5.3 Flash with 1M context",
+        "group": "Open Source",
+        "label": "GLM-5.3 FlashX",
+        "notice": null,
+        "order": 15
+      },
+      "id": "z-ai/glm-5.3-flashx",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 131072,
+      "minimumPlan": "individual-go",
+      "name": "GLM-5.3 FlashX",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.075,
+        "inputCost": 0.37,
+        "outputCost": 1.25
+      },
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "frontier coding with emergent cyber capabilities",
+        "group": "Open Source",
+        "label": "GLM-5.3",
+        "notice": null,
+        "order": 16
+      },
+      "id": "zai-org/GLM-5.3",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "GLM-5.3",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.26,
+        "inputCost": 1.4,
+        "outputCost": 4.4
+      },
+      "reasoningEfforts": [
+        "low",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "powerful coding with 1M context and long-horizon tasks",
+        "group": "Open Source",
+        "label": "GLM-5.2",
+        "notice": null,
+        "order": 17
+      },
+      "id": "zai-org/GLM-5.2",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "GLM-5.2",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.26,
+        "inputCost": 1.4,
+        "outputCost": 4.4
+      },
+      "reasoningEfforts": [
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "high-throughput GLM-5.2 with 1M context",
+        "group": "Open Source",
+        "label": "GLM-5.2 Fast",
+        "notice": null,
+        "order": 18
+      },
+      "id": "zai-org/GLM-5.2-Fast",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "GLM-5.2 Fast",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "inputCost": 3,
+        "outputCost": 10.25
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 200000,
+      "display": {
+        "badge": null,
+        "description": "long-horizon autonomous coding agent",
+        "group": "Open Source",
+        "label": "GLM-5.1",
+        "notice": null,
+        "order": 19
+      },
+      "id": "zai-org/GLM-5.1",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "GLM-5.1",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.26,
+        "inputCost": 1.4,
+        "outputCost": 4.4
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 200000,
+      "display": {
+        "badge": null,
+        "description": "multi-mode thinking & long-range planning",
+        "group": "Open Source",
+        "label": "GLM-5",
+        "notice": null,
+        "order": 20
+      },
+      "id": "zai-org/GLM-5",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "GLM-5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "inputCost": 1,
+        "outputCost": 3.2
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [
+        "minimax/minimax-m3.1-flash-preview"
+      ],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "multimodal coding with tunable thinking depth",
+        "group": "Open Source",
+        "label": "MiniMax M3.1 Flash",
+        "notice": null,
+        "order": 21
+      },
+      "id": "minimax/minimax-m3.1-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M3.1 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.015,
+        "inputCost": 0.15,
+        "outputCost": 0.6
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [
+        "minimax/minimax-m3.1-flash-preview:free"
+      ],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": "free",
+        "description": "multimodal coding with tunable thinking depth",
+        "group": "Open Source",
+        "label": "MiniMax M3.1 Flash",
+        "notice": "MiniMax M3.1 Flash is free and uses shared capacity, so limits may apply during busy periods",
+        "order": 22
+      },
+      "hidden": true,
+      "id": "minimax/minimax-m3.1-flash:free",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M3.1 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "frontier coding, agents & native multimodality",
+        "group": "Open Source",
+        "label": "MiniMax M3",
+        "notice": null,
+        "order": 23
+      },
+      "id": "MiniMaxAI/MiniMax-M3",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M3",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.06,
+        "inputCost": 0.3,
+        "outputCost": 1.2
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 200000,
+      "display": {
+        "badge": null,
+        "description": "end-to-end software engineering agent",
+        "group": "Open Source",
+        "label": "MiniMax M2.7",
+        "notice": null,
+        "order": 24
+      },
+      "id": "MiniMaxAI/MiniMax-M2.7",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M2.7",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.06,
+        "inputCost": 0.3,
+        "outputCost": 1.2
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": "free",
+        "description": "frontier coding, agents & native multimodality",
+        "group": "Open Source",
+        "label": "MiniMax M3",
+        "notice": null,
+        "order": 25
+      },
+      "hidden": true,
+      "id": "minimax/minimax-m3-free",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M3 (Free)",
+      "object": "model",
+      "owned_by": "command-code",
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 197000,
+      "display": {
+        "badge": "free",
+        "description": "end-to-end software engineering agent",
+        "group": "Open Source",
+        "label": "MiniMax M2.7",
+        "notice": null,
+        "order": 26
+      },
+      "hidden": true,
+      "id": "minimax/minimax-m2.7-free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M2.7 (Free)",
+      "object": "model",
+      "owned_by": "command-code",
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 200000,
+      "display": {
+        "badge": null,
+        "description": "cross-platform full-stack agentic dev",
+        "group": "Open Source",
+        "label": "MiniMax M2.5",
+        "notice": null,
+        "order": 27
+      },
+      "id": "MiniMaxAI/MiniMax-M2.5",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiniMax M2.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.03,
+        "inputCost": 0.3,
+        "outputCost": 1.2
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": null,
+        "description": "open-weight MoE for fast agentic coding",
+        "group": "Open Source",
+        "label": "Ornith 1.5 122B",
+        "notice": null,
+        "order": 28
+      },
+      "id": "ornith/ornith-1.5-122b",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Ornith 1.5 122B",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.02,
+        "inputCost": 0.16,
+        "outputCost": 0.64
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": "free",
+        "description": "open-weight MoE for fast agentic coding",
+        "group": "Open Source",
+        "label": "Ornith 1.5 122B",
+        "notice": "Ornith 1.5 122B is free and uses shared capacity, so limits may apply during busy periods",
+        "order": 29
+      },
+      "hidden": true,
+      "id": "ornith/ornith-1.5-122b:free",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Ornith 1.5 122B",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "flagship multimodal agentic coding with 1M context",
+        "group": "Open Source",
+        "label": "MiMo V2.6 Pro",
+        "notice": null,
+        "order": 30
+      },
+      "id": "xiaomi/mimo-v2.6-pro",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiMo V2.6 Pro",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.0036,
+        "inputCost": 0.435,
+        "outputCost": 0.87
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "low-latency serving tier of MiMo V2.6 Pro",
+        "group": "Open Source",
+        "label": "MiMo V2.6 Pro UltraSpeed",
+        "notice": null,
+        "order": 31
+      },
+      "id": "xiaomi/mimo-v2.6-pro-ultraspeed",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "MiMo V2.6 Pro UltraSpeed",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.036,
+        "inputCost": 4.35,
+        "outputCost": 8.7
+      },
+      "reasoningEfforts": null,
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "efficient multimodal agentic coding with 1M context",
+        "group": "Open Source",
+        "label": "MiMo V2.6 Flash",
+        "notice": null,
+        "order": 32
+      },
+      "id": "xiaomi/mimo-v2.6-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiMo V2.6 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.0028,
+        "inputCost": 0.14,
+        "outputCost": 0.28
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "high-capability long-context agentic coding",
+        "group": "Open Source",
+        "label": "MiMo V2.5 Pro",
+        "notice": null,
+        "order": 33
+      },
+      "hidden": true,
+      "id": "xiaomi/mimo-v2.5-pro",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiMo V2.5 Pro",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.0036,
+        "inputCost": 0.435,
+        "outputCost": 0.87
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "efficient long-context agentic coding",
+        "group": "Open Source",
+        "label": "MiMo V2.5",
+        "notice": null,
+        "order": 34
+      },
+      "hidden": true,
+      "id": "xiaomi/mimo-v2.5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "MiMo V2.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.0028,
+        "inputCost": 0.14,
+        "outputCost": 0.28
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "omni-modal understanding & multimedia agentic work",
+        "group": "Open Source",
+        "label": "Qwen 3.8 Omni Flash",
+        "notice": null,
+        "order": 35
+      },
+      "id": "Qwen/Qwen3.8-Omni-Flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 131072,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.8 Omni Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.016,
+        "inputCost": 0.15,
+        "outputCost": 0.47
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "high-speed Qwen 3.8 Max: 1.5–2× faster output",
+        "group": "Open Source",
+        "label": "Qwen 3.8 Max Prime",
+        "notice": null,
+        "order": 36
+      },
+      "id": "Qwen/Qwen3.8-Max-Prime",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 131072,
+      "minimumPlan": "individual-goat",
+      "name": "Qwen 3.8 Max Prime",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWriteCost": 5,
+        "inputCost": 4,
+        "outputCost": 12
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "upgraded Qwen 3.8 Max: stronger coding & agentic tool use",
+        "group": "Open Source",
+        "label": "Qwen 3.8 Max 0902",
+        "notice": null,
+        "order": 37
+      },
+      "id": "Qwen/Qwen3.8-Max-0902",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.8 Max 0902",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.25,
+        "inputCost": 2,
+        "outputCost": 6
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "autonomous long-horizon coding & professional work",
+        "group": "Open Source",
+        "label": "Qwen 3.8 Max",
+        "notice": null,
+        "order": 38
+      },
+      "id": "Qwen/Qwen3.8-Max",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.8 Max",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.25,
+        "cacheWriteCost": 2.5,
+        "inputCost": 2,
+        "outputCost": 6
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": null,
+        "description": "compact vision-language coding & agentic work",
+        "group": "Open Source",
+        "label": "Qwen 3.8 27B",
+        "notice": null,
+        "order": 39
+      },
+      "id": "Qwen/Qwen3.8-27B",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 32768,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.8 27B",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.04,
+        "inputCost": 0.4,
+        "outputCost": 3
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "fast low-cost agentic coding & reasoning",
+        "group": "Open Source",
+        "label": "Qwen 3.8 Flash",
+        "notice": null,
+        "order": 40
+      },
+      "id": "Qwen/Qwen3.8-Flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.8 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.016,
+        "inputCost": 0.16,
+        "outputCost": 0.47
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "frontier coding & long-horizon agent execution",
+        "group": "Open Source",
+        "label": "Qwen 3.7 Max",
+        "notice": null,
+        "order": 41
+      },
+      "id": "Qwen/Qwen3.7-Max",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.7 Max",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "cacheWriteCost": 3.13,
+        "inputCost": 2.5,
+        "outputCost": 7.5
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "agentic coding & reasoning at lower cost",
+        "group": "Open Source",
+        "label": "Qwen 3.7 Plus",
+        "notice": null,
+        "order": 42
+      },
+      "id": "Qwen/Qwen3.7-Plus",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.7 Plus",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.08,
+        "cacheWriteCost": 0.5,
+        "contextTiers": [
+          {
+            "maxContext": 256000,
+            "rates": {
+              "cacheReadCost": 0.08,
+              "cacheWriteCost": 0.5,
+              "inputCost": 0.4,
+              "outputCost": 1.6
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.24,
+              "cacheWriteCost": 1.5,
+              "inputCost": 1.2,
+              "outputCost": 4.8
+            }
+          }
+        ],
+        "inputCost": 0.4,
+        "outputCost": 1.6
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "fast low-cost agentic coding & reasoning",
+        "group": "Open Source",
+        "label": "Qwen 3.7 Flash",
+        "notice": null,
+        "order": 43
+      },
+      "id": "Qwen/Qwen3.7-Flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.7 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.006,
+        "cacheWriteCost": 0.038,
+        "contextTiers": [
+          {
+            "maxContext": 32000,
+            "rates": {
+              "cacheReadCost": 0.006,
+              "cacheWriteCost": 0.038,
+              "inputCost": 0.03,
+              "outputCost": 0.13
+            }
+          },
+          {
+            "maxContext": 256000,
+            "rates": {
+              "cacheReadCost": 0.02,
+              "cacheWriteCost": 0.125,
+              "inputCost": 0.1,
+              "outputCost": 0.4
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.04,
+              "cacheWriteCost": 0.25,
+              "inputCost": 0.2,
+              "outputCost": 0.8
+            }
+          }
+        ],
+        "inputCost": 0.03,
+        "outputCost": 0.13
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 200000,
+      "display": {
+        "badge": null,
+        "description": "vibe coding & efficient agent execution",
+        "group": "Open Source",
+        "label": "Qwen 3.6 Max Preview",
+        "notice": null,
+        "order": 44
+      },
+      "id": "Qwen/Qwen3.6-Max-Preview",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.6 Max Preview",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.26,
+        "cacheWriteCost": 1.63,
+        "inputCost": 1.3,
+        "outputCost": 7.8
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 200000,
+      "display": {
+        "badge": null,
+        "description": "agentic coding & reasoning",
+        "group": "Open Source",
+        "label": "Qwen 3.6 Plus",
+        "notice": null,
+        "order": 45
+      },
+      "id": "Qwen/Qwen3.6-Plus",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 3.6 Plus",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "contextTiers": [
+          {
+            "maxContext": 256000,
+            "rates": {
+              "cacheReadCost": 0.1,
+              "inputCost": 0.5,
+              "outputCost": 3
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.2,
+              "inputCost": 2,
+              "outputCost": 6
+            }
+          }
+        ],
+        "inputCost": 0.5,
+        "outputCost": 3
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "trillion-parameter agentic coding with 1M context",
+        "group": "Open Source",
+        "label": "LongCat 2.0",
+        "notice": null,
+        "order": 46
+      },
+      "id": "meituan/LongCat-2.0",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "LongCat 2.0",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.006,
+        "inputCost": 0.3,
+        "outputCost": 1.2
+      },
+      "reasoningEfforts": null,
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": "free",
+        "description": "trillion-parameter agentic coding with 1M context",
+        "group": "Open Source",
+        "label": "LongCat 2.0",
+        "notice": null,
+        "order": 47
+      },
+      "hidden": true,
+      "id": "meituan/LongCat-2.0:free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "LongCat 2.0 (Free)",
+      "object": "model",
+      "owned_by": "command-code",
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "600B sparse-MoE agentic coding with 1M context",
+        "group": "Open Source",
+        "label": "Step 5 Preview",
+        "notice": null,
+        "order": 48
+      },
+      "id": "stepfun/Step-5-Preview",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Step 5 Preview",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.05,
+        "inputCost": 1,
+        "outputCost": 2.7
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 256000,
+      "display": {
+        "badge": null,
+        "description": "multimodal sparse-MoE reasoning",
+        "group": "Open Source",
+        "label": "Step 3.7 Flash",
+        "notice": null,
+        "order": 49
+      },
+      "id": "stepfun/Step-3.7-Flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Step 3.7 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.04,
+        "inputCost": 0.2,
+        "outputCost": 1.15
+      },
+      "reasoningEfforts": null,
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": null,
+        "description": "fast sparse-MoE agentic reasoning",
+        "group": "Open Source",
+        "label": "Step 3.5 Flash",
+        "notice": null,
+        "order": 50
+      },
+      "id": "stepfun/Step-3.5-Flash",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Step 3.5 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.02,
+        "inputCost": 0.09,
+        "outputCost": 0.3
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [
+        "tencent/HY3"
+      ],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": "free",
+        "description": "sparse-MoE reasoning & agentic tool use",
+        "group": "Open Source",
+        "label": "Tencent Hy3 (Free)",
+        "notice": null,
+        "order": 51
+      },
+      "hidden": true,
+      "id": "tencent/Hy3",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Tencent Hy3 (Free)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": null,
+        "description": "sparse-MoE reasoning & agentic tool use",
+        "group": "Open Source",
+        "label": "Tencent Hy3",
+        "notice": null,
+        "order": 52
+      },
+      "id": "tencent/hy3-paid",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Tencent Hy3",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.035,
+        "inputCost": 0.14,
+        "outputCost": 0.58
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "agentic coding & sustained multi-step tool use",
+        "group": "Open Source",
+        "label": "Tencent Hy4 Preview",
+        "notice": null,
+        "order": 53
+      },
+      "id": "tencent/hy4-preview",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Tencent Hy4 Preview",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.042,
+        "inputCost": 0.834,
+        "outputCost": 2.501
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "complex software engineering & sustained agent workflows",
+        "group": "Google",
+        "label": "Gemini 4 Carbon",
+        "notice": null,
+        "order": 93
+      },
+      "id": "google/gemini-4-carbon",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Gemini 4 Carbon",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "multimodal reasoning for documents and agent workflows",
+        "group": "Google",
+        "label": "Gemini 4 Argon",
+        "notice": null,
+        "order": 94
+      },
+      "id": "google/gemini-4-argon",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Gemini 4 Argon",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "newest Gemini Flash, improved core reasoning",
+        "group": "Google",
+        "label": "Gemini 3.8 Flash",
+        "notice": null,
+        "order": 95
+      },
+      "id": "google/gemini-3.8-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Gemini 3.8 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 1.5,
+        "outputCost": 7.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "higher-quality coding & agentic workflows, fewer tokens",
+        "group": "Google",
+        "label": "Gemini 3.7 Flash",
+        "notice": null,
+        "order": 96
+      },
+      "id": "google/gemini-3.7-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Gemini 3.7 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "cacheWriteCost": 0.08334,
+        "inputCost": 1.5,
+        "outputCost": 7.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "previous Gemini Flash, still fast & capable",
+        "group": "Google",
+        "label": "Gemini 3.6 Flash",
+        "notice": null,
+        "order": 97
+      },
+      "id": "google/gemini-3.6-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Gemini 3.6 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 1.5,
+        "outputCost": 7.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "Pro-level coding proficiency, parallel agentic execution",
+        "group": "Google",
+        "label": "Gemini 3.5 Flash",
+        "notice": null,
+        "order": 98
+      },
+      "id": "google/gemini-3.5-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Gemini 3.5 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 1.5,
+        "outputCost": 9
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "upgraded agentic capabilities, ideal for subagents",
+        "group": "Google",
+        "label": "Gemini 3.5 Flash Lite",
+        "notice": null,
+        "order": 99
+      },
+      "id": "google/gemini-3.5-flash-lite",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Gemini 3.5 Flash Lite",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.03,
+        "inputCost": 0.3,
+        "outputCost": 2.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "high-volume workhorse model with implicit caching",
+        "group": "Google",
+        "label": "Gemini 3.1 Flash Lite",
+        "notice": null,
+        "order": 100
+      },
+      "id": "google/gemini-3.1-flash-lite",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Gemini 3.1 Flash Lite",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.03,
+        "inputCost": 0.25,
+        "outputCost": 1.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "multi-agent orchestration across frontier models",
+        "group": "Sakana",
+        "label": "Fugu Ultra",
+        "notice": null,
+        "order": 101
+      },
+      "id": "sakana/fugu-ultra",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "Fugu Ultra",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "inputCost": 5,
+        "outputCost": 30
+      },
+      "reasoningEfforts": [
+        "high",
+        "xhigh"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "open reasoning model for long-horizon autonomous agents",
+        "group": "Open Source",
+        "label": "Nemotron 3 Ultra",
+        "notice": null,
+        "order": 54
+      },
+      "id": "nvidia/nemotron-3-ultra-550b-a55b",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Nemotron 3 Ultra",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.12,
+        "inputCost": 0.6,
+        "outputCost": 2.4
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": null,
+        "description": "open vision-language model for coding and documents",
+        "group": "Open Source",
+        "label": "Nemotron 3.5 Super VL",
+        "notice": null,
+        "order": 55
+      },
+      "id": "nvidia/nemotron-3.5-super-vl",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Nemotron 3.5 Super VL",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.04,
+        "inputCost": 0.2,
+        "outputCost": 0.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 256000,
+      "display": {
+        "badge": null,
+        "description": "multimodal MoE reasoning",
+        "group": "Open Source",
+        "label": "Inkling",
+        "notice": null,
+        "order": 56
+      },
+      "id": "thinkingmachines/inkling",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Inkling",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.17,
+        "inputCost": 1,
+        "outputCost": 4.05
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "lightweight MoE reasoning at lower cost and latency",
+        "group": "Open Source",
+        "label": "Inkling Small",
+        "notice": null,
+        "order": 57
+      },
+      "id": "thinkingmachines/inkling-small",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Inkling Small",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "inputCost": 0.5,
+        "outputCost": 1.2
+      },
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": "free",
+        "description": "stealth model with 1M context",
+        "group": "Stealth",
+        "label": "Space Bunny Alpha",
+        "notice": null,
+        "order": 65
+      },
+      "hidden": true,
+      "id": "stealth/space-bunny-alpha",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Space Bunny Alpha",
+      "object": "model",
+      "owned_by": "command-code",
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": "free",
+        "description": "stealth coding model for web and mobile apps",
+        "group": "Stealth",
+        "label": "Pixel Canary",
+        "notice": null,
+        "order": 66
+      },
+      "hidden": true,
+      "id": "stealth/pixel-canary",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Pixel Canary",
+      "object": "model",
+      "owned_by": "command-code",
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 256000,
+      "display": {
+        "badge": "free",
+        "description": "stealth reasoning model in early access",
+        "group": "Stealth",
+        "label": "Glyph Cluster",
+        "notice": "Glyph Cluster is free and uses shared capacity, so limits may apply during busy periods. 1000 requests a day per account",
+        "order": 67
+      },
+      "id": "stealth/glyph-cluster:free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": 256000,
+      "minimumPlan": "individual-go",
+      "name": "Glyph Cluster",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": "free",
+        "description": "lightweight stealth model for agentic sub-tasks, 1M context",
+        "group": "Stealth",
+        "label": "Crouton Alpha",
+        "notice": null,
+        "order": 68
+      },
+      "hidden": true,
+      "id": "stealth/crouton-alpha",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 943718,
+      "minimumPlan": "individual-go",
+      "name": "Crouton Alpha",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": "free",
+        "description": "reasoning model for coding and agentic workflows",
+        "group": "Open Source",
+        "label": "Beam 1.0",
+        "notice": null,
+        "order": 58
+      },
+      "hidden": true,
+      "id": "reflection/beam:free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": 131072,
+      "minimumPlan": "individual-go",
+      "name": "Beam 1.0 (Free)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 256000,
+      "display": {
+        "badge": "free",
+        "description": "open-weight agentic coding and long-horizon work",
+        "group": "Open Source",
+        "label": "Laguna S 2.1",
+        "notice": null,
+        "order": 59
+      },
+      "hidden": true,
+      "id": "poolside/laguna-s-2.1-free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": 32768,
+      "minimumPlan": "individual-go",
+      "name": "Laguna S 2.1 (Free)",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": null,
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": "free",
+        "description": "hybrid-reasoning MoE for coding & tool-using agents",
+        "group": "Open Source",
+        "label": "Ling 3.1 Flash",
+        "notice": null,
+        "order": 60
+      },
+      "hidden": true,
+      "id": "inclusionai/ling-3.1-flash:free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Ling 3.1 Flash (Free)",
+      "object": "model",
+      "owned_by": "command-code",
+      "reasoningEfforts": null,
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "standard-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": null,
+        "description": "hybrid-reasoning MoE for coding & tool-using agents",
+        "group": "Open Source",
+        "label": "Ling 3.1 Flash",
+        "notice": null,
+        "order": 61
+      },
+      "id": "inclusionai/ling-3.1-flash",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": 32768,
+      "minimumPlan": "individual-go",
+      "name": "Ling 3.1 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.06,
+        "inputCost": 0.3,
+        "outputCost": 0.9
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "hybrid-reasoning MoE for coding & tool-using agents",
+        "group": "Open Source",
+        "label": "Ling 3.1 Flash 1019",
+        "notice": null,
+        "order": 62
+      },
+      "id": "inclusionai/ling-3.1-flash-1019",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": 262144,
+      "minimumPlan": "individual-go",
+      "name": "Ling 3.1 Flash 1019",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.06,
+        "inputCost": 0.3,
+        "outputCost": 0.9
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": "free",
+        "description": "hybrid-reasoning MoE for coding & tool-using agents",
+        "group": "Open Source",
+        "label": "Ling 3.1 Flash 1019",
+        "notice": "Ling 3.1 Flash 1019 is free and uses shared capacity, so limits may apply during busy periods. 100 requests a day per account",
+        "order": 63
+      },
+      "hidden": true,
+      "id": "inclusionai/ling-3.1-flash-1019:free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": 262144,
+      "minimumPlan": "individual-go",
+      "name": "Ling 3.1 Flash 1019",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "private-reasoning-v1",
+      "category": "premium",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "agentic performance, tool use, and computer use",
+        "group": "Meta",
+        "label": "Muse Spark 1.1",
+        "notice": null,
+        "order": 102
+      },
+      "id": "meta/muse-spark-1.1",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Muse Spark 1.1",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 1.25,
+        "outputCost": 4.25
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "private-reasoning-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "coding-optimized for agentic workflows and large codebases",
+        "group": "Meta",
+        "label": "Muse Spark 1.2",
+        "notice": "Muse Spark 1.2 is going through upstream inference issues at Meta, not Command Code. Expect slower responses and occasional rate limits.",
+        "order": 103
+      },
+      "id": "meta/muse-spark-1.2",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Muse Spark 1.2",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 1.25,
+        "outputCost": 4.25
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "private-reasoning-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "Muse Spark 1.2 at ~95% off",
+        "group": "Meta",
+        "label": "Muse Spark 1.2 Contributor",
+        "notice": "Muse Spark 1.2 Contributor is going through upstream inference issues at Meta, not Command Code. Expect slower responses and occasional rate limits.",
+        "order": 104
+      },
+      "id": "meta/muse-spark-1.2-contributor",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Muse Spark 1.2 Contributor",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.002,
+        "inputCost": 0.1,
+        "outputCost": 0.2
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "private-reasoning-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "multimodal reasoning for long-horizon agentic and coding workflows",
+        "group": "Meta",
+        "label": "Muse Spark 1.3",
+        "notice": null,
+        "order": 105
+      },
+      "id": "meta/muse-spark-1.3",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Muse Spark 1.3",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 1.25,
+        "outputCost": 4.25
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "private-reasoning-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "Muse Spark 1.3 at up to 95% off",
+        "group": "Meta",
+        "label": "Muse Spark 1.3 Contributor",
+        "notice": null,
+        "order": 106
+      },
+      "id": "meta/muse-spark-1.3-contributor",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Muse Spark 1.3 Contributor",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.002,
+        "inputCost": 0.1,
+        "outputCost": 0.2
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "open-weight Muse Spark for coding and agentic workflows",
+        "group": "Meta",
+        "label": "Muse Spark Open",
+        "notice": null,
+        "order": 107
+      },
+      "id": "meta/muse-spark-open",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Muse Spark Open",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 1.25,
+        "outputCost": 4.25
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "private-reasoning-v1",
+      "category": "premium",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "frontier coding, long-running agents and advanced computer use",
+        "group": "Meta",
+        "label": "Muse Wonder",
+        "notice": null,
+        "order": 108
+      },
+      "id": "meta/muse-wonder-1.0",
+      "inputModalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-max",
+      "name": "Muse Wonder",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.2,
+        "inputCost": 4,
+        "outputCost": 20
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "private-reasoning-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "multimodal reasoning for conversational and agentic work",
+        "group": "Meta",
+        "label": "Muse Ember",
+        "notice": null,
+        "order": 109
+      },
+      "id": "meta/muse-ember",
+      "inputModalities": [
+        "text",
+        "image",
+        "file"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Muse Ember",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.004,
+        "inputCost": 0.1,
+        "outputCost": 0.5
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 500000,
+      "display": {
+        "badge": null,
+        "description": "smartest model for coding, agentic tasks, knowledge work",
+        "group": "xAI",
+        "label": "Grok 4.5",
+        "notice": null,
+        "order": 110
+      },
+      "id": "xai/grok-4.5",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Grok 4.5",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "inputCost": 2,
+        "outputCost": 6
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 500000,
+      "display": {
+        "badge": null,
+        "description": "frontier performance on coding, knowledge work, and STEM",
+        "group": "xAI",
+        "label": "Grok 4.6",
+        "notice": null,
+        "order": 111
+      },
+      "id": "xai/grok-4.6",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Grok 4.6",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "contextTiers": [
+          {
+            "maxContext": 200000,
+            "rates": {
+              "cacheReadCost": 0.5,
+              "inputCost": 2,
+              "outputCost": 6
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 1,
+              "inputCost": 4,
+              "outputCost": 12
+            }
+          }
+        ],
+        "inputCost": 2,
+        "outputCost": 6
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 500000,
+      "display": {
+        "badge": null,
+        "description": "coding and knowledge work, built for multi-hour tasks",
+        "group": "xAI",
+        "label": "Grok 4.7",
+        "notice": null,
+        "order": 112
+      },
+      "id": "xai/grok-4.7",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-goat",
+      "name": "Grok 4.7",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.5,
+        "contextTiers": [
+          {
+            "maxContext": 200000,
+            "rates": {
+              "cacheReadCost": 0.5,
+              "inputCost": 2,
+              "outputCost": 6
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 1,
+              "inputCost": 4,
+              "outputCost": 12
+            }
+          }
+        ],
+        "inputCost": 2,
+        "outputCost": 6
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 524288,
+      "display": {
+        "badge": null,
+        "description": "frontier open-weight multimodal model for coding & analysis",
+        "group": "Open Source",
+        "label": "Mistral Large 4",
+        "notice": null,
+        "order": 64
+      },
+      "id": "mistral/mistral-large-4",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 262144,
+      "minimumPlan": "individual-go",
+      "name": "Mistral Large 4",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.14,
+        "inputCost": 1.36,
+        "outputCost": 4.18
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    }
+  ],
+  "object": "list",
+  "refreshAfterSeconds": 900,
+  "roles": {
+    "default": "deepseek/deepseek-v4.1-flash",
+    "features": {
+      "branchSummarization": "deepseek/deepseek-v4-pro",
+      "compaction": "deepseek/deepseek-v4.1-flash",
+      "tasteOnboarding": "deepseek/deepseek-v4-flash",
+      "titleGeneration": "deepseek/deepseek-v4.1-flash",
+      "toolDescription": "deepseek/deepseek-v4.1-flash",
+      "vision": "deepseek/deepseek-v4.1-flash"
+    },
+    "zdrFeatures": {
+      "vision": "deepseek/deepseek-v4.1-flash"
+    }
+  },
+  "schemaVersion": 1
+}

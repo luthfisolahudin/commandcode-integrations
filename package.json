@@ -1,19 +1,52 @@
 {
-  "name": "commandcode-integrations",
+  "name": "@luthfisolahudin/commandcode-integrations",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "license": "MIT",
+  "description": "CommandCode model catalog integration for OpenCode and Pi with live model discovery",
+  "main": "./adapters/opencode/src/index.ts",
+  "exports": {
+    ".": "./adapters/opencode/src/index.ts"
+  },
+  "pi": {
+    "extensions": [
+      "./adapters/pi/src/index.ts"
+    ]
+  },
   "engines": {
-    "node": ">=22"
+    "node": ">=24"
   },
   "packageManager": "pnpm@12.18.0",
   "scripts": {
-    "check": "pnpm -r check && tsc -p tsconfig.scripts.json",
-    "test": "pnpm -r test",
-    "verify:live": "node --experimental-strip-types scripts/verify-live.ts"
+    "check": "pnpm run typecheck && pnpm run test:packages && pnpm run check:boundaries && pnpm run check:catalog && pnpm run doctor",
+    "typecheck": "tsc -p tsconfig.json",
+    "test:packages": "pnpm -r test",
+    "check:boundaries": "node packages/cli/src/commands/boundaries.ts",
+    "check:catalog": "node packages/cli/src/commands/check-catalog.ts",
+    "conformance": "pnpm --filter @repo/conformance test",
+    "report": "node packages/cli/src/commands/report.ts",
+    "doctor": "node packages/cli/src/commands/doctor.ts",
+    "probe:effort": "node packages/cli/src/commands/probe-effort.ts",
+    "probe:routes": "node packages/cli/src/commands/probe-routes.ts",
+    "sync:template": "node packages/cli/src/commands/sync-template.ts",
+    "init": "node packages/cli/src/commands/init.ts",
+    "pricing": "node packages/cli/src/commands/pricing.ts",
+    "verify:live": "node packages/provider/verify-live.ts"
   },
   "devDependencies": {
-    "@types/node": "^24.10.1",
-    "typescript": "^5.9.3"
+    "@earendil-works/pi-ai": "catalog:",
+    "@earendil-works/pi-coding-agent": "catalog:",
+    "@opencode/ai": "catalog:",
+    "@opencode/plugin": "catalog:",
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3",
+      "onFail": "error"
+    }
   }
 }

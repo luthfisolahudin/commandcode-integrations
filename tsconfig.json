@@ -1,15 +1,53 @@
 {
   "compilerOptions": {
     "target": "ES2023",
+    "lib": [
+      "ES2023"
+    ],
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "strict": true,
     "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
     "allowImportingTsExtensions": true,
     "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+    "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["node"]
-  }
+    "types": [
+      "node"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "@luthfisolahudin/commandcode-integrations-contract": [
+        "packages/contract/src/index.ts"
+      ],
+      "@luthfisolahudin/commandcode-integrations-catalog": [
+        "packages/catalog/src/index.ts"
+      ],
+      "@luthfisolahudin/commandcode-integrations-provider": [
+        "packages/provider/src/index.ts"
+      ],
+      "@luthfisolahudin/commandcode-integrations-cli": [
+        "packages/cli/src/index.ts"
+      ],
+      "@luthfisolahudin/commandcode-integrations-pi": [
+        "adapters/pi/src/index.ts"
+      ],
+      "@luthfisolahudin/commandcode-integrations-opencode": [
+        "adapters/opencode/src/index.ts"
+      ],
+      "@luthfisolahudin/commandcode-integrations-pi/model": [
+        "adapters/pi/src/model.ts"
+      ],
+      "@luthfisolahudin/commandcode-integrations-opencode/model": [
+        "adapters/opencode/src/model.ts"
+      ]
+    }
+  },
+  "include": [
+    "packages/**/*.ts",
+    "adapters/**/*.ts",
+    "examples/**/*.ts"
+  ]
 }

@@ -1,0 +1,14 @@
+# Normalise line endings so both machines produce identical diffs.
+* text=auto eol=lf
+*.md text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.ts text eol=lf
+
+# Symlink pair; git stores the link itself, not a copy.
+CLAUDE.md -text
+.claude/skills -text
+
+# Lockfiles are generated.
+pnpm-lock.yaml merge=binary
