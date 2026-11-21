@@ -3,7 +3,7 @@ import { test } from "node:test";
 
 import type { NormalizedModel } from "@luthfisolahudin/commandcode-integrations-contract";
 
-import { effortLevels, toOpencodeModel, toOpencodeModels } from "../src/model.ts";
+import { toOpencodeModel, toOpencodeModels } from "../src/model.ts";
 
 function model(overrides: Partial<NormalizedModel> = {}): NormalizedModel {
 	return {
@@ -44,23 +44,18 @@ test("excluded models are not registered", () => {
 });
 
 test("a measured effort is advertised; an unmeasured one is not", () => {
-	assert.deepEqual(toOpencodeModel(model(), "max")?.capabilities.reasoning, { supported: true, effort: ["max"] });
-	assert.deepEqual(toOpencodeModel(model())?.capabilities.reasoning, { supported: true });
+	assert.deepEqual(toOpencodeModel(model(), "max")?.variants, [{ id: "max", settings: { reasoningEffort: "max" } }]);
+	assert.deepEqual(toOpencodeModel(model())?.variants, []);
 });
 
 test("an unmapped thinking format advertises no effort even when measured", () => {
 	const projected = toOpencodeModel(model({ thinking: { format: "gemini-level", canDisable: true } }), "max");
-	assert.deepEqual(projected?.capabilities.reasoning, { supported: true });
+	assert.deepEqual(projected?.variants, []);
 });
 
-test("effort levels never include the off level", () => {
-	assert.deepEqual(effortLevels("max", true), ["max"]);
-	assert.equal(effortLevels(undefined, true), undefined);
-});
-
-test("a non-reasoning model has no reasoning capability block", () => {
+test("a non-reasoning model has no effort variants", () => {
 	const projected = toOpencodeModel(model({ reasoning: false, thinking: {} }), "max");
-	assert.equal(projected?.capabilities.reasoning, undefined);
+	assert.deepEqual(projected?.variants, []);
 });
 
 test("the list projection drops exclusions", () => {
@@ -73,12 +68,12 @@ test("the list projection drops exclusions", () => {
 
 test("declared levels are advertised when nothing was measured", () => {
 	const projected = toOpencodeModel(model({ thinking: { format: "qwen", canDisable: true, efforts: ["low", "medium"] } }));
-	assert.deepEqual(projected?.capabilities.reasoning?.effort, ["low", "medium"]);
+	assert.deepEqual(projected?.variants.map((variant) => variant.id), ["low", "medium"]);
 });
 
-test("a none declaration is not advertised as an effort level", () => {
+test("an explicit off value becomes its own variant", () => {
 	const projected = toOpencodeModel(model({ thinking: { format: "qwen", canDisable: true, efforts: ["none", "high"] } }));
-	assert.deepEqual(projected?.capabilities.reasoning?.effort, ["high"]);
+	assert.deepEqual(projected?.variants.map((variant) => variant.id), ["none", "high"]);
 });
 
 test("a routed api selects the per-model host package", () => {

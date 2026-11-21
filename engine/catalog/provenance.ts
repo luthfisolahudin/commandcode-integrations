@@ -11,7 +11,7 @@ import {
 	type Pack,
 	type RawRecord,
 	type Source,
-} from "@luthfisolahudin/commandcode-integrations-contract";
+} from "../contract/index.ts";
 
 import { exclusionReason } from "./availability.ts";
 import type { ModelIndex } from "./modelsdev.ts";
@@ -61,12 +61,12 @@ interface MergedFacts {
  * spot, because the limit ladder has to know which one it hit. Merging early is
  * how a curated value silently starts reporting itself as `catalog`.
  */
-function mergeFacts(pack: Pack, record: RawRecord): MergedFacts | undefined {
+function mergeFacts(pack: Pack, record: RawRecord, fallback = false): MergedFacts | undefined {
 	const view = capabilityView(record, pack.fields);
 	const id = String(record.id);
 	const curated = pack.curated?.[id] ?? {};
-	const hooked = pack.hooks?.normalize?.(record);
-	if (pack.hooks?.normalize !== undefined && hooked === undefined) return undefined;
+	const hooked = fallback ? undefined : pack.hooks?.normalize?.(record);
+	if (!fallback && pack.hooks?.normalize !== undefined && hooked === undefined) return undefined;
 
 	const catalog: ModelFacts = {
 		input: inputModalities(view),
@@ -172,7 +172,7 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 		cacheWrite: curated.cost?.cacheWrite ?? hint?.cost?.cacheWrite ?? ZERO_COST.cacheWrite,
 	};
 
-	const routedApi = effective.api !== undefined && effective.api.length > 0 ? effective.api : pack.hooks?.route?.(effective);
+	const routedApi = effective.api || pack.hooks?.route?.(effective) || pack.api;
 	const model: NormalizedModel = {
 		providerId: pack.id,
 		id: effective.id,
@@ -212,39 +212,19 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 	return pack.hooks?.decorate?.(model) ?? model;
 }
 
-function pinnedModel(pack: Pack, id: string): MergedFacts {
-	const facts: ModelFacts = { id, input: ["text"], output: ["text"], reasoning: false, availability: "unknown" };
-	return {
-		catalog: facts,
-		curated: {},
-		effective: facts,
-		declared: { limits: false, modalities: false, reasoning: false, tools: false },
-	};
-}
-
-/**
- * Builds the full list: discovered records, then any pinned fallback member the
- * catalog did not return. Excluded records stay in the list with a reason so
- * reporting can explain every disappearance.
- */
+/** Projects the authoritative records, keeping excluded models for diagnostics. */
 export function buildModels(pack: Pack, records: readonly RawRecord[], options: BuildOptions = {}): NormalizedModel[] {
 	const models: NormalizedModel[] = [];
-	const seen = new Set<string>();
-
 	for (const record of records) {
 		const merged = mergeFacts(pack, record);
-		if (merged === undefined) continue;
-		seen.add(merged.effective.id);
-		models.push(buildModel(pack, merged, options));
+		if (merged !== undefined) models.push(buildModel(pack, merged, options));
 	}
-
-	for (const pinned of pack.fallback ?? []) {
-		if (seen.has(pinned.id)) continue;
-		const model = buildModel(pack, pinnedModel(pack, pinned.id), options);
-		// A pinned fallback exists so the provider is never empty offline.
-		delete model.excluded;
-		models.push(model);
-	}
-
 	return models.sort((a, b) => a.id.localeCompare(b.id));
+}
+
+export function buildFallbackModels(pack: Pack, options: BuildOptions = {}): NormalizedModel[] {
+	return (pack.fallback ?? []).flatMap(({ id }) => {
+		const facts = mergeFacts(pack, { id }, true);
+		return facts === undefined ? [] : [buildModel(pack, facts, options)];
+	});
 }

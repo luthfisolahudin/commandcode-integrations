@@ -65,7 +65,7 @@ for (const pack of packs) {
 		const models = buildModels(pack, records(), { measuredIds });
 		const host = { providerId: pack.id, baseUrl: pack.baseUrl };
 		const pi = new Map(toPiModels(models, MEASURED_WIRE_EFFORT, host).map((model) => [model.id, model]));
-		const opencode = new Map(toOpencodeModels(models, MEASURED_WIRE_EFFORT).map((model) => [model.id, model]));
+		const opencode = new Map(toOpencodeModels(models, MEASURED_WIRE_EFFORT, pack.thinkingFormatOverrides).map((model) => [String(model.id), model]));
 
 		for (const model of models) {
 			if (model.excluded !== undefined || !model.reasoning) continue;
@@ -82,24 +82,24 @@ for (const pack of packs) {
 
 			if (!mappable) {
 				assert.equal(piModel.thinkingLevelMap, undefined, `${model.id} pi: unmapped format must offer no menu`);
-				assert.equal(opencodeModel.capabilities.reasoning?.effort, undefined, `${model.id} opencode: unmapped format`);
+				assert.equal(opencodeModel.variants.length, 0, `${model.id} opencode: unmapped format`);
 				continue;
 			}
 
 			if (measured !== undefined) {
 				assert.equal(piModel.thinkingLevelMap?.max, measured, `${model.id} pi menu value`);
-				assert.deepEqual(opencodeModel.capabilities.reasoning?.effort, [measured], `${model.id} opencode effort`);
+				assert.deepEqual(opencodeModel.variants.map((variant) => variant.id), [measured], `${model.id} opencode effort`);
 				continue;
 			}
 
 			if (declared !== undefined) {
 				assert.ok(piModel.thinkingLevelMap !== undefined, `${model.id} pi: a declared menu should be exposed`);
-				assert.ok((opencodeModel.capabilities.reasoning?.effort?.length ?? 0) > 0, `${model.id} opencode: declared menu`);
+				assert.ok(opencodeModel.variants.length > 0, `${model.id} opencode: declared menu`);
 				continue;
 			}
 
 			assert.equal(piModel.thinkingLevelMap, undefined, `${model.id} pi must offer no menu`);
-			assert.equal(opencodeModel.capabilities.reasoning?.effort, undefined, `${model.id} opencode must offer no menu`);
+			assert.equal(opencodeModel.variants.length, 0, `${model.id} opencode must offer no menu`);
 		}
 	});
 

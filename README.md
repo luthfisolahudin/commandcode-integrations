@@ -5,8 +5,7 @@ shared by Pi and OpenCode. The catalog is read from CommandCode's Provider API; 
 model list is maintained by hand.
 
 Built on [`ai-provider-integrations-template`](https://github.com/luthfisolahudin/ai-provider-integrations-template):
-the engine, both adapters, the checks and the docs come from there, and this repo
-owns only the CommandCode surface.
+This repo owns the provider pack and pins the [copied engine](docs/SYNC.md).
 
 This integration uses CommandCode's **Provider API**. It does not emulate the CLI,
 its `/alpha/generate` transport, its tool aliases, or its harness features.
@@ -37,12 +36,10 @@ its `/alpha/generate` transport, its tool aliases, or its harness features.
 
 ```jsonc
 // opencode.json
-{ "plugins": ["file://<path-to-checkout>/packages/opencode/src/index.ts"] }
+{ "plugins": ["file://<path-to-checkout>"] }
 ```
 
-Both paths are shims that re-export the shared adapters, so an existing
-configuration keeps working. Paths are placeholders: an absolute path is
-machine-specific. See `docs/INSTALL.md`.
+The Pi shim loads the shared adapter. OpenCode reads its entrypoint from the checkout manifest. See `docs/INSTALL.md`.
 
 Authentication, in order: `COMMANDCODE_API_KEY`, then
 `~/.pi/agent/commandcode/auth.json`, then `~/.commandcode/auth.json`. One key only.
