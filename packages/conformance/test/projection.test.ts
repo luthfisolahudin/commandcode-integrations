@@ -7,7 +7,7 @@ import { toOpencodeModels } from "@luthfisolahudin/commandcode-integrations-open
 import { toPiModels } from "@luthfisolahudin/commandcode-integrations-pi/model";
 import { buildModels } from "@luthfisolahudin/commandcode-integrations-catalog";
 import type { RawRecord } from "@luthfisolahudin/commandcode-integrations-contract";
-import { MEASURED_WIRE_EFFORT, measuredIds, packs } from "@luthfisolahudin/commandcode-integrations-provider";
+import { MEASURED_WIRE_EFFORT, commandCodePack, measuredIds, mergeCatalog, packs } from "@luthfisolahudin/commandcode-integrations-provider";
 
 const ROOT = join(import.meta.dirname, "../../..");
 const FIXTURE = join(ROOT, "packages/provider/fixtures/catalog.json");
@@ -46,11 +46,13 @@ for (const pack of packs) {
 
 		for (const model of pi) {
 			assert.equal(model.provider, pack.id);
-			assert.equal(model.baseUrl, pack.baseUrl);
+			const expectedBase = model.api === "anthropic-messages" ? pack.baseUrl.replace(/\/v1\/*$/, "") : pack.baseUrl;
+			assert.equal(model.baseUrl, expectedBase);
 			// A provider may route each model to a different wire api, so assert that the
 			// projection agrees with the model rather than that it is the default.
 			const source = models.find((entry) => entry.id === model.id);
 			assert.equal(model.api, source?.api ?? "openai-completions", `${model.id} api`);
+			assert.deepEqual(model.cost, source?.cost, `${model.id} price`);
 			assert.ok(
 				["openai-completions", "anthropic-messages", "openai-responses"].includes(model.api),
 				`${model.id} api is one this adapter can drive`,
@@ -114,3 +116,13 @@ for (const pack of packs) {
 		}
 	});
 }
+
+test("a CommandCode catalog rate reaches Pi with catalog provenance", () => {
+	const raw = mergeCatalog({ schemaVersion: 1, catalogVersion: "fixture", data: [{
+		id: "fixture-priced", pricing: { inputCost: 0.000003, outputCost: 0.000015 },
+	}] }, []);
+	const models = buildModels(commandCodePack, raw);
+	const [pi] = toPiModels(models, {}, { providerId: commandCodePack.id, baseUrl: commandCodePack.baseUrl });
+	assert.deepEqual(pi?.cost, { input: 3, output: 15, cacheRead: 0, cacheWrite: 0 });
+	assert.deepEqual(models[0]?.pricingSources, { input: "catalog", output: "catalog", cacheRead: "default", cacheWrite: "default" });
+});

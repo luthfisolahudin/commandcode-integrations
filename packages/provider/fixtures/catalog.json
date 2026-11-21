@@ -746,8 +746,7 @@
       "pricing": {
         "input": 660000,
         "output": 1980000,
-        "cacheRead": 22000,
-        "cacheWrite": 0
+        "cacheRead": 22000
       }
     },
     {
@@ -774,8 +773,7 @@
       "pricing": {
         "input": 150000,
         "output": 600000,
-        "cacheRead": 3000,
-        "cacheWrite": 0
+        "cacheRead": 3000
       }
     },
     {
@@ -803,8 +801,7 @@
       "pricing": {
         "input": 150000,
         "output": 600000,
-        "cacheRead": 3000,
-        "cacheWrite": 0
+        "cacheRead": 3000
       }
     },
     {
@@ -830,8 +827,7 @@
       "pricing": {
         "input": 280000,
         "output": 560000,
-        "cacheRead": 70000,
-        "cacheWrite": 0
+        "cacheRead": 70000
       }
     },
     {
@@ -860,8 +856,7 @@
       "pricing": {
         "input": 150000,
         "output": 600000,
-        "cacheRead": 3000,
-        "cacheWrite": 0
+        "cacheRead": 3000
       }
     },
     {
@@ -890,8 +885,7 @@
       "pricing": {
         "input": 160000,
         "output": 580000,
-        "cacheRead": 16000,
-        "cacheWrite": 0
+        "cacheRead": 16000
       }
     },
     {
@@ -920,8 +914,7 @@
       "pricing": {
         "input": 2400000,
         "output": 9600000,
-        "cacheRead": 48000,
-        "cacheWrite": 0
+        "cacheRead": 48000
       }
     },
     {
@@ -949,8 +942,7 @@
       "pricing": {
         "input": 2000000,
         "output": 10000000,
-        "cacheRead": 200000,
-        "cacheWrite": 0
+        "cacheRead": 200000
       }
     },
     {
@@ -978,8 +970,7 @@
       "pricing": {
         "input": 3000000,
         "output": 15000000,
-        "cacheRead": 300000,
-        "cacheWrite": 0
+        "cacheRead": 300000
       }
     },
     {
@@ -1003,8 +994,7 @@
       "pricing": {
         "input": 950000,
         "output": 4000000,
-        "cacheRead": 190000,
-        "cacheWrite": 0
+        "cacheRead": 190000
       }
     },
     {
@@ -1028,8 +1018,7 @@
       "pricing": {
         "input": 1900000,
         "output": 8000000,
-        "cacheRead": 380000,
-        "cacheWrite": 0
+        "cacheRead": 380000
       }
     },
     {
@@ -1053,8 +1042,7 @@
       "pricing": {
         "input": 950000,
         "output": 4000000,
-        "cacheRead": 160000,
-        "cacheWrite": 0
+        "cacheRead": 160000
       }
     },
     {
@@ -1078,8 +1066,7 @@
       "pricing": {
         "input": 600000,
         "output": 3000000,
-        "cacheRead": 100000,
-        "cacheWrite": 0
+        "cacheRead": 100000
       }
     },
     {
@@ -1106,8 +1093,7 @@
       "pricing": {
         "input": 150000,
         "output": 500000,
-        "cacheRead": 30000,
-        "cacheWrite": 0
+        "cacheRead": 30000
       }
     },
     {
@@ -1135,8 +1121,7 @@
       "pricing": {
         "input": 370000,
         "output": 1250000,
-        "cacheRead": 75000,
-        "cacheWrite": 0
+        "cacheRead": 75000
       }
     },
     {
@@ -1162,8 +1147,7 @@
       "pricing": {
         "input": 1400000,
         "output": 4400000,
-        "cacheRead": 260000,
-        "cacheWrite": 0
+        "cacheRead": 260000
       }
     },
     {
@@ -1189,8 +1173,7 @@
       "pricing": {
         "input": 1400000,
         "output": 4400000,
-        "cacheRead": 260000,
-        "cacheWrite": 0
+        "cacheRead": 260000
       }
     },
     {
@@ -1213,8 +1196,7 @@
       "pricing": {
         "input": 3000000,
         "output": 10250000,
-        "cacheRead": 500000,
-        "cacheWrite": 0
+        "cacheRead": 500000
       }
     },
     {
@@ -1237,8 +1219,7 @@
       "pricing": {
         "input": 1400000,
         "output": 4400000,
-        "cacheRead": 260000,
-        "cacheWrite": 0
+        "cacheRead": 260000
       }
     },
     {
@@ -1261,8 +1242,7 @@
       "pricing": {
         "input": 1000000,
         "output": 3200000,
-        "cacheRead": 200000,
-        "cacheWrite": 0
+        "cacheRead": 200000
       }
     },
     {
@@ -1291,8 +1271,7 @@
       "pricing": {
         "input": 150000,
         "output": 600000,
-        "cacheRead": 15000,
-        "cacheWrite": 0
+        "cacheRead": 15000
       }
     },
     {
@@ -1320,8 +1299,7 @@
       "pricing": {
         "input": 300000,
         "output": 1200000,
-        "cacheRead": 60000,
-        "cacheWrite": 0
+        "cacheRead": 60000
       }
     },
     {
@@ -1344,8 +1322,7 @@
       "pricing": {
         "input": 300000,
         "output": 1200000,
-        "cacheRead": 60000,
-        "cacheWrite": 0
+        "cacheRead": 60000
       }
     },
     {
@@ -1368,8 +1345,7 @@
       "pricing": {
         "input": 300000,
         "output": 1200000,
-        "cacheRead": 30000,
-        "cacheWrite": 0
+        "cacheRead": 30000
       }
     },
     {
@@ -1392,8 +1368,7 @@
       "pricing": {
         "input": 160000,
         "output": 640000,
-        "cacheRead": 20000,
-        "cacheWrite": 0
+        "cacheRead": 20000
       }
     },
     {
@@ -1417,8 +1392,7 @@
       "pricing": {
         "input": 435000,
         "output": 870000,
-        "cacheRead": 3600,
-        "cacheWrite": 0
+        "cacheRead": 3600
       }
     },
     {
@@ -1442,8 +1416,7 @@
       "pricing": {
         "input": 4350000,
         "output": 8700000,
-        "cacheRead": 36000,
-        "cacheWrite": 0
+        "cacheRead": 36000
       }
     },
     {
@@ -1467,8 +1440,7 @@
       "pricing": {
         "input": 140000,
         "output": 280000,
-        "cacheRead": 2800,
-        "cacheWrite": 0
+        "cacheRead": 2800
       }
     },
     {
@@ -1496,8 +1468,7 @@
       "pricing": {
         "input": 150000,
         "output": 470000,
-        "cacheRead": 16000,
-        "cacheWrite": 0
+        "cacheRead": 16000
       }
     },
     {
@@ -1553,8 +1524,7 @@
       "pricing": {
         "input": 2000000,
         "output": 6000000,
-        "cacheRead": 250000,
-        "cacheWrite": 0
+        "cacheRead": 250000
       }
     },
     {
@@ -1611,8 +1581,7 @@
       "pricing": {
         "input": 400000,
         "output": 3000000,
-        "cacheRead": 40000,
-        "cacheWrite": 0
+        "cacheRead": 40000
       }
     },
     {
@@ -1639,8 +1608,7 @@
       "pricing": {
         "input": 160000,
         "output": 470000,
-        "cacheRead": 16000,
-        "cacheWrite": 0
+        "cacheRead": 16000
       }
     },
     {
@@ -1762,8 +1730,7 @@
       "pricing": {
         "input": 500000,
         "output": 3000000,
-        "cacheRead": 100000,
-        "cacheWrite": 0
+        "cacheRead": 100000
       }
     },
     {
@@ -1785,8 +1752,7 @@
       "pricing": {
         "input": 300000,
         "output": 1200000,
-        "cacheRead": 6000,
-        "cacheWrite": 0
+        "cacheRead": 6000
       }
     },
     {
@@ -1814,8 +1780,7 @@
       "pricing": {
         "input": 1000000,
         "output": 2700000,
-        "cacheRead": 50000,
-        "cacheWrite": 0
+        "cacheRead": 50000
       }
     },
     {
@@ -1839,8 +1804,7 @@
       "pricing": {
         "input": 200000,
         "output": 1150000,
-        "cacheRead": 40000,
-        "cacheWrite": 0
+        "cacheRead": 40000
       }
     },
     {
@@ -1863,8 +1827,7 @@
       "pricing": {
         "input": 90000,
         "output": 300000,
-        "cacheRead": 20000,
-        "cacheWrite": 0
+        "cacheRead": 20000
       }
     },
     {
@@ -1887,8 +1850,7 @@
       "pricing": {
         "input": 140000,
         "output": 580000,
-        "cacheRead": 35000,
-        "cacheWrite": 0
+        "cacheRead": 35000
       }
     },
     {
@@ -1914,8 +1876,7 @@
       "pricing": {
         "input": 834000,
         "output": 2501000,
-        "cacheRead": 42000,
-        "cacheWrite": 0
+        "cacheRead": 42000
       }
     },
     {
@@ -1943,8 +1904,7 @@
       "pricing": {
         "input": 2000000,
         "output": 10000000,
-        "cacheRead": 100000,
-        "cacheWrite": 0
+        "cacheRead": 100000
       }
     },
     {
@@ -1972,8 +1932,7 @@
       "pricing": {
         "input": 2000000,
         "output": 10000000,
-        "cacheRead": 100000,
-        "cacheWrite": 0
+        "cacheRead": 100000
       }
     },
     {
@@ -2001,8 +1960,7 @@
       "pricing": {
         "input": 1500000,
         "output": 7500000,
-        "cacheRead": 150000,
-        "cacheWrite": 0
+        "cacheRead": 150000
       }
     },
     {
@@ -2058,8 +2016,7 @@
       "pricing": {
         "input": 1500000,
         "output": 7500000,
-        "cacheRead": 150000,
-        "cacheWrite": 0
+        "cacheRead": 150000
       }
     },
     {
@@ -2087,8 +2044,7 @@
       "pricing": {
         "input": 1500000,
         "output": 9000000,
-        "cacheRead": 150000,
-        "cacheWrite": 0
+        "cacheRead": 150000
       }
     },
     {
@@ -2116,8 +2072,7 @@
       "pricing": {
         "input": 300000,
         "output": 2500000,
-        "cacheRead": 30000,
-        "cacheWrite": 0
+        "cacheRead": 30000
       }
     },
     {
@@ -2145,8 +2100,7 @@
       "pricing": {
         "input": 250000,
         "output": 1500000,
-        "cacheRead": 30000,
-        "cacheWrite": 0
+        "cacheRead": 30000
       }
     },
     {
@@ -2173,8 +2127,7 @@
       "pricing": {
         "input": 5000000,
         "output": 30000000,
-        "cacheRead": 500000,
-        "cacheWrite": 0
+        "cacheRead": 500000
       }
     },
     {
@@ -2197,8 +2150,7 @@
       "pricing": {
         "input": 600000,
         "output": 2400000,
-        "cacheRead": 120000,
-        "cacheWrite": 0
+        "cacheRead": 120000
       }
     },
     {
@@ -2226,8 +2178,7 @@
       "pricing": {
         "input": 200000,
         "output": 500000,
-        "cacheRead": 40000,
-        "cacheWrite": 0
+        "cacheRead": 40000
       }
     },
     {
@@ -2251,8 +2202,7 @@
       "pricing": {
         "input": 1000000,
         "output": 4050000,
-        "cacheRead": 170000,
-        "cacheWrite": 0
+        "cacheRead": 170000
       }
     },
     {
@@ -2276,8 +2226,7 @@
       "pricing": {
         "input": 500000,
         "output": 1200000,
-        "cacheRead": 100000,
-        "cacheWrite": 0
+        "cacheRead": 100000
       }
     },
     {
@@ -2301,7 +2250,12 @@
       "protocol": "openai-completions",
       "protocolReason": "chat-supported",
       "hidden": false,
-      "minimumPlan": "individual-go"
+      "minimumPlan": "individual-go",
+      "pricing": {
+        "input": 0,
+        "output": 0,
+        "cacheRead": 0
+      }
     },
     {
       "id": "inclusionai/ling-3.1-flash",
@@ -2326,8 +2280,7 @@
       "pricing": {
         "input": 300000,
         "output": 900000,
-        "cacheRead": 60000,
-        "cacheWrite": 0
+        "cacheRead": 60000
       }
     },
     {
@@ -2353,8 +2306,7 @@
       "pricing": {
         "input": 300000,
         "output": 900000,
-        "cacheRead": 60000,
-        "cacheWrite": 0
+        "cacheRead": 60000
       }
     },
     {
@@ -2383,8 +2335,7 @@
       "pricing": {
         "input": 1250000,
         "output": 4250000,
-        "cacheRead": 150000,
-        "cacheWrite": 0
+        "cacheRead": 150000
       }
     },
     {
@@ -2413,8 +2364,7 @@
       "pricing": {
         "input": 1250000,
         "output": 4250000,
-        "cacheRead": 150000,
-        "cacheWrite": 0
+        "cacheRead": 150000
       }
     },
     {
@@ -2443,8 +2393,7 @@
       "pricing": {
         "input": 100000,
         "output": 200000,
-        "cacheRead": 2000,
-        "cacheWrite": 0
+        "cacheRead": 2000
       }
     },
     {
@@ -2474,8 +2423,7 @@
       "pricing": {
         "input": 1250000,
         "output": 4250000,
-        "cacheRead": 150000,
-        "cacheWrite": 0
+        "cacheRead": 150000
       }
     },
     {
@@ -2504,8 +2452,7 @@
       "pricing": {
         "input": 100000,
         "output": 200000,
-        "cacheRead": 2000,
-        "cacheWrite": 0
+        "cacheRead": 2000
       }
     },
     {
@@ -2533,8 +2480,7 @@
       "pricing": {
         "input": 1250000,
         "output": 4250000,
-        "cacheRead": 150000,
-        "cacheWrite": 0
+        "cacheRead": 150000
       }
     },
     {
@@ -2563,8 +2509,7 @@
       "pricing": {
         "input": 4000000,
         "output": 20000000,
-        "cacheRead": 200000,
-        "cacheWrite": 0
+        "cacheRead": 200000
       }
     },
     {
@@ -2594,8 +2539,7 @@
       "pricing": {
         "input": 100000,
         "output": 500000,
-        "cacheRead": 4000,
-        "cacheWrite": 0
+        "cacheRead": 4000
       }
     },
     {
@@ -2623,8 +2567,7 @@
       "pricing": {
         "input": 2000000,
         "output": 6000000,
-        "cacheRead": 500000,
-        "cacheWrite": 0
+        "cacheRead": 500000
       }
     },
     {
@@ -2653,8 +2596,7 @@
       "pricing": {
         "input": 2000000,
         "output": 6000000,
-        "cacheRead": 500000,
-        "cacheWrite": 0
+        "cacheRead": 500000
       }
     },
     {
@@ -2683,8 +2625,7 @@
       "pricing": {
         "input": 2000000,
         "output": 6000000,
-        "cacheRead": 500000,
-        "cacheWrite": 0
+        "cacheRead": 500000
       }
     },
     {
@@ -2712,8 +2653,7 @@
       "pricing": {
         "input": 1360000,
         "output": 4179999.9999999995,
-        "cacheRead": 140000,
-        "cacheWrite": 0
+        "cacheRead": 140000
       }
     }
   ]

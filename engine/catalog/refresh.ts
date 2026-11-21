@@ -1,11 +1,11 @@
-import type { NormalizedModel, Pack } from "../contract/index.ts";
+import type { Pack } from "../contract/index.ts";
 
 import { isFresh, type Snapshot } from "./cache.ts";
 import { discover, type DiscoverOptions } from "./discover.ts";
-import { buildFallbackModels, buildModels, type BuildOptions } from "./provenance.ts";
+import { buildFallbackModels, buildModels, type BuildOptions, type CatalogModel } from "./provenance.ts";
 
 export interface RefreshOutcome {
-	models: NormalizedModel[];
+	models: CatalogModel[];
 	source: "snapshot" | "network" | "fallback";
 	snapshot?: Snapshot;
 	error?: Error;

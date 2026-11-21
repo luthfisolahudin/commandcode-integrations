@@ -265,3 +265,24 @@ test("a pack default thinking format fills a silent catalog", () => {
 	const silent = buildModels(tierA(), [{ id: "chat-plain" }]).find((entry) => entry.id === "chat-plain");
 	assert.equal(silent?.thinking.format, undefined);
 });
+
+test("provider pricing preserves explicit zeros and fills missing rates by precedence", () => {
+	const pack = definePack({
+		...tierA(),
+		curated: { "chat-plain": { cost: { output: 15 } } },
+		hooks: { normalize: () => ({ cost: { input: 3, output: 12, cacheRead: 0 } }) },
+	});
+	const modelsDev = buildModelIndex({ p: { models: { "chat-plain": { cost: { input: 9, output: 9, cache_read: 1 } } } } });
+	const [model] = buildModels(pack, [{ id: "chat-plain" }], { modelsDev });
+	assert.deepEqual(model?.cost, { input: 3, output: 15, cacheRead: 0, cacheWrite: 0 });
+	assert.deepEqual(model?.pricingSources, { input: "catalog", output: "curated", cacheRead: "catalog", cacheWrite: "default" });
+});
+
+test("a models.dev hint fills a missing output limit independently of context", () => {
+	const pack = definePack({ ...tierA(), fields: { contextWindow: ["context"] } });
+	const modelsDev = buildModelIndex({ p: { models: { "chat-plain": { limit: { context: 9000, output: 2000 } } } } });
+	const [model] = buildModels(pack, [{ id: "chat-plain", context: 3000 }], { modelsDev });
+	assert.equal(model?.contextWindow, 3000);
+	assert.equal(model?.maxOutput, 2000);
+	assert.deepEqual(model?.provenance.limits, { context: "catalog", maxOutput: "models.dev" });
+});

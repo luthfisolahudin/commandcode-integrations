@@ -1,3 +1,4 @@
+import type { CatalogModel } from "@luthfisolahudin/commandcode-integrations-catalog";
 import type { NormalizedModel, Pack } from "@luthfisolahudin/commandcode-integrations-contract";
 
 /** T3 Code's Settings → Usage shape, verified from `~/.t3/userdata/settings.json`. */
@@ -30,7 +31,7 @@ function priceKey(providerId: string, modelId: string): string {
  * that actually exist in the catalog — an alias never invents membership.
  */
 export function buildPricingFragment(
-	models: readonly NormalizedModel[],
+	models: readonly (NormalizedModel & Partial<Pick<CatalogModel, "pricingSources">>)[],
 	packs: readonly Pack[],
 	options: FragmentOptions = {},
 ): T3PricingFragment {
@@ -48,11 +49,14 @@ export function buildPricingFragment(
 		if (model.excluded !== undefined) continue;
 		const key = priceKey(model.providerId, model.id);
 
-		if (model.provenance.pricing !== "default" && (model.cost.input > 0 || model.cost.output > 0)) {
+		const known = (field: "input" | "output" | "cacheRead") => model.pricingSources === undefined
+			? model.provenance.pricing !== "default" && model.cost[field] > 0
+			: model.pricingSources[field] !== "default";
+		if (known("input") && known("output")) {
 			fragment.usagePriceOverrides[key] = {
 				inputCostPerMillionTokens: model.cost.input,
 				outputCostPerMillionTokens: model.cost.output,
-				...(model.cost.cacheRead > 0 ? { cacheReadCostPerMillionTokens: model.cost.cacheRead } : {}),
+				...(known("cacheRead") ? { cacheReadCostPerMillionTokens: model.cost.cacheRead } : {}),
 			};
 		}
 

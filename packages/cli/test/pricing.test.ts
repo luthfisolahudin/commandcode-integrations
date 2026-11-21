@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
+import { buildModels } from "@luthfisolahudin/commandcode-integrations-catalog";
 import type { NormalizedModel, Pack } from "@luthfisolahudin/commandcode-integrations-contract";
 
 import {
@@ -137,4 +138,16 @@ test("the settings path honours T3_SETTINGS_PATH", () => {
 test("indentation is detected from the existing file", () => {
 	assert.equal(detectIndent('{\n  "a": 1\n}'), "  ");
 	assert.equal(detectIndent('{\n\t"a": 1\n}'), "\t");
+});
+
+test("exports an explicitly free catalog rate and skips incomplete rates", () => {
+	const pack: Pack = {
+		...PACK,
+		hooks: { normalize: (record) => ({ cost: record.id === "free" ? { input: 0, output: 0, cacheRead: 0 } : { input: 3 } }) },
+	};
+	const models = buildModels(pack, [{ id: "free" }, { id: "partial" }]);
+	const fragment = buildPricingFragment(models, [pack]);
+	assert.deepEqual(fragment.usagePriceOverrides, {
+		"cosmoshub/free": { inputCostPerMillionTokens: 0, outputCostPerMillionTokens: 0, cacheReadCostPerMillionTokens: 0 },
+	});
 });

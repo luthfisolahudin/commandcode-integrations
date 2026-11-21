@@ -68,7 +68,7 @@ export interface CommandCodeRecord {
 	protocolReason: string;
 	hidden: boolean;
 	minimumPlan: string | null;
-	pricing?: { input: number; output: number; cacheRead: number; cacheWrite: number };
+	pricing?: Partial<Record<"input" | "output" | "cacheRead" | "cacheWrite", number>>;
 	[key: string]: unknown;
 }
 
@@ -91,27 +91,32 @@ export function isClaudeModel(id: string, group?: string): boolean {
  * route, and an unknown model is marked unverified rather than dropped.
  */
 export function resolveProtocol(input: { id: string; group?: string; endpoints: readonly string[] }): {
-	protocol: CommandCodeApi;
+	protocol?: CommandCodeApi;
 	reason: string;
 } {
-	if (isClaudeModel(input.id, input.group)) return { protocol: "anthropic-messages", reason: "anthropic-model" };
 	const endpoints = new Set(input.endpoints);
+	if (endpoints.has("/messages") && isClaudeModel(input.id, input.group)) {
+		return { protocol: "anthropic-messages", reason: "anthropic-model" };
+	}
 	if (endpoints.has("/chat/completions")) return { protocol: "openai-completions", reason: "chat-supported" };
-	if (endpoints.size === 1 && endpoints.has("/messages")) {
-		return { protocol: "anthropic-messages", reason: "messages-only" };
+	if (endpoints.has("/messages")) {
+		return { protocol: "anthropic-messages", reason: "messages-supported" };
 	}
 	if (endpoints.has("/responses")) return { protocol: "openai-responses", reason: "chat-unsupported" };
-	return { protocol: "openai-completions", reason: "default-unverified" };
+	return endpoints.size === 0
+		? { protocol: "openai-completions", reason: "default-unverified" }
+		: { reason: "unsupported-endpoints" };
 }
 
-function perMillion(value: unknown): number {
-	return typeof value === "number" && Number.isFinite(value) && value > 0 ? value * 1_000_000 : 0;
+function perMillion(value: unknown): number | undefined {
+	if (typeof value !== "number" || value < 0) return undefined;
+	const rate = value * 1_000_000;
+	return Number.isFinite(rate) ? rate : undefined;
 }
 
 /**
  * Pricing arrives per token; the hosts want per million. Cache fields fall back to
- * zero instead of borrowing the input price: a missing cache price is unknown, and
- * an invented one would make a usage report wrong.
+ * an absent field when a rate is unpublished. A published zero stays zero.
  */
 export function normalizePricing(pricing: ClientPricing | undefined): CommandCodeRecord["pricing"] {
 	if (pricing === undefined) return undefined;
@@ -119,8 +124,13 @@ export function normalizePricing(pricing: ClientPricing | undefined): CommandCod
 	const output = perMillion(pricing.outputCost);
 	const cacheRead = perMillion(pricing.cacheReadCost);
 	const cacheWrite = perMillion(pricing.cacheWriteCost);
-	if (input === 0 && output === 0 && cacheRead === 0 && cacheWrite === 0) return undefined;
-	return { input, output, cacheRead, cacheWrite };
+	if (input === undefined && output === undefined && cacheRead === undefined && cacheWrite === undefined) return undefined;
+	return {
+		...(input === undefined ? {} : { input }),
+		...(output === undefined ? {} : { output }),
+		...(cacheRead === undefined ? {} : { cacheRead }),
+		...(cacheWrite === undefined ? {} : { cacheWrite }),
+	};
 }
 
 function effortsOf(model: ClientModel): string[] {
@@ -147,8 +157,9 @@ function toRecord(input: {
 	pricing?: CommandCodeRecord["pricing"];
 	minimumPlan: string | null;
 	hidden: boolean;
-}): CommandCodeRecord {
+}): CommandCodeRecord | undefined {
 	const routed = resolveProtocol({ id: input.id, group: input.group, endpoints: input.endpoints });
+	if (routed.protocol === undefined) return undefined;
 	return {
 		id: input.id,
 		name: input.name,
@@ -178,43 +189,42 @@ export function mergeCatalog(client: ClientCatalog, publicModels: readonly Publi
 
 	for (const model of client.data) {
 		if (typeof model.id !== "string" || model.id.length === 0 || seen.has(model.id)) continue;
-		if (model.hidden === true) continue;
 		seen.add(model.id);
+		if (model.hidden === true) continue;
 		const published = publicById.get(model.id);
 		const endpoints = published === undefined ? [] : endpointsOf(published);
-		records.push(
-			toRecord({
-				id: model.id,
-				name: model.display?.label ?? model.id,
-				...(model.display?.group === undefined ? {} : { group: model.display.group }),
-				contextWindow: model.context_length ?? published?.context_length ?? 128_000,
-				maxOutputTokens: typeof model.maxOutputTokens === "number" ? model.maxOutputTokens : null,
-				modalities: modalitiesOf(model),
-				efforts: effortsOf(model),
-				endpoints,
-				...(normalizePricing(model.pricing) === undefined ? {} : { pricing: normalizePricing(model.pricing) }),
-				minimumPlan: model.minimumPlan ?? null,
-				hidden: false,
-			}),
-		);
+		const pricing = normalizePricing(model.pricing);
+		const record = toRecord({
+			id: model.id,
+			name: model.display?.label ?? model.id,
+			...(model.display?.group === undefined ? {} : { group: model.display.group }),
+			contextWindow: model.context_length ?? published?.context_length ?? 128_000,
+			maxOutputTokens: typeof model.maxOutputTokens === "number" ? model.maxOutputTokens : null,
+			modalities: modalitiesOf(model),
+			efforts: effortsOf(model),
+			endpoints,
+			...(pricing === undefined ? {} : { pricing }),
+			minimumPlan: model.minimumPlan ?? null,
+			hidden: false,
+		});
+		if (record !== undefined) records.push(record);
 	}
 
 	for (const model of publicModels) {
-		if (typeof model.id !== "string" || seen.has(model.id)) continue;
+		if (typeof model.id !== "string" || model.id.length === 0 || seen.has(model.id)) continue;
 		seen.add(model.id);
-		records.push(
-			toRecord({
-				id: model.id,
-				name: model.name ?? model.id,
-				contextWindow: model.context_length ?? 128_000,
-				maxOutputTokens: null,
-				modalities: ["text"],
-				efforts: [],
-				endpoints: endpointsOf(model),
-				minimumPlan: null,
-				hidden: false,
-			}),
-		);
+		const record = toRecord({
+			id: model.id,
+			name: model.name ?? model.id,
+			contextWindow: model.context_length ?? 128_000,
+			maxOutputTokens: null,
+			modalities: ["text"],
+			efforts: [],
+			endpoints: endpointsOf(model),
+			minimumPlan: null,
+			hidden: false,
+		});
+		if (record !== undefined) records.push(record);
 	}
 
 	return records;

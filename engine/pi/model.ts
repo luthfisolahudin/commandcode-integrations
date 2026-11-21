@@ -58,7 +58,8 @@ export function toPiModel(model: NormalizedModel, options: ProjectOptions): PiMo
 		name: model.name,
 		provider: options.providerId,
 		api,
-		baseUrl: options.baseUrl,
+		// Pi’s Anthropic SDK appends /v1/messages; discovery uses the versioned base.
+		baseUrl: api === "anthropic-messages" ? options.baseUrl.replace(/\/v1\/*$/, "") : options.baseUrl,
 		reasoning: model.reasoning,
 		input: model.input.filter((m): m is "text" | "image" => m === "text" || m === "image"),
 		cost: { ...model.cost },

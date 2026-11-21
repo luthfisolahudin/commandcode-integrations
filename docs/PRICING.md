@@ -5,14 +5,11 @@ Three places can hold a price, and they are not interchangeable.
 ## 1. models.dev (the default source)
 
 The engine reads `input`, `output`, `cache_read`, `cache_write` from the
-models.dev entry for a model and treats them as **USD per 1M tokens**. When
-models.dev does not publish the model, cost is zero and
-`provenance.pricing = "default"`.
+models.dev entry for a model and treats them as **USD per 1M tokens**. When no source publishes a rate, its provenance is `default`.
 
 That price is a hint, not a billing contract: models.dev lists the same model
 once per gateway, so the engine takes the most common published value and any
-gateway markup is invisible. `task report --write` shows `cost/1M` and
-`effort-src`/`limits-src` provenance, so a zero is visible rather than implied.
+gateway markup is invisible. `task report --write` shows `cost/1M` and `price-src`.
 
 ## 2. The pack (per model, authoritative)
 
@@ -30,19 +27,20 @@ curated: {
 },
 ```
 
-Order: `curated.cost` → models.dev (via `aliases` if present) → zero. Fields a
-curated entry omits stay zero; they are not borrowed from the aliased entry,
-because a partial price is still a guess in the field that was omitted.
+For each rate, the engine checks curated overrides, rates mapped by the provider
+pack from its catalog, then models.dev hints. The catalog must supply a rate in
+USD per million tokens, or the pack must convert it to those units. An explicit
+zero keeps its source. Pi requires numeric rates, so it receives a zero placeholder
+for missing rates. Reports show missing rates as a dash.
 
 An alias also redirects limits, modalities and reasoning, since it changes the
 metadata lookup key, not just the price. It never adds membership: a model that
 is not in the provider catalog stays absent.
 
-Do not put an aggregator's own price field in a pack. CosmoHub publishes none;
-GutsAI publishes `price_per_1m` in **IDR, blended in/out**, which cannot be
-mapped honestly into four USD fields.
+Guts AI publishes `price_per_1m` as a blended input and output rate in IDR.
+That rate has no direct mapping to the four USD cost fields.
 
-## 3. T3 Code (what actually bills)
+## 3. T3 Code usage estimates
 
 T3 Code keeps its own overrides in `~/.t3/userdata/settings.json`. Verified
 shape on this machine:
@@ -50,14 +48,14 @@ shape on this machine:
 ```jsonc
 {
   "usagePriceOverrides": {
-    "cosmoshub/deepseek-v4.1-flash": {
+    "example/deepseek-v4.1-flash": {
       "inputCostPerMillionTokens": 0.3,
       "outputCostPerMillionTokens": 1.2,
       "cacheReadCostPerMillionTokens": 0.006
     }
   },
   "usageModelAliases": {
-    "cosmoshub/kimi-k3.1-pro": "kimi-k3.1-pro"
+    "example/kimi-k3.1-pro": "kimi-k3.1-pro"
   }
 }
 ```
@@ -73,9 +71,8 @@ Two consequences for this repo:
 1. **Never normalize a model id.** Aliases are keyed by the id the harness sees,
    so renaming `deepseek-v4.1-flash-1017` to `deepseek-v4.1-flash` would silently
    split or merge usage rows.
-2. **A zero cost in the picker is not a bug.** It means nobody published a price
-   for that exact id; add an override in T3 Code, or curate it in the pack when
-   the price is stable and known.
+2. **Check pricing provenance when the picker shows zero.** The rate may be
+   published as zero or missing. Use a curated override when you have a known rate.
 
 The settings file is the source of truth. T3 Code applies it without restarting
 the harness, and any settings panel in the app writes the same keys. Edit the
@@ -97,10 +94,9 @@ task pricing -- --live        # price from the live catalog instead of the fixtu
 
 What it writes, and what it refuses to write:
 
-- only models with a real price (`provenance.pricing` is `models.dev` or
-  `curated`); a zero is not emitted, because writing zero would tell T3 the model
-  is free;
-- `cacheReadCostPerMillionTokens` only when it is above zero;
+- a price override when there are known input and output rates, including
+  explicitly published zero rates;
+- a cache-read rate when it is known;
 - `usageModelAliases` from `pack.aliases`, and only for models present in the
   catalog;
 - nothing outside `<providerId>/` keys. Other providers' entries and every other

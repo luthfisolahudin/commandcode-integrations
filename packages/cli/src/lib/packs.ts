@@ -1,14 +1,14 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { buildFallbackModels, buildModels, buildModelIndex, discover, type DiscoverOptions } from "@luthfisolahudin/commandcode-integrations-catalog";
+import { buildFallbackModels, buildModels, buildModelIndex, discover, type CatalogModel, type DiscoverOptions } from "@luthfisolahudin/commandcode-integrations-catalog";
 import { capabilityView, inputModalities, type NormalizedModel, type Pack, type RawRecord } from "@luthfisolahudin/commandcode-integrations-contract";
 import { MEASURED_WIRE_EFFORT, invariants, measuredIds, packs } from "@luthfisolahudin/commandcode-integrations-provider";
 
 export interface LoadedPack {
 	pack: Pack;
 	fixture?: RawRecord[];
-	models: NormalizedModel[];
+	models: CatalogModel[];
 	source: "fixture" | "network" | "fallback";
 }
 
@@ -128,7 +128,7 @@ export function excluded(models: readonly NormalizedModel[]): { id: string; reas
 		.map((model) => ({ id: model.id, reason: model.excluded?.reason ?? "unknown" }));
 }
 
-export function inventoryRows(models: readonly NormalizedModel[]): string[][] {
+export function inventoryRows(models: readonly CatalogModel[]): string[][] {
 	return models
 		.filter((model) => model.excluded === undefined)
 		.sort((a, b) => a.id.localeCompare(b.id))
@@ -137,7 +137,10 @@ export function inventoryRows(models: readonly NormalizedModel[]): string[][] {
 			model.name,
 			`${Math.round(model.contextWindow / 1000)}K`,
 			`${Math.round(model.maxOutput / 1000)}K`,
-			model.cost.input === 0 && model.cost.output === 0 ? "-" : `$${model.cost.input}/$${model.cost.output}`,
+			(["input", "output"] as const)
+				.map((rate) => model.pricingSources[rate] === "default" ? "-" : "$" + model.cost[rate])
+				.join("/"),
+			model.provenance.pricing,
 			model.input.join("+"),
 			model.reasoning ? "yes" : "no",
 			model.thinking.format ?? "-",
@@ -153,6 +156,7 @@ export const INVENTORY_HEADER = [
 	"context",
 	"max-out",
 	"cost/1M",
+	"price-src",
 	"input",
 	"reasoning",
 	"format",
