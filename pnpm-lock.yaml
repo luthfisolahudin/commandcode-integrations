@@ -208,12 +208,9 @@ importers:
 
   adapters/opencode:
     dependencies:
-      '@luthfisolahudin/commandcode-integrations-catalog':
+      '@luthfisolahudin/ai-integrations-opencode':
         specifier: workspace:*
-        version: link:../../packages/catalog
-      '@luthfisolahudin/commandcode-integrations-contract':
-        specifier: workspace:*
-        version: link:../../packages/contract
+        version: link:../../packages/runtime/opencode
       '@luthfisolahudin/commandcode-integrations-provider':
         specifier: workspace:*
         version: link:../../packages/provider
@@ -224,12 +221,9 @@ importers:
 
   adapters/pi:
     dependencies:
-      '@luthfisolahudin/commandcode-integrations-catalog':
+      '@luthfisolahudin/ai-integrations-pi':
         specifier: workspace:*
-        version: link:../../packages/catalog
-      '@luthfisolahudin/commandcode-integrations-contract':
-        specifier: workspace:*
-        version: link:../../packages/contract
+        version: link:../../packages/runtime/pi
       '@luthfisolahudin/commandcode-integrations-provider':
         specifier: workspace:*
         version: link:../../packages/provider
@@ -241,73 +235,75 @@ importers:
         specifier: 'catalog:'
         version: 1.5.2(@aws-sdk/credential-provider-node@3.972.94)(@smithy/signature-v4@5.7.5)(ws@8.22.2)
 
-  packages/catalog:
+  packages/dev/cli:
     dependencies:
-      '@luthfisolahudin/commandcode-integrations-contract':
+      '@luthfisolahudin/ai-integrations-catalog':
         specifier: workspace:*
-        version: link:../contract
+        version: link:../../runtime/catalog
+      '@luthfisolahudin/ai-integrations-contract':
+        specifier: workspace:*
+        version: link:../../runtime/contract
 
-  packages/cli:
+  packages/dev/conformance:
     dependencies:
-      '@luthfisolahudin/commandcode-integrations-catalog':
+      '@luthfisolahudin/ai-integrations-catalog':
         specifier: workspace:*
-        version: link:../catalog
-      '@luthfisolahudin/commandcode-integrations-contract':
-        specifier: workspace:*
-        version: link:../contract
-      '@luthfisolahudin/commandcode-integrations-provider':
-        specifier: workspace:*
-        version: link:../provider
-
-  packages/conformance:
-    dependencies:
-      '@luthfisolahudin/commandcode-integrations-catalog':
-        specifier: workspace:*
-        version: link:../catalog
-      '@luthfisolahudin/commandcode-integrations-cli':
+        version: link:../../runtime/catalog
+      '@luthfisolahudin/ai-integrations-cli':
         specifier: workspace:*
         version: link:../cli
-      '@luthfisolahudin/commandcode-integrations-contract':
+      '@luthfisolahudin/ai-integrations-contract':
         specifier: workspace:*
-        version: link:../contract
-      '@luthfisolahudin/commandcode-integrations-opencode':
+        version: link:../../runtime/contract
+      '@luthfisolahudin/ai-integrations-opencode':
         specifier: workspace:*
-        version: link:../../adapters/opencode
-      '@luthfisolahudin/commandcode-integrations-pi':
+        version: link:../../runtime/opencode
+      '@luthfisolahudin/ai-integrations-pi':
         specifier: workspace:*
-        version: link:../../adapters/pi
-      '@luthfisolahudin/commandcode-integrations-provider':
-        specifier: workspace:*
-        version: link:../provider
-
-  packages/contract: {}
-
-  packages/opencode:
-    dependencies:
-      '@luthfisolahudin/commandcode-integrations-provider':
-        specifier: workspace:*
-        version: link:../provider
-      '@opencode/plugin':
-        specifier: '*'
-        version: 2.2.7(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1(@opentelemetry/api@1.9.0))
-
-  packages/pi:
-    dependencies:
-      '@earendil-works/pi-ai':
-        specifier: '*'
-        version: 1.5.2(@aws-sdk/credential-provider-node@3.972.94)(@smithy/signature-v4@5.7.5)(undici@8.12.4)(ws@8.22.2)
-      '@earendil-works/pi-coding-agent':
-        specifier: '*'
-        version: 1.5.2(@aws-sdk/credential-provider-node@3.972.94)(@smithy/signature-v4@5.7.5)(ws@8.22.2)
-      '@luthfisolahudin/commandcode-integrations-provider':
-        specifier: workspace:*
-        version: link:../provider
+        version: link:../../runtime/pi
 
   packages/provider:
     dependencies:
-      '@luthfisolahudin/commandcode-integrations-contract':
+      '@luthfisolahudin/ai-integrations-contract':
+        specifier: workspace:*
+        version: link:../runtime/contract
+
+  packages/runtime/catalog:
+    dependencies:
+      '@luthfisolahudin/ai-integrations-contract':
         specifier: workspace:*
         version: link:../contract
+
+  packages/runtime/contract: {}
+
+  packages/runtime/opencode:
+    dependencies:
+      '@luthfisolahudin/ai-integrations-catalog':
+        specifier: workspace:*
+        version: link:../catalog
+      '@luthfisolahudin/ai-integrations-contract':
+        specifier: workspace:*
+        version: link:../contract
+    devDependencies:
+      '@opencode/plugin':
+        specifier: 'catalog:'
+        version: 2.2.7(@opentelemetry/semantic-conventions@1.45.0)(redis@6.3.1(@opentelemetry/api@1.9.0))
+
+  packages/runtime/pi:
+    dependencies:
+      '@luthfisolahudin/ai-integrations-catalog':
+        specifier: workspace:*
+        version: link:../catalog
+      '@luthfisolahudin/ai-integrations-contract':
+        specifier: workspace:*
+        version: link:../contract
+    devDependencies:
+      '@earendil-works/pi-ai':
+        specifier: 'catalog:'
+        version: 1.5.2(@aws-sdk/credential-provider-node@3.972.94)(@smithy/signature-v4@5.7.5)(undici@8.12.4)(ws@8.22.2)
+      '@earendil-works/pi-coding-agent':
+        specifier: 'catalog:'
+        version: 1.5.2(@aws-sdk/credential-provider-node@3.972.94)(@smithy/signature-v4@5.7.5)(ws@8.22.2)
 
 packages:
 

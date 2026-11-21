@@ -1,4 +1,4 @@
-import { createPiExtension } from "../../../engine/pi/provider.ts";
-import { MEASURED_WIRE_EFFORT, packs } from "@luthfisolahudin/commandcode-integrations-provider";
+import { createPiExtension } from "@luthfisolahudin/ai-integrations-pi";
+import { provider } from "@luthfisolahudin/commandcode-integrations-provider";
 
-export default createPiExtension(packs[0]!, MEASURED_WIRE_EFFORT);
+export default createPiExtension(provider.packs[0]!, provider.effort);

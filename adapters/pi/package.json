@@ -13,12 +13,8 @@
       "src/index.ts"
     ]
   },
-  "scripts": {
-    "test": "node --test \"test/**/*.test.ts\""
-  },
   "dependencies": {
-    "@luthfisolahudin/commandcode-integrations-catalog": "workspace:*",
-    "@luthfisolahudin/commandcode-integrations-contract": "workspace:*",
+    "@luthfisolahudin/ai-integrations-pi": "workspace:*",
     "@luthfisolahudin/commandcode-integrations-provider": "workspace:*"
   },
   "peerDependencies": {

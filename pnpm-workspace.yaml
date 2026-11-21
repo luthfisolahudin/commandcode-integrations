@@ -1,5 +1,7 @@
 packages:
-  - "packages/*"
+  - "packages/provider"
+  - "packages/runtime/*"
+  - "packages/dev/*"
   - "adapters/*"
 
 # One version per dependency for the whole workspace. Package manifests reference

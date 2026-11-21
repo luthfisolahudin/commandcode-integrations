@@ -28,25 +28,37 @@ Four words decide where a line of code goes:
 | Word | Meaning | Package |
 |---|---|---|
 | facts | vendor data and measurements | `packages/provider` |
-| policy | vendor-neutral rules and contracts | `packages/contract` |
-| mechanics | I/O that applies policy to facts | `packages/catalog` |
-| adapters | translation into a host API | `adapters/pi`, `adapters/opencode` |
+| policy | vendor-neutral rules and contracts | `packages/runtime/contract` |
+| mechanics | I/O that applies policy to facts | `packages/runtime/catalog` |
+| adapters | host wiring (thin) | `adapters/pi`, `adapters/opencode` |
+| factories | reusable host adapters | `packages/runtime/pi`, `packages/runtime/opencode` |
+| factories | reusable host adapters | `packages/runtime/pi`, `packages/runtime/opencode` |
 
 Import rules, enforced by `workspace:*` deps and `task check:boundaries`:
 
-- `packages/contract` imports nothing from this repo.
-- `packages/catalog` may not import a provider.
+- `packages/runtime/contract` imports nothing from this repo.
+- `packages/runtime/catalog` may not import a provider.
 - `packages/provider` may not import a catalog or an adapter.
 - an adapter may not import another adapter.
-- `packages/cli` may not import an adapter.
-- `packages/conformance` may import everything, and is the only package that does.
-- Import across packages by package name (`<scope>/<repo>-<suffix>`), never by
-  relative path. The contract and catalog workspace packages re-export the copied engine.
+- `packages/dev/cli` may not import a factory or an adapter.
+- `packages/dev/conformance` may import everything, and is the only package that does.
+- Import across packages by package name, never by relative path. Package
+  names follow one grammar: `@luthfisolahudin/<project>-integrations-<role>`. The
+  head token names the owner (`ai-integrations` upstream, `commandcode` here), so
+  `ai-integrations-pi` is the factory and `commandcode-integrations-pi` is wiring.
+- A package that needs the vendor imports it through `#provider`, an alias each
+  consumer package maps to `src/provider.ts`, which re-exports
+  `../../../provider/src/index.ts`. The alias is structural: only the packages
+  allowed to see the vendor declare it.
+- A package that needs the vendor imports it through `#provider`, an alias each
+  consumer package maps to `src/provider.ts`, which re-exports
+  `../../../provider/src/index.ts`. The alias is structural: only the packages
+  allowed to see the vendor declare it.
 
-`engine/`, `packages/cli`, `packages/conformance`, and the engine's own tests are
-release-owned. `engine.lock.json` lists each of those files with its sha256, so
-editing one is a lock violation, not a quiet fork. Change them upstream and take a
-new tag; see `docs/SYNC.md`.
+`packages/runtime/**` and `packages/dev/**` are release-owned, copied from
+`ai-integrations`. `ai-integrations.lock.json` lists each of those files with
+its sha256, so editing one is a lock violation, not a quiet fork. Change them
+upstream and take a new tag; see `docs/SYNC.md`.
 
 ## Commands
 
@@ -56,7 +68,7 @@ task check:catalog    # project the fixture/live catalog, assert invariants
 task probe:effort     # measure thinking/effort for one model (needs an API key)
 task probe:routes     # which wire routes the endpoint exposes
 task report --write   # regenerate docs/PROVIDERS.md
-task engine:update    # update the copied engine from an upstream tag
+task sync:upstream    # copy packages/runtime + packages/dev from a tagged release
 task doctor           # symlink pair, AGENTS.md, skills, vendor shape
 task pricing          # T3 Code price block: print, --check, or --write
 ```

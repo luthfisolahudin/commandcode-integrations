@@ -1,4 +1,4 @@
-import { PACK_SCHEMA_VERSION, definePack } from "@luthfisolahudin/commandcode-integrations-contract";
+import { PACK_SCHEMA_VERSION, definePack } from "@luthfisolahudin/ai-integrations-contract";
 
 import { mergeCatalog, type ClientCatalog, type CommandCodeRecord, type PublicModel } from "./catalog.ts";
 import { curated } from "./curated.ts";

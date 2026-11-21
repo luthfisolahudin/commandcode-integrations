@@ -8,12 +8,8 @@
     ".": "./src/index.ts",
     "./model": "./src/model.ts"
   },
-  "scripts": {
-    "test": "node --test \"test/**/*.test.ts\""
-  },
   "dependencies": {
-    "@luthfisolahudin/commandcode-integrations-catalog": "workspace:*",
-    "@luthfisolahudin/commandcode-integrations-contract": "workspace:*",
+    "@luthfisolahudin/ai-integrations-opencode": "workspace:*",
     "@luthfisolahudin/commandcode-integrations-provider": "workspace:*"
   },
   "peerDependencies": {

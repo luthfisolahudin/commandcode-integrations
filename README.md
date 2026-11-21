@@ -4,8 +4,9 @@ Live model discovery and OpenAI Chat Completions for [CommandCode](https://comma
 shared by Pi and OpenCode. The catalog is read from CommandCode's Provider API; no
 model list is maintained by hand.
 
-Built on [`ai-provider-integrations-template`](https://github.com/luthfisolahudin/ai-provider-integrations-template):
-This repo owns the provider pack and pins the [copied engine](docs/SYNC.md).
+Built on [`ai-integrations`](https://github.com/luthfisolahudin/ai-integrations):
+`packages/runtime` and `packages/dev` are copied from its releases and pinned by
+`ai-integrations.lock.json`.
 
 This integration uses CommandCode's **Provider API**. It does not emulate the CLI,
 its `/alpha/generate` transport, its tool aliases, or its harness features.

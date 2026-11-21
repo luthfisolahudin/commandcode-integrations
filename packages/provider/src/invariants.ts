@@ -1,4 +1,4 @@
-import type { ModelFacts } from "@luthfisolahudin/commandcode-integrations-contract";
+import type { ModelFacts } from "@luthfisolahudin/ai-integrations-contract";
 
 export interface CapabilityInvariant {
 	readonly id: string;

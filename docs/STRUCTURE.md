@@ -1,7 +1,18 @@
-# Integration layout
+# Structure
 
-`packages/provider/` owns vendor data, fixtures, and rules. `engine/` is pinned by
-`engine.lock.json`, a per-file sha256 manifest covering `engine/`, `packages/cli`,
-`packages/conformance`, and the engine tests. `adapters/` registers this pack in
-each host. The contract and catalog workspace packages re-export the copied engine
-for checks and diagnostics. [Engine updates](SYNC.md)
+Focused packages; layers are derived from the package name and the file path in
+[the boundary checker](../packages/dev/cli/src/commands/boundaries.ts).
+
+| Owner | Paths |
+|---|---|
+| Upstream runtime | `packages/runtime/{contract,catalog}` |
+| Upstream host factories | `packages/runtime/{pi,opencode}` |
+| Upstream tooling (dev) | `packages/dev/{cli,conformance}` |
+| Vendor data and fixtures | `packages/provider` |
+| Host wiring (thin) | `adapters/pi`, `adapters/opencode` |
+
+`packages/runtime/**` and `packages/dev/**` are copied from
+[luthfisolahudin/ai-integrations](https://github.com/luthfisolahudin/ai-integrations)
+and pinned by `ai-integrations.lock.json`. Everything else is owned here.
+
+See [the update procedure](SYNC.md).

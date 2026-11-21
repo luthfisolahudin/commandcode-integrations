@@ -56,7 +56,7 @@ tasks:
     cmds:
       - pnpm probe:routes
 
-  engine:update:
-    desc: Replace the copied integration engine from an upstream tag
+  sync:upstream:
+    desc: Copy packages/runtime and packages/dev from a tagged ai-integrations release
     cmds:
-      - pnpm run engine:update {{.CLI_ARGS}}
+      - pnpm run sync:upstream {{.CLI_ARGS}}

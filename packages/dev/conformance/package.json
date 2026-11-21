@@ -1,0 +1,19 @@
+{
+  "name": "@luthfisolahudin/ai-integrations-conformance",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "imports": {
+    "#provider": "./src/provider.ts"
+  },
+  "scripts": {
+    "test": "node --test \"test/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@luthfisolahudin/ai-integrations-catalog": "workspace:*",
+    "@luthfisolahudin/ai-integrations-cli": "workspace:*",
+    "@luthfisolahudin/ai-integrations-contract": "workspace:*",
+    "@luthfisolahudin/ai-integrations-opencode": "workspace:*",
+    "@luthfisolahudin/ai-integrations-pi": "workspace:*"
+  }
+}
