@@ -4,12 +4,68 @@ Fetch the desired tag in a checkout of the upstream engine, then run this from t
 
 ```sh
 pnpm run engine:update --source <upstream-checkout> --tag <version>
-pnpm run check:catalog
-git diff -- engine engine.lock.json
+git diff -- engine engine.lock.json packages/cli packages/conformance
 ```
 
-The updater verifies the current copy against its digest, stages the selected tag, and checks that it accepts the same pack schema. It switches to the staged copy and runs the provider repo's `pnpm check`. A failed check restores the previous engine and lock. Keep upstream engine changes in the upstream repo so each copy stays verifiable.
+## What the updater guarantees
 
-Commit `engine/` and `engine.lock.json` together. To roll back, revert that commit and run `pnpm check`.
+`engine.lock.json` lists every file the release owns with its sha256. That covers
+more than `engine/`:
 
-For an existing merge-based consumer, generate a sibling checkout and bring over the pack, provider fixtures, and evidence. Use the generated entrypoints to verify the new engine, then apply the equivalent file changes to the existing repo. Preserve model IDs and the provider's Git history.
+| Tree | Owned by the release |
+|---|---|
+| `engine/` | yes — contract, catalog, and both adapter factories |
+| `packages/cli/src`, `packages/cli/test` | yes |
+| `packages/contract/test`, `packages/catalog/test` | yes |
+| `packages/conformance/test` | yes, except `corpus.test.ts`, which needs the example packs |
+| `scripts/engine.ts` | yes — the updater ships itself |
+
+`pnpm check` runs `scripts/engine.ts verify` first, so editing any of those files
+fails the gate. That is deliberate: a checkout whose CLI or tests have quietly
+diverged from its tag is a fork that claims to be a pin.
+
+Changed files outside that list are yours. They are staged and restored across a
+failed update together with the engine itself.
+
+## Sequence
+
+The updater:
+
+1. verifies the current copy against its manifest;
+2. stages the selected tag and refuses a different `PACK_SCHEMA_VERSION`;
+3. snapshots every owned path, then writes the staged tree;
+4. runs this repo's `pnpm check`;
+5. restores the previous tree and lock if that check fails.
+
+## Committing and rolling back
+
+Commit `engine/`, `engine.lock.json`, and any managed file the release changed, in
+one commit. To roll back, revert that commit and run `pnpm check`.
+
+## Upgrading from a pre-manifest lock
+
+A lock written before v2.1.0 stores one directory `digest` and no `files`. It
+cannot be verified against a manifest, so the first update out of one replaces the
+tree outright and says so:
+
+```
+engine: replacing a pre-manifest lock; run `git diff` and commit the result
+```
+
+It still runs `pnpm check` and still restores the old lock on failure. Review the
+diff; nothing else about the procedure changes.
+
+## Adopting an existing merge-based consumer
+
+Generate a sibling checkout, bring over the pack, provider fixtures, and evidence,
+and verify the new engine through the generated entrypoints before applying the
+equivalent changes to the existing repo. Preserve model IDs and the provider's Git
+history.
+
+## v2.1.x notes
+
+- v2.1.0 replaces the single directory digest with the per-file manifest above and
+  adds `cli`, `conformance`, and the engine tests to it.
+- v2.1.1 makes `docs/PROVIDERS.md` reproducible: `report` no longer reads the
+  machine-local models.dev cache unless `--hints` is passed, so `report --check`
+  gives the same answer on your machine and in CI.

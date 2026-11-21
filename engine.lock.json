@@ -1,6 +1,6 @@
 {
-  "commit": "dba46c60ca1f16378a8a79bad27f58765c59c1a7",
-  "tag": "v2.1.1",
+  "commit": "30c571128afa5269fd8230e545e9e19cdbf8ae84",
+  "tag": "v2.1.2",
   "packSchemaVersion": 1,
   "files": {
     "engine/contract/capabilities.ts": "2bed9dbbb1a9ebaccfe666ecef9782509f73ef3788ca096cb7c71372e7601b49",
