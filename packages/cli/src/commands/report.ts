@@ -13,7 +13,16 @@ if (write && check) {
 	process.exit(2);
 }
 
-const cached = readCachedModelIndex(modelsDevCachePath());
+/**
+ * The report is a committed artifact, so it must not depend on machine state.
+ *
+ * Reading the models.dev cache made the output differ between a developer's
+ * machine and CI, and between two developers. `--hints` opts in when you want the
+ * enriched view for inspection; the default is the catalog alone, which is
+ * reproducible anywhere.
+ */
+const hints = process.argv.includes("--hints");
+const cached = hints ? readCachedModelIndex(modelsDevCachePath()) : undefined;
 const loaded = loadAll(process.cwd(), cached === undefined ? {} : { modelsDev: cached });
 const lines: string[] = [
 	"# Provider inventory",

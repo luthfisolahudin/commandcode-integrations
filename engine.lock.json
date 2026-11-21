@@ -1,6 +1,6 @@
 {
-  "commit": "ffc38f8a7199659246ff79a2e8dcc1fa7d398fa8",
-  "tag": "v2.1.0",
+  "commit": "dba46c60ca1f16378a8a79bad27f58765c59c1a7",
+  "tag": "v2.1.1",
   "packSchemaVersion": 1,
   "files": {
     "engine/contract/capabilities.ts": "2bed9dbbb1a9ebaccfe666ecef9782509f73ef3788ca096cb7c71372e7601b49",
@@ -44,7 +44,7 @@
     "packages/cli/src/commands/pricing.ts": "3ad908033ba28c016afbc1b1743abbcf72a32c00eb96242c895f46312d4f7f0d",
     "packages/cli/src/commands/probe-effort.ts": "25b4b123aad6696c6536d710d2ea282dba637b7c8431c2641607deccf6513292",
     "packages/cli/src/commands/probe-routes.ts": "e3794c9f012fca99b12bdc6920ddc84e37e029907bf5e1f8365ea62d45ac3468",
-    "packages/cli/src/commands/report.ts": "ff592a995b6d0db78b66446a18c86679b2eff1efbf1b738434afaedca1098f82",
+    "packages/cli/src/commands/report.ts": "b25666836103f8b3c5ea8966b5b0b3f3482c7a19d515978afe87d55909e43fb9",
     "packages/cli/src/index.ts": "03b7e996fd88d419389963b4fe66961a7d01fd9253d7fdb1e5f1d9c54da5e765",
     "packages/cli/src/lib/boundaries.ts": "f0440192bd4db90ea5fe8e38e7ff38dd283bd85066853b9a2915247660f5d459",
     "packages/cli/src/lib/checks.ts": "26efd3977c217d2b204c4176e2e8fdc1478dd1253aa2e2fcb971464c4d81a0a8",
