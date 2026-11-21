@@ -1,6 +1,6 @@
 import { PACK_SCHEMA_VERSION, definePack } from "@luthfisolahudin/commandcode-integrations-contract";
 
-import { mergeCatalog, type ClientCatalog, type PublicModel } from "./catalog.ts";
+import { mergeCatalog, type ClientCatalog, type CommandCodeRecord, type PublicModel } from "./catalog.ts";
 import { curated } from "./curated.ts";
 import { FALLBACK } from "./fallback.ts";
 
@@ -14,12 +14,12 @@ async function fetchJson(url: string, headers: Record<string, string>, signal: A
 	return response.json();
 }
 
-function publicList(payload: unknown): PublicModel[] {
+function publicList(payload: unknown): PublicModel[] | undefined {
 	if (Array.isArray(payload)) return payload as PublicModel[];
 	const body = payload as { data?: unknown; models?: unknown };
 	if (Array.isArray(body?.data)) return body.data as PublicModel[];
 	if (Array.isArray(body?.models)) return body.models as PublicModel[];
-	return [];
+	return undefined;
 }
 
 /**
@@ -84,22 +84,21 @@ export const commandCodePack = definePack({
 				client = { schemaVersion: body.schemaVersion, catalogVersion: body.catalogVersion, data: body.data };
 			}
 
-			const records = mergeCatalog(client ?? { schemaVersion: SCHEMA_VERSION, catalogVersion: "unknown", data: [] }, publicList(publicPayload));
-			if (records.length === 0) throw new Error("CommandCode catalog produced no models");
+			const publicModels = publicList(publicPayload);
+			const records = mergeCatalog(client ?? { schemaVersion: SCHEMA_VERSION, catalogVersion: "unknown", data: [] }, publicModels ?? []);
+			if (records.length === 0 && (client === undefined || publicModels === undefined)) {
+				throw new Error("incomplete CommandCode catalog produced no models");
+			}
 			return records;
 		},
 		normalize(record) {
 			const efforts = Array.isArray(record.reasoningEfforts) ? record.reasoningEfforts : [];
-			const pricing = record.pricing as
-				| { input: number; output: number; cacheRead: number; cacheWrite: number }
-				| undefined;
+			const pricing = record.pricing as CommandCodeRecord["pricing"];
 			return {
 				...(typeof record.protocol === "string" ? { api: record.protocol } : {}),
 				reasoning: efforts.length > 0,
 				thinkingCanDisable: efforts.includes("off"),
-				...(pricing === undefined
-					? {}
-					: { cost: { input: pricing.input, output: pricing.output, cacheRead: pricing.cacheRead, cacheWrite: pricing.cacheWrite } }),
+				...(pricing === undefined ? {} : { cost: pricing }),
 			};
 		},
 	},

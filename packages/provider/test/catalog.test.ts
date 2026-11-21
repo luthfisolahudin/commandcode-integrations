@@ -19,16 +19,17 @@ const publicModels = (() => {
 	return Array.isArray(body) ? body : (body.data ?? []);
 })();
 
-test("claude models route to Anthropic Messages, everything else prefers chat", () => {
-	assert.equal(resolveProtocol({ id: "claude-sonnet-5-5", endpoints: ["/chat/completions"] }).protocol, "anthropic-messages");
+test("routing prefers Messages for Claude when the catalog advertises it", () => {
+	assert.equal(resolveProtocol({ id: "claude-sonnet-5-5", endpoints: ["/chat/completions"] }).protocol, "openai-completions");
 	assert.equal(
 		resolveProtocol({ id: "claude-sonnet-5-5", endpoints: ["/messages"] }).reason,
 		"anthropic-model",
 	);
 	assert.equal(resolveProtocol({ id: "gpt-5.5", endpoints: ["/chat/completions", "/responses"] }).protocol, "openai-completions");
-	assert.equal(resolveProtocol({ id: "x", endpoints: ["/messages"] }).protocol, "anthropic-messages");
+	assert.equal(resolveProtocol({ id: "x", endpoints: ["/messages", "/embeddings"] }).protocol, "anthropic-messages");
 	assert.equal(resolveProtocol({ id: "y", endpoints: ["/responses"] }).protocol, "openai-responses");
 	assert.equal(resolveProtocol({ id: "z", endpoints: [] }).reason, "default-unverified");
+	assert.equal(resolveProtocol({ id: "embedding", endpoints: ["/embeddings"] }).protocol, undefined);
 });
 
 test("client facts win, the public list supplies endpoints", () => {
@@ -48,10 +49,13 @@ test("client facts win, the public list supplies endpoints", () => {
 	assert.deepEqual(record.reasoningEfforts, ["low", "max"]);
 });
 
-test("a model only in the public list still appears, without efforts or price", () => {
+test("public-only chat models appear without effort or price and embedding models are skipped", () => {
 	const records = mergeCatalog(
 		{ schemaVersion: 1, catalogVersion: "v1", data: [] },
-		[{ id: "public-only", name: "Public Only", supported_endpoints: ["/chat/completions"] }],
+		[
+			{ id: "public-only", name: "Public Only", supported_endpoints: ["/chat/completions"] },
+			{ id: "embedding", supported_endpoints: ["/embeddings"] },
+		],
 	);
 	assert.equal(records.length, 1);
 	assert.deepEqual(records[0]?.reasoningEfforts, []);
@@ -68,7 +72,7 @@ test("hidden models never reach a picker", () => {
 				{ id: "secret", hidden: true },
 			],
 		},
-		[],
+		[{ id: "secret", supported_endpoints: ["/chat/completions"] }],
 	);
 	assert.deepEqual(records.map((record) => record.id), ["visible"]);
 });
@@ -86,10 +90,10 @@ test("pricing converts per-token to per-million and never borrows a cache price"
 		input: 3,
 		output: 15,
 		cacheRead: 0.3,
-		cacheWrite: 0,
 	});
 	assert.equal(normalizePricing({ contextTiers: [{ maxContext: 100 }] }), undefined);
 	assert.equal(normalizePricing(undefined), undefined);
+	assert.deepEqual(normalizePricing({ inputCost: 0, outputCost: 0 }), { input: 0, output: 0 });
 });
 
 test("the captured catalog routes to both protocols and drops nothing visible", () => {
@@ -116,4 +120,14 @@ test("the committed catalog fixture is the merge of the two captured views", () 
 	const committed = JSON.parse(readFileSync(join(FIXTURES, "catalog.json"), "utf8")) as { data: unknown[] };
 	const merged = mergeCatalog(client, publicModels);
 	assert.deepEqual(committed.data, merged, "fixtures/catalog.json drifted from the captured views; regenerate it");
+});
+
+test("discovery distinguishes a valid empty catalog from a partial outage", async (t) => {
+	const context = { baseUrl: "https://fixture.test", headers: {}, signal: AbortSignal.timeout(1_000) };
+	const discover = commandCodePack.hooks!.discover!;
+	const client = { schemaVersion: 1, catalogVersion: "fixture", data: [] };
+	const fetch = t.mock.method(globalThis, "fetch", async (url: string) => Response.json(url.endsWith("?view=client") ? client : []));
+	assert.deepEqual(await discover(context), []);
+	fetch.mock.mockImplementation(async (url: string) => url.endsWith("?view=client") ? Response.json(client) : new Response(null, { status: 503 }));
+	await assert.rejects(discover(context), /incomplete CommandCode catalog/);
 });

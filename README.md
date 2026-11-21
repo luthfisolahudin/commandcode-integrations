@@ -52,7 +52,7 @@ task check            # typecheck, unit tests, conformance, invariants, doctor
 task check:catalog    # project the merged fixture, assert the invariants
 task report --write   # regenerate docs/PROVIDERS.md
 task pricing          # print the T3 Code price block for this provider
-pnpm verify:live      # one request per wire protocol against the API
+pnpm verify:live      # one request per protocol with a confirmed free model
 ```
 
 ## Routing
@@ -61,9 +61,10 @@ Chat-first:
 
 | Model | Route | Why |
 |---|---|---|
-| Claude | Anthropic Messages | adaptive thinking and effort live there |
-| everything else | OpenAI Chat Completions | 72 models list both routes; chat answered for all |
-| Responses-only | OpenAI Responses | no visible model needs it today |
+| Claude with Messages advertised | Anthropic Messages | adaptive thinking and effort live there |
+| Models advertising Chat Completions | OpenAI Chat Completions | preferred when available |
+| Messages without Chat | Anthropic Messages | supported chat route |
+| Responses without Chat or Messages | OpenAI Responses | no visible model needs it today |
 
 A `403` is plan gating, not a routing failure. `hidden` models are dropped before a
 picker sees them; `reasoningEfforts` from the catalog drive the effort menu, and a

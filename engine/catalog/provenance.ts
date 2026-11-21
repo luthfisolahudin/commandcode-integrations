@@ -24,7 +24,15 @@ export interface BuildOptions {
 
 const DEFAULT_CONTEXT = 128_000;
 const DEFAULT_MAX_OUTPUT = 16_384;
-const ZERO_COST: ModelCost = { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
+const COST_FIELDS = ["input", "output", "cacheRead", "cacheWrite"] as const;
+
+export interface CatalogModel extends NormalizedModel {
+	pricingSources: Record<keyof ModelCost, Source>;
+}
+
+function validRate(rate: number | undefined): rate is number {
+	return rate !== undefined && Number.isFinite(rate) && rate >= 0;
+}
 
 function firstDefined<T>(...values: (T | undefined)[]): T | undefined {
 	for (const value of values) {
@@ -53,7 +61,7 @@ interface MergedFacts {
 	curated: Partial<ModelFacts>;
 	effective: ModelFacts;
 	/** What the provider actually said, so models.dev only fills silence. */
-	declared: { limits: boolean; modalities: boolean; reasoning: boolean; tools: boolean };
+	declared: { modalities: boolean; reasoning: boolean; tools: boolean };
 }
 
 /**
@@ -104,8 +112,6 @@ function mergeFacts(pack: Pack, record: RawRecord, fallback = false): MergedFact
 	}
 
 	const declared = {
-		limits: hasDeclared(record, pack.fields?.contextWindow) || hasDeclared(record, pack.fields?.maxOutput) ||
-			curated.contextWindow !== undefined || curated.maxOutput !== undefined,
 		modalities: hasDeclared(record, pack.fields?.vision) || hasDeclared(record, pack.fields?.pdf) ||
 			hasDeclared(record, pack.fields?.audioInput) || hasDeclared(record, pack.fields?.videoInput) ||
 			hasDeclared(record, pack.fields?.inputModalities) || curated.input !== undefined ||
@@ -117,7 +123,7 @@ function mergeFacts(pack: Pack, record: RawRecord, fallback = false): MergedFact
 	return { catalog, curated, effective, declared };
 }
 
-export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOptions = {}): NormalizedModel {
+export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOptions = {}): CatalogModel {
 	const { catalog, curated, effective, declared } = merged;
 	// An alias only redirects the lookup; membership still comes from the catalog.
 	const lookupKey = pack.aliases?.[effective.id] ?? effective.id;
@@ -126,13 +132,13 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 	const context = resolveLimit({
 		catalog: catalog.contextWindow,
 		curated: curated.contextWindow,
-		modelsDev: declared.limits ? undefined : hint?.contextWindow,
+		modelsDev: hint?.contextWindow,
 		defaultValue: pack.defaults?.contextWindow ?? DEFAULT_CONTEXT,
 	});
 	const maxOutput = resolveLimit({
 		catalog: catalog.maxOutput,
 		curated: curated.maxOutput,
-		modelsDev: declared.limits ? undefined : hint?.maxOutput,
+		modelsDev: hint?.maxOutput,
 		defaultValue: pack.defaults?.maxOutput ?? DEFAULT_MAX_OUTPUT,
 		capBy: context.value,
 	});
@@ -150,7 +156,6 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 	const reasoning = reasoningDeclared ? effective.reasoning === true : (hint?.reasoning ?? effective.reasoning === true);
 	const tools = declared.tools ? effective.tools : firstDefined(effective.tools, hint?.tools);
 
-	// Curated price > models.dev > zero. A price the provider declares is never used.
 	// A measured wire value always wins. Otherwise the levels the provider declares
 	// (via models.dev) are used, and recorded as a declaration, not a measurement.
 	const measured = options.measuredIds?.has(effective.id) === true;
@@ -164,16 +169,25 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 		effective.thinkingCanDisable ??
 		(declaredEfforts === undefined || hint?.toggle !== true ? undefined : true);
 
-	const costSource: Source = curated.cost !== undefined ? "curated" : hint?.cost === undefined ? "default" : "models.dev";
-	const cost: ModelCost = {
-		input: curated.cost?.input ?? hint?.cost?.input ?? ZERO_COST.input,
-		output: curated.cost?.output ?? hint?.cost?.output ?? ZERO_COST.output,
-		cacheRead: curated.cost?.cacheRead ?? hint?.cost?.cacheRead ?? ZERO_COST.cacheRead,
-		cacheWrite: curated.cost?.cacheWrite ?? hint?.cost?.cacheWrite ?? ZERO_COST.cacheWrite,
+	const cost: ModelCost = { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
+	const pricingSources: CatalogModel["pricingSources"] = {
+		input: "default", output: "default", cacheRead: "default", cacheWrite: "default",
 	};
+	for (const field of COST_FIELDS) {
+		for (const [source, rates] of [["curated", curated.cost], ["catalog", catalog.cost], ["models.dev", hint?.cost]] as const) {
+			const rate = rates?.[field];
+			if (!validRate(rate)) continue;
+			cost[field] = rate;
+			pricingSources[field] = source;
+			break;
+		}
+	}
+	const costSource = (["curated", "catalog", "models.dev"] as const).find((source) =>
+		COST_FIELDS.some((field) => pricingSources[field] === source),
+	) ?? "default";
 
 	const routedApi = effective.api || pack.hooks?.route?.(effective) || pack.api;
-	const model: NormalizedModel = {
+	const model: CatalogModel = {
 		providerId: pack.id,
 		id: effective.id,
 		name: effective.name ?? displayName(effective.id, { brands: pack.brands, owners: pack.owners, names: pack.names }),
@@ -188,6 +202,7 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 			...(declaredEfforts === undefined ? {} : { efforts: declaredEfforts }),
 		},
 		cost,
+		pricingSources,
 		availability: effective.availability ?? "unknown",
 		provenance: {
 			limits: { context: context.source, maxOutput: maxOutput.source },
@@ -209,12 +224,13 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 	const excluded = exclusionReason({ pack, modelId: model.id, availability: model.availability });
 	if (excluded !== undefined) model.excluded = { reason: excluded };
 
-	return pack.hooks?.decorate?.(model) ?? model;
+	const decorated = pack.hooks?.decorate?.(model);
+	return decorated === undefined ? model : { ...decorated, pricingSources };
 }
 
 /** Projects the authoritative records, keeping excluded models for diagnostics. */
-export function buildModels(pack: Pack, records: readonly RawRecord[], options: BuildOptions = {}): NormalizedModel[] {
-	const models: NormalizedModel[] = [];
+export function buildModels(pack: Pack, records: readonly RawRecord[], options: BuildOptions = {}): CatalogModel[] {
+	const models: CatalogModel[] = [];
 	for (const record of records) {
 		const merged = mergeFacts(pack, record);
 		if (merged !== undefined) models.push(buildModel(pack, merged, options));
@@ -222,7 +238,7 @@ export function buildModels(pack: Pack, records: readonly RawRecord[], options: 
 	return models.sort((a, b) => a.id.localeCompare(b.id));
 }
 
-export function buildFallbackModels(pack: Pack, options: BuildOptions = {}): NormalizedModel[] {
+export function buildFallbackModels(pack: Pack, options: BuildOptions = {}): CatalogModel[] {
 	return (pack.fallback ?? []).flatMap(({ id }) => {
 		const facts = mergeFacts(pack, { id }, true);
 		return facts === undefined ? [] : [buildModel(pack, facts, options)];

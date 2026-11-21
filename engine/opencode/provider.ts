@@ -38,16 +38,16 @@ export function createOpenCodePlugin(pack: Pack, effort: Readonly<Record<string,
 				editor.models.set(providerID, current);
 			});
 
-			let active = true;
+			const lifetime = new AbortController();
 			let refreshing = false;
 			async function refresh() {
 				if (refreshing) return;
 				refreshing = true;
 				try {
-					const next = project(await catalog.refresh(connection));
-					if (!active || JSON.stringify(next) === JSON.stringify(current)) return;
-					current = next;
+					const next = project(await catalog.refresh(connection, { signal: lifetime.signal }));
+					if (lifetime.signal.aborted || JSON.stringify(next) === JSON.stringify(current)) return;
 					await context.provider.reload();
+					current = next;
 				} catch (error) {
 					console.error(`${pack.id}: OpenCode model refresh failed`, error);
 				} finally {
@@ -59,7 +59,7 @@ export function createOpenCodePlugin(pack: Pack, effort: Readonly<Record<string,
 			const timer = setInterval(() => void refresh(), REFRESH_MS);
 			timer.unref?.();
 			return () => {
-				active = false;
+				lifetime.abort();
 				clearInterval(timer);
 			};
 		},
