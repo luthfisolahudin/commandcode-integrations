@@ -72,4 +72,4 @@ if (unmeasuredCount > 0) {
 
 if (problems.length > 0) for (const problem of problems) console.error(`warning: ${problem}`);
 
-process.exitCode = invariantFailures.length > 0 ? 1 : 0;
+process.exitCode = invariantFailures.length > 0 || (live && problems.length > 0) ? 1 : 0;

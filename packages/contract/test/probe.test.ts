@@ -19,7 +19,7 @@ test("median handles odd and even counts", () => {
 	assert.equal(median([]), undefined);
 });
 
-test("cosmoshub deepseek-v4.1-flash 11/10/11 is no observable difference", () => {
+test("nearby reasoning token counts show no observable difference", () => {
 	const verdict = decideEffort(samples({ minimal: 11, low: 10, max: 11 }));
 	assert.equal(verdict.verdict, "no-observable-difference");
 });

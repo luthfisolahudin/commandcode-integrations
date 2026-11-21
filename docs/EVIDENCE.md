@@ -55,3 +55,5 @@ levels unchanged, and the adapter drops the menu when the format is not mappable
 Cloudflare sits in front of the API and answers `403 error code: 1010` to Python's
 default user agent. The pack sends `commandcode-integrations/0.1` on every request,
 including the two catalog views.
+
+- 2026-11-21: engine v2.0.0 streamed chat in Pi 1.5.2 and OpenCode 2.3.2 with `stealth/glyph-cluster:free`. The live client catalog confirmed zero input and output token rates.

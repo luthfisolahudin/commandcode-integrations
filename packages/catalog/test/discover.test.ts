@@ -95,11 +95,9 @@ test("a bespoke hook replaces the HTTP path entirely", async () => {
 	assert.deepEqual(result.raw.map((record) => record.id), ["hooked"]);
 });
 
-test("a hook that returns nothing is a configuration error", async () => {
-	await assert.rejects(
-		discover(pack({ hooks: { discover: async () => [] } })),
-		/returned no models/,
-	);
+test("a discovery hook can return a valid empty catalog", async () => {
+	const result = await discover(pack({ hooks: { discover: async () => [] } }));
+	assert.deepEqual(result.raw, []);
 });
 
 test("a key can come from a credential file when the environment is empty", async () => {

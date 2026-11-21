@@ -15,8 +15,7 @@ catalog qualities:
 - `examples/tier-b` — modalities, availability and price only (Tier B);
 - `examples/tier-c` — ids and nothing else (Tier C).
 
-`provider-init` turns this checkout into a single-provider repo and deletes the
-corpus.
+The provider code and fixtures live in this checkout. The engine is pinned by `engine.lock.json`.
 
 ## Read first
 
@@ -47,8 +46,7 @@ Import rules, enforced by `workspace:*` deps and `task check:boundaries`:
 - `packages/cli` may not import an adapter.
 - `packages/conformance` may import everything, and is the only package that does.
 - Import across packages by package name (`<scope>/<repo>-<suffix>`), never by
-  relative path. `task init` renames the prefix, and relative paths silently
-  survive the rename.
+  relative path. The contract and catalog workspace packages re-export the copied engine.
 
 ## Commands
 
@@ -58,10 +56,9 @@ task check:catalog    # project the fixture/live catalog, assert invariants
 task probe:effort     # measure thinking/effort for one model (needs an API key)
 task probe:routes     # which wire routes the endpoint exposes
 task report --write   # regenerate docs/PROVIDERS.md
+task engine:update    # update the copied engine from an upstream tag
 task doctor           # symlink pair, AGENTS.md, skills, vendor shape
 task pricing          # T3 Code price block: print, --check, or --write
-task sync:template    # merge a template tag (downstream repos only)
-task init             # turn this checkout into a provider repo
 ```
 
 ## Hard invariants
@@ -95,7 +92,7 @@ Fixture first, then invariants, then the projection test, then the code:
 
 ## Human decisions
 
-Ask before: bumping `PACK_SCHEMA_VERSION`, merging a template tag, deleting a
+Ask before: bumping `PACK_SCHEMA_VERSION`, deleting a
 fallback id, choosing an effort mapping when the probe is inconclusive, or
 turning a `default` provenance into a `curated` one.
 

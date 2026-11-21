@@ -3,7 +3,7 @@ import { test } from "node:test";
 
 import { PACK_SCHEMA_VERSION, definePack, type Pack } from "@luthfisolahudin/commandcode-integrations-contract";
 
-import { buildModelIndex, buildModels, exclusionReason } from "../src/index.ts";
+import { buildFallbackModels, buildModelIndex, buildModels, exclusionReason } from "../src/index.ts";
 
 function tierA(): Pack {
 	return definePack({
@@ -125,9 +125,10 @@ test("output never exceeds the context window", () => {
 	assert.equal(model?.maxOutput, 4_096);
 });
 
-test("a pinned fallback member is present even when discovery omits it", () => {
+test("a pinned fallback only appears in the offline baseline", () => {
 	const models = buildModels(tierA(), RECORDS);
-	const pinned = models.find((entry) => entry.id === "pinned-offline");
+	assert.equal(models.some((entry) => entry.id === "pinned-offline"), false);
+	const [pinned] = buildFallbackModels(tierA());
 	assert.ok(pinned);
 	assert.equal(pinned.excluded, undefined);
 });
@@ -178,7 +179,7 @@ test("the decorate hook can rename without inventing membership", () => {
 	});
 	const models = buildModels(pack, RECORDS);
 	assert.ok(models.every((model) => model.name.startsWith("X ")));
-	assert.deepEqual(models.map((model) => model.id), ["chat-plain", "chat-vision", "pinned-offline"]);
+	assert.deepEqual(models.map((model) => model.id), ["chat-plain", "chat-vision"]);
 });
 
 test("an alias redirects the metadata lookup without adding membership", () => {

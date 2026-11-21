@@ -1,4 +1,4 @@
-import type { RawRecord } from "@luthfisolahudin/commandcode-integrations-contract";
+import type { RawRecord } from "../contract/index.ts";
 
 function isRecord(value: unknown): value is RawRecord {
 	return typeof value === "object" && value !== null && !Array.isArray(value);
@@ -13,18 +13,18 @@ function isRecord(value: unknown): value is RawRecord {
  * one of them and the next refresh would look like a random model swap.
  */
 export function parseEnvelope(payload: unknown): RawRecord[] {
-	const entries: unknown[] = [];
+	let entries: unknown[] | undefined;
 	if (Array.isArray(payload)) {
-		entries.push(...payload);
+		entries = payload;
 	} else if (isRecord(payload)) {
 		const data = payload.data;
 		const models = payload.models;
-		if (Array.isArray(data)) entries.push(...data);
-		else if (Array.isArray(models)) entries.push(...models);
-		else if (typeof payload.id === "string") entries.push(payload);
+		if (Array.isArray(data)) entries = data;
+		else if (Array.isArray(models)) entries = models;
+		else if (typeof payload.id === "string") entries = [payload];
 	}
-	if (entries.length === 0) {
-		throw new Error("model discovery returned an invalid catalog (no model records)");
+	if (entries === undefined) {
+		throw new Error("model discovery returned an invalid catalog envelope");
 	}
 
 	const seen = new Set<string>();

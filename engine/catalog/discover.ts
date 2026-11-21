@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import { homedir } from "node:os";
 
-import type { HookContext, Pack, RawRecord } from "@luthfisolahudin/commandcode-integrations-contract";
+import type { HookContext, Pack, RawRecord } from "../contract/index.ts";
 
 import { parseEnvelope } from "./parse.ts";
 
@@ -32,6 +32,7 @@ export const DEFAULT_TIMEOUT_MS = 5_000;
  * does), and it never throws: a missing or malformed file is just a miss.
  */
 export function resolveApiKey(pack: Pack, env: NodeJS.ProcessEnv = process.env): string | undefined {
+	if (pack.auth?.kind === "none") return undefined;
 	for (const candidate of [
 		pack.auth?.apiKeyEnv === undefined ? undefined : env[pack.auth.apiKeyEnv],
 		pack.auth?.apiKey,
@@ -100,8 +101,7 @@ export async function discover(pack: Pack, options: DiscoverOptions = {}): Promi
 			headers,
 			signal,
 		};
-		const raw = await pack.hooks.discover(context);
-		if (raw.length === 0) throw new Error(`pack "${pack.id}": discover hook returned no models`);
+		const raw = parseEnvelope(await pack.hooks.discover(context));
 		return { raw, notModified: false, checkedAt: now(), status: 200 };
 	}
 
@@ -110,7 +110,8 @@ export async function discover(pack: Pack, options: DiscoverOptions = {}): Promi
 		{ headers, signal },
 	);
 	if (response.status === 304) {
-		return { raw: [], notModified: true, checkedAt: now(), status: 304 };
+		const etag = response.headers.get("etag");
+		return { raw: [], etag: etag ?? undefined, notModified: true, checkedAt: now(), status: 304 };
 	}
 	if (!response.ok) {
 		throw new Error(`model discovery failed (HTTP ${response.status}) for ${pack.id}`);

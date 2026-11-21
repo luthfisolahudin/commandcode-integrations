@@ -1,4 +1,4 @@
-import type { NormalizedModel, Pack } from "@luthfisolahudin/commandcode-integrations-contract";
+import type { NormalizedModel, Pack } from "../contract/index.ts";
 
 /** Reasons a model is dropped from pickers. Recorded so nothing vanishes silently. */
 export type ExclusionReason = "excluded-id" | "non-chat" | "offline";

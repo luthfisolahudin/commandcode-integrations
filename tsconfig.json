@@ -46,6 +46,8 @@
     }
   },
   "include": [
+    "engine/**/*.ts",
+    "scripts/**/*.ts",
     "packages/**/*.ts",
     "adapters/**/*.ts",
     "examples/**/*.ts"

@@ -19,20 +19,19 @@
   },
   "packageManager": "pnpm@12.18.0",
   "scripts": {
-    "check": "pnpm run typecheck && pnpm run test:packages && pnpm run check:boundaries && pnpm run check:catalog && pnpm run doctor",
+    "check": "node scripts/engine.ts verify && pnpm run typecheck && pnpm run test:packages && pnpm run check:boundaries && pnpm run check:catalog && pnpm run doctor",
     "typecheck": "tsc -p tsconfig.json",
     "test:packages": "pnpm -r test",
     "check:boundaries": "node packages/cli/src/commands/boundaries.ts",
     "check:catalog": "node packages/cli/src/commands/check-catalog.ts",
-    "conformance": "pnpm --filter @repo/conformance test",
+    "conformance": "pnpm --filter ./packages/conformance test",
     "report": "node packages/cli/src/commands/report.ts",
     "doctor": "node packages/cli/src/commands/doctor.ts",
     "probe:effort": "node packages/cli/src/commands/probe-effort.ts",
     "probe:routes": "node packages/cli/src/commands/probe-routes.ts",
-    "sync:template": "node packages/cli/src/commands/sync-template.ts",
-    "init": "node packages/cli/src/commands/init.ts",
     "pricing": "node packages/cli/src/commands/pricing.ts",
-    "verify:live": "node verify-live.ts"
+    "verify:live": "node verify-live.ts",
+    "engine:update": "node scripts/engine.ts update"
   },
   "devDependencies": {
     "@earendil-works/pi-ai": "catalog:",

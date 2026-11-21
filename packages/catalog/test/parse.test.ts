@@ -17,11 +17,11 @@ test("accepts a single record", () => {
 	assert.deepEqual(parseEnvelope({ id: "solo" }).map((r) => r.id), ["solo"]);
 });
 
-test("rejects an empty or shapeless payload", () => {
-	assert.throws(() => parseEnvelope({}), /no model records/);
-	assert.throws(() => parseEnvelope([]), /no model records/);
-	assert.throws(() => parseEnvelope({ data: [] }), /no model records/);
-	assert.throws(() => parseEnvelope("nope"), /no model records/);
+test("accepts a valid empty catalog and rejects a shapeless envelope", () => {
+	assert.deepEqual(parseEnvelope([]), []);
+	assert.deepEqual(parseEnvelope({ data: [] }), []);
+	assert.throws(() => parseEnvelope({}), /invalid catalog envelope/);
+	assert.throws(() => parseEnvelope("nope"), /invalid catalog envelope/);
 });
 
 test("rejects a record without a usable id", () => {
