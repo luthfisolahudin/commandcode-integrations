@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { loadModelIndex, modelsDevCachePath, readCachedModelIndex } from "@luthfisolahudin/commandcode-integrations-catalog";
+import { loadModelIndex, modelsDevCachePath, readCachedModelIndex } from "../../../../engine/catalog/index.ts";
 import {
 	checkInvariants,
 	declaredOnly,

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
-import { decideEffort, PI_LEVELS, type ProbeSample } from "@luthfisolahudin/commandcode-integrations-contract";
-import { MEASURED_WIRE_EFFORT, packs } from "@luthfisolahudin/commandcode-integrations-provider";
+import { decideEffort, PI_LEVELS, type ProbeSample } from "../../../../engine/contract/index.ts";
+import { MEASURED_WIRE_EFFORT, packs } from "../../../provider/src/index.ts";
 
 import { resolveKey } from "../lib/http.ts";
 

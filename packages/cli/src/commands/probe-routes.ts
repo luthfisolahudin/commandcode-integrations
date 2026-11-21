@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { packs } from "@luthfisolahudin/commandcode-integrations-provider";
+import { packs } from "../../../provider/src/index.ts";
 
 import { resolveKey } from "../lib/http.ts";
 

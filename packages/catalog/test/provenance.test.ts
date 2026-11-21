@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { PACK_SCHEMA_VERSION, definePack, type Pack } from "@luthfisolahudin/commandcode-integrations-contract";
+import { PACK_SCHEMA_VERSION, definePack, type Pack } from "../../../engine/contract/index.ts";
 
 import { buildFallbackModels, buildModelIndex, buildModels, exclusionReason } from "../src/index.ts";
 

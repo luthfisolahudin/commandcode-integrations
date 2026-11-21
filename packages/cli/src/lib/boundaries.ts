@@ -1,19 +1,33 @@
-import type { NormalizedModel, Pack } from "@luthfisolahudin/commandcode-integrations-contract";
+import type { NormalizedModel, Pack } from "../../../../engine/contract/index.ts";
 
 /** Layer of a workspace package id, or `undefined` for an external dependency. */
 export type Layer = "contract" | "catalog" | "provider" | "adapter" | "example" | "cli" | "conformance";
 
-export const PACKAGE_LAYER: Readonly<Record<string, Layer>> = {
-	"@luthfisolahudin/commandcode-integrations-contract": "contract",
-	"@luthfisolahudin/commandcode-integrations-catalog": "catalog",
-	"@luthfisolahudin/commandcode-integrations-provider": "provider",
-	"@luthfisolahudin/commandcode-integrations-pi": "adapter",
-	"@luthfisolahudin/commandcode-integrations-opencode": "adapter",
-	"@luthfisolahudin/commandcode-integrations-cli": "cli",
-	"@luthfisolahudin/commandcode-integrations-conformance": "conformance",
-	"@luthfisolahudin/commandcode-integrations-tier-b": "example",
-	"@luthfisolahudin/commandcode-integrations-tier-c": "example",
+/**
+ * Workspace scope. Every package in this repo is `@<scope>/<repo>-<suffix>`.
+ */
+const SCOPE = "@luthfisolahudin/";
+
+/**
+ * The suffix after `<repo>-` decides the layer.
+ *
+ * Deriving the layer instead of listing package ids is what keeps this file
+ * honest across checkouts: a downstream repo deletes `examples/`, so a hardcoded
+ * `tier-b`/`tier-c` entry would describe a package that no longer exists, and a
+ * package added later would silently skip the check.
+ */
+const SUFFIX_LAYER: Readonly<Record<string, Layer>> = {
+	contract: "contract",
+	catalog: "catalog",
+	provider: "provider",
+	pi: "adapter",
+	opencode: "adapter",
+	cli: "cli",
+	conformance: "conformance",
 };
+
+/** Example packs carry a `tier-a`/`tier-b`/`tier-c` suffix. */
+const EXAMPLE_PREFIX = "tier-";
 
 /** Forbidden import directions. Absence means "allowed". */
 export const FORBIDDEN: Readonly<Record<Layer, readonly Layer[]>> = {
@@ -36,11 +50,40 @@ export interface BoundaryViolation {
 
 const SPECIFIER = /(?:\bfrom\s*|\bimport\s*\(\s*)["']([^"']+)["']/g;
 
-export function layerOfSpecifier(specifier: string): { layer: Layer; packageId: string } | undefined {
-	for (const [packageId, layer] of Object.entries(PACKAGE_LAYER)) {
-		if (specifier === packageId || specifier.startsWith(`${packageId}/`)) return { layer, packageId };
+/**
+ * Splits a workspace specifier into the suffix that names its layer. Accepts both
+ * the scoped form (`@scope/<repo>-catalog/model`) and the bare form (`catalog`)
+ * that the engine's copy-in rewrite produces.
+ */
+function suffixOf(specifier: string): string | undefined {
+	const unscoped = specifier.startsWith(SCOPE) ? specifier.slice(SCOPE.length) : specifier;
+	const packageName = unscoped.split("/")[0];
+	if (packageName === undefined || packageName.length === 0) return undefined;
+
+	// Bare form: the package segment is the suffix.
+	if (!packageName.includes("-")) return packageName;
+
+	// Scoped form `<repo>-<suffix>`. Example packs are `<repo>-tier-<x>`, so they
+	// are matched by segment rather than by a fixed suffix.
+	if (packageName.includes(`-${EXAMPLE_PREFIX}`)) return EXAMPLE_PREFIX;
+
+	const known = Object.keys(SUFFIX_LAYER);
+	let best: string | undefined;
+	for (const suffix of known) {
+		if (!packageName.endsWith(`-${suffix}`)) continue;
+		if (best === undefined || suffix.length > best.length) best = suffix;
 	}
-	return undefined;
+	return best;
+}
+
+export function layerOfSpecifier(specifier: string): { layer: Layer; packageId: string } | undefined {
+	const suffix = suffixOf(specifier);
+	if (suffix === undefined) return undefined;
+	const layer = SUFFIX_LAYER[suffix] ?? (suffix.startsWith(EXAMPLE_PREFIX) ? "example" : undefined);
+	if (layer === undefined) return undefined;
+	const unscoped = specifier.startsWith(SCOPE) ? specifier.slice(SCOPE.length) : specifier;
+	const packageId = unscoped.split("/")[0];
+	return packageId === undefined ? undefined : { layer, packageId };
 }
 
 /** Pure check, so tests and the CLI share one definition of the rules. */

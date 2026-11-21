@@ -108,22 +108,29 @@ export function resolveProtocol(input: { id: string; group?: string; endpoints: 
 		: { reason: "unsupported-endpoints" };
 }
 
-function perMillion(value: unknown): number | undefined {
-	if (typeof value !== "number" || value < 0) return undefined;
-	const rate = value * 1_000_000;
-	return Number.isFinite(rate) ? rate : undefined;
+/**
+ * Catalog rates are already **USD per 1M tokens**, which is the unit the hosts
+ * want. Verified against the vendor's published table
+ * (https://commandcode.ai/docs/plans/goat): `claude-sonnet-5-5` is listed at
+ * `$2.00 / $10.00 / $0.10 / $2.50` and the client catalog reports exactly those
+ * numbers. Multiplying here would inflate every price by 1,000,000 and still look
+ * authoritative in a picker.
+ */
+function ratePerMillion(value: unknown): number | undefined {
+	if (typeof value !== "number" || !Number.isFinite(value) || value < 0) return undefined;
+	return value;
 }
 
 /**
- * Pricing arrives per token; the hosts want per million. Cache fields fall back to
- * an absent field when a rate is unpublished. A published zero stays zero.
+ * Maps the catalog's rates onto the host model shape. Cache fields fall back to an
+ * absent field when a rate is unpublished. A published zero stays zero.
  */
 export function normalizePricing(pricing: ClientPricing | undefined): CommandCodeRecord["pricing"] {
 	if (pricing === undefined) return undefined;
-	const input = perMillion(pricing.inputCost);
-	const output = perMillion(pricing.outputCost);
-	const cacheRead = perMillion(pricing.cacheReadCost);
-	const cacheWrite = perMillion(pricing.cacheWriteCost);
+	const input = ratePerMillion(pricing.inputCost);
+	const output = ratePerMillion(pricing.outputCost);
+	const cacheRead = ratePerMillion(pricing.cacheReadCost);
+	const cacheWrite = ratePerMillion(pricing.cacheWriteCost);
 	if (input === undefined && output === undefined && cacheRead === undefined && cacheWrite === undefined) return undefined;
 	return {
 		...(input === undefined ? {} : { input }),

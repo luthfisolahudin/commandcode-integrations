@@ -15,11 +15,11 @@
     ]
   },
   "engines": {
-    "node": ">=24"
+    "node": ">=26"
   },
-  "packageManager": "pnpm@12.18.0",
+  "packageManager": "pnpm@12.21.0",
   "scripts": {
-    "check": "node scripts/engine.ts verify && pnpm run typecheck && pnpm run test:packages && pnpm run check:boundaries && pnpm run check:catalog && pnpm run doctor",
+    "check": "node scripts/engine.ts verify && pnpm run typecheck && pnpm run test:packages && pnpm run check:boundaries && pnpm run check:catalog && pnpm run report -- --check && pnpm run doctor",
     "typecheck": "tsc -p tsconfig.json",
     "test:packages": "pnpm -r test",
     "check:boundaries": "node packages/cli/src/commands/boundaries.ts",
@@ -31,7 +31,8 @@
     "probe:routes": "node packages/cli/src/commands/probe-routes.ts",
     "pricing": "node packages/cli/src/commands/pricing.ts",
     "verify:live": "node verify-live.ts",
-    "engine:update": "node scripts/engine.ts update"
+    "engine:update": "node scripts/engine.ts update",
+    "report:check": "node packages/cli/src/commands/report.ts --check"
   },
   "devDependencies": {
     "@earendil-works/pi-ai": "catalog:",
@@ -44,7 +45,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "12.18.0+sha512.9d7882d5dc82147ecfc4e062aa34834e0ad0296710a1837a1115ae012127d36b7109e321ac1598a1dd0a65597681b1e99917e12ed0d749eae91187943363beb3",
+      "version": "12.21.0+sha512-Zv2CeO4ok1zpUXktNDZ/869cQyonVkRYIwKVM4NbjaUpu+C+UTCv1W7QcT+4eJ5Hutgtk71a4v5UsVVi1idu8A==",
       "onFail": "error"
     }
   }

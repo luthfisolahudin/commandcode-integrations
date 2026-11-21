@@ -25,10 +25,10 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 2000000,
-        "output": 10000000,
-        "cacheRead": 100000,
-        "cacheWrite": 2500000
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.1,
+        "cacheWrite": 2.5
       }
     },
     {
@@ -55,10 +55,10 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 2000000,
-        "output": 10000000,
-        "cacheRead": 200000,
-        "cacheWrite": 2500000
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.2,
+        "cacheWrite": 2.5
       }
     },
     {
@@ -85,10 +85,10 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 3000000,
-        "output": 15000000,
-        "cacheRead": 300000,
-        "cacheWrite": 3750000
+        "input": 3,
+        "output": 15,
+        "cacheRead": 0.3,
+        "cacheWrite": 3.75
       }
     },
     {
@@ -115,10 +115,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 8000000,
-        "output": 40000000,
-        "cacheRead": 200000,
-        "cacheWrite": 10000000
+        "input": 8,
+        "output": 40,
+        "cacheRead": 0.2,
+        "cacheWrite": 10
       }
     },
     {
@@ -145,10 +145,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 10000000,
-        "output": 50000000,
-        "cacheRead": 250000,
-        "cacheWrite": 12500000
+        "input": 10,
+        "output": 50,
+        "cacheRead": 0.25,
+        "cacheWrite": 12.5
       }
     },
     {
@@ -175,10 +175,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 10000000,
-        "output": 50000000,
-        "cacheRead": 1000000,
-        "cacheWrite": 12500000
+        "input": 10,
+        "output": 50,
+        "cacheRead": 1,
+        "cacheWrite": 12.5
       }
     },
     {
@@ -205,10 +205,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 4000000,
-        "output": 20000000,
-        "cacheRead": 200000,
-        "cacheWrite": 5000000
+        "input": 4,
+        "output": 20,
+        "cacheRead": 0.2,
+        "cacheWrite": 5
       }
     },
     {
@@ -235,10 +235,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 5000000,
-        "output": 25000000,
-        "cacheRead": 500000,
-        "cacheWrite": 6250000
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite": 6.25
       }
     },
     {
@@ -265,10 +265,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 5000000,
-        "output": 25000000,
-        "cacheRead": 500000,
-        "cacheWrite": 6250000
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite": 6.25
       }
     },
     {
@@ -295,10 +295,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 5000000,
-        "output": 25000000,
-        "cacheRead": 500000,
-        "cacheWrite": 6250000
+        "input": 5,
+        "output": 25,
+        "cacheRead": 0.5,
+        "cacheWrite": 6.25
       }
     },
     {
@@ -325,10 +325,10 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 100000,
-        "output": 500000,
-        "cacheRead": 10000,
-        "cacheWrite": 125000
+        "input": 0.1,
+        "output": 0.5,
+        "cacheRead": 0.01,
+        "cacheWrite": 0.125
       }
     },
     {
@@ -349,10 +349,10 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 1000000,
-        "output": 5000000,
-        "cacheRead": 100000,
-        "cacheWrite": 1250000
+        "input": 1,
+        "output": 5,
+        "cacheRead": 0.1,
+        "cacheWrite": 1.25
       }
     },
     {
@@ -380,10 +380,10 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 10000000,
-        "output": 50000000,
-        "cacheRead": 1000000,
-        "cacheWrite": 12500000
+        "input": 10,
+        "output": 50,
+        "cacheRead": 1,
+        "cacheWrite": 12.5
       }
     },
     {
@@ -411,10 +411,10 @@
       "hidden": false,
       "minimumPlan": "individual-max",
       "pricing": {
-        "input": 2000000,
-        "output": 10000000,
-        "cacheRead": 100000,
-        "cacheWrite": 2500000
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.1,
+        "cacheWrite": 2.5
       }
     },
     {
@@ -442,10 +442,10 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 1000000,
-        "output": 5000000,
-        "cacheRead": 50000,
-        "cacheWrite": 1250000
+        "input": 1,
+        "output": 5,
+        "cacheRead": 0.05,
+        "cacheWrite": 1.25
       }
     },
     {
@@ -473,10 +473,10 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 2000000,
-        "output": 10000000,
-        "cacheRead": 200000,
-        "cacheWrite": 2500000
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.2,
+        "cacheWrite": 2.5
       }
     },
     {
@@ -504,10 +504,10 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 100000,
-        "output": 500000,
-        "cacheRead": 10000,
-        "cacheWrite": 125000
+        "input": 0.1,
+        "output": 0.5,
+        "cacheRead": 0.01,
+        "cacheWrite": 0.125
       }
     },
     {
@@ -535,10 +535,10 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 5000000,
-        "output": 30000000,
-        "cacheRead": 500000,
-        "cacheWrite": 6250000
+        "input": 5,
+        "output": 30,
+        "cacheRead": 0.5,
+        "cacheWrite": 6.25
       }
     },
     {
@@ -566,10 +566,10 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 2000000,
-        "output": 12000000,
-        "cacheRead": 200000,
-        "cacheWrite": 2500000
+        "input": 2,
+        "output": 12,
+        "cacheRead": 0.2,
+        "cacheWrite": 2.5
       }
     },
     {
@@ -597,10 +597,10 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 200000,
-        "output": 1200000,
-        "cacheRead": 20000,
-        "cacheWrite": 250000
+        "input": 0.2,
+        "output": 1.2,
+        "cacheRead": 0.02,
+        "cacheWrite": 0.25
       }
     },
     {
@@ -627,9 +627,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 5000000,
-        "output": 30000000,
-        "cacheRead": 500000,
+        "input": 5,
+        "output": 30,
+        "cacheRead": 0.5,
         "cacheWrite": 0
       }
     },
@@ -657,9 +657,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 2500000,
-        "output": 15000000,
-        "cacheRead": 250000,
+        "input": 2.5,
+        "output": 15,
+        "cacheRead": 0.25,
         "cacheWrite": 0
       }
     },
@@ -687,9 +687,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 2000000,
-        "output": 8000000,
-        "cacheRead": 500000,
+        "input": 2,
+        "output": 8,
+        "cacheRead": 0.5,
         "cacheWrite": 0
       }
     },
@@ -716,9 +716,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 750000,
-        "output": 4500000,
-        "cacheRead": 75000,
+        "input": 0.75,
+        "output": 4.5,
+        "cacheRead": 0.075,
         "cacheWrite": 0
       }
     },
@@ -744,9 +744,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 660000,
-        "output": 1980000,
-        "cacheRead": 22000
+        "input": 0.66,
+        "output": 1.98,
+        "cacheRead": 0.022
       }
     },
     {
@@ -771,9 +771,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 150000,
-        "output": 600000,
-        "cacheRead": 3000
+        "input": 0.15,
+        "output": 0.6,
+        "cacheRead": 0.003
       }
     },
     {
@@ -799,9 +799,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 150000,
-        "output": 600000,
-        "cacheRead": 3000
+        "input": 0.15,
+        "output": 0.6,
+        "cacheRead": 0.003
       }
     },
     {
@@ -825,9 +825,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 280000,
-        "output": 560000,
-        "cacheRead": 70000
+        "input": 0.28,
+        "output": 0.56,
+        "cacheRead": 0.07
       }
     },
     {
@@ -854,9 +854,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 150000,
-        "output": 600000,
-        "cacheRead": 3000
+        "input": 0.15,
+        "output": 0.6,
+        "cacheRead": 0.003
       }
     },
     {
@@ -883,9 +883,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 160000,
-        "output": 580000,
-        "cacheRead": 16000
+        "input": 0.16,
+        "output": 0.58,
+        "cacheRead": 0.016
       }
     },
     {
@@ -912,9 +912,9 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 2400000,
-        "output": 9600000,
-        "cacheRead": 48000
+        "input": 2.4,
+        "output": 9.6,
+        "cacheRead": 0.048
       }
     },
     {
@@ -940,9 +940,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 2000000,
-        "output": 10000000,
-        "cacheRead": 200000
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.2
       }
     },
     {
@@ -968,9 +968,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 3000000,
-        "output": 15000000,
-        "cacheRead": 300000
+        "input": 3,
+        "output": 15,
+        "cacheRead": 0.3
       }
     },
     {
@@ -992,9 +992,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 950000,
-        "output": 4000000,
-        "cacheRead": 190000
+        "input": 0.95,
+        "output": 4,
+        "cacheRead": 0.19
       }
     },
     {
@@ -1016,9 +1016,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1900000,
-        "output": 8000000,
-        "cacheRead": 380000
+        "input": 1.9,
+        "output": 8,
+        "cacheRead": 0.38
       }
     },
     {
@@ -1040,9 +1040,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 950000,
-        "output": 4000000,
-        "cacheRead": 160000
+        "input": 0.95,
+        "output": 4,
+        "cacheRead": 0.16
       }
     },
     {
@@ -1064,9 +1064,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 600000,
-        "output": 3000000,
-        "cacheRead": 100000
+        "input": 0.6,
+        "output": 3,
+        "cacheRead": 0.1
       }
     },
     {
@@ -1091,9 +1091,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 150000,
-        "output": 500000,
-        "cacheRead": 30000
+        "input": 0.15,
+        "output": 0.5,
+        "cacheRead": 0.03
       }
     },
     {
@@ -1119,9 +1119,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 370000,
-        "output": 1250000,
-        "cacheRead": 75000
+        "input": 0.37,
+        "output": 1.25,
+        "cacheRead": 0.075
       }
     },
     {
@@ -1145,9 +1145,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1400000,
-        "output": 4400000,
-        "cacheRead": 260000
+        "input": 1.4,
+        "output": 4.4,
+        "cacheRead": 0.26
       }
     },
     {
@@ -1171,9 +1171,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1400000,
-        "output": 4400000,
-        "cacheRead": 260000
+        "input": 1.4,
+        "output": 4.4,
+        "cacheRead": 0.26
       }
     },
     {
@@ -1194,9 +1194,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 3000000,
-        "output": 10250000,
-        "cacheRead": 500000
+        "input": 3,
+        "output": 10.25,
+        "cacheRead": 0.5
       }
     },
     {
@@ -1217,9 +1217,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1400000,
-        "output": 4400000,
-        "cacheRead": 260000
+        "input": 1.4,
+        "output": 4.4,
+        "cacheRead": 0.26
       }
     },
     {
@@ -1240,9 +1240,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1000000,
-        "output": 3200000,
-        "cacheRead": 200000
+        "input": 1,
+        "output": 3.2,
+        "cacheRead": 0.2
       }
     },
     {
@@ -1269,9 +1269,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 150000,
-        "output": 600000,
-        "cacheRead": 15000
+        "input": 0.15,
+        "output": 0.6,
+        "cacheRead": 0.015
       }
     },
     {
@@ -1297,9 +1297,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 300000,
-        "output": 1200000,
-        "cacheRead": 60000
+        "input": 0.3,
+        "output": 1.2,
+        "cacheRead": 0.06
       }
     },
     {
@@ -1320,9 +1320,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 300000,
-        "output": 1200000,
-        "cacheRead": 60000
+        "input": 0.3,
+        "output": 1.2,
+        "cacheRead": 0.06
       }
     },
     {
@@ -1343,9 +1343,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 300000,
-        "output": 1200000,
-        "cacheRead": 30000
+        "input": 0.3,
+        "output": 1.2,
+        "cacheRead": 0.03
       }
     },
     {
@@ -1366,9 +1366,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 160000,
-        "output": 640000,
-        "cacheRead": 20000
+        "input": 0.16,
+        "output": 0.64,
+        "cacheRead": 0.02
       }
     },
     {
@@ -1390,9 +1390,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 435000,
-        "output": 870000,
-        "cacheRead": 3600
+        "input": 0.435,
+        "output": 0.87,
+        "cacheRead": 0.0036
       }
     },
     {
@@ -1414,9 +1414,9 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 4350000,
-        "output": 8700000,
-        "cacheRead": 36000
+        "input": 4.35,
+        "output": 8.7,
+        "cacheRead": 0.036
       }
     },
     {
@@ -1438,9 +1438,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 140000,
-        "output": 280000,
-        "cacheRead": 2800
+        "input": 0.14,
+        "output": 0.28,
+        "cacheRead": 0.0028
       }
     },
     {
@@ -1466,9 +1466,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 150000,
-        "output": 470000,
-        "cacheRead": 16000
+        "input": 0.15,
+        "output": 0.47,
+        "cacheRead": 0.016
       }
     },
     {
@@ -1494,10 +1494,10 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 4000000,
-        "output": 12000000,
-        "cacheRead": 500000,
-        "cacheWrite": 5000000
+        "input": 4,
+        "output": 12,
+        "cacheRead": 0.5,
+        "cacheWrite": 5
       }
     },
     {
@@ -1522,9 +1522,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 2000000,
-        "output": 6000000,
-        "cacheRead": 250000
+        "input": 2,
+        "output": 6,
+        "cacheRead": 0.25
       }
     },
     {
@@ -1550,10 +1550,10 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 2000000,
-        "output": 6000000,
-        "cacheRead": 250000,
-        "cacheWrite": 2500000
+        "input": 2,
+        "output": 6,
+        "cacheRead": 0.25,
+        "cacheWrite": 2.5
       }
     },
     {
@@ -1579,9 +1579,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 400000,
-        "output": 3000000,
-        "cacheRead": 40000
+        "input": 0.4,
+        "output": 3,
+        "cacheRead": 0.04
       }
     },
     {
@@ -1606,9 +1606,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 160000,
-        "output": 470000,
-        "cacheRead": 16000
+        "input": 0.16,
+        "output": 0.47,
+        "cacheRead": 0.016
       }
     },
     {
@@ -1629,10 +1629,10 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 2500000,
-        "output": 7500000,
-        "cacheRead": 500000,
-        "cacheWrite": 3130000
+        "input": 2.5,
+        "output": 7.5,
+        "cacheRead": 0.5,
+        "cacheWrite": 3.13
       }
     },
     {
@@ -1654,10 +1654,10 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 400000,
-        "output": 1600000,
-        "cacheRead": 80000,
-        "cacheWrite": 500000
+        "input": 0.4,
+        "output": 1.6,
+        "cacheRead": 0.08,
+        "cacheWrite": 0.5
       }
     },
     {
@@ -1679,10 +1679,10 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 30000,
-        "output": 130000,
-        "cacheRead": 6000,
-        "cacheWrite": 38000
+        "input": 0.03,
+        "output": 0.13,
+        "cacheRead": 0.006,
+        "cacheWrite": 0.038
       }
     },
     {
@@ -1703,10 +1703,10 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1300000,
-        "output": 7800000,
-        "cacheRead": 260000,
-        "cacheWrite": 1630000
+        "input": 1.3,
+        "output": 7.8,
+        "cacheRead": 0.26,
+        "cacheWrite": 1.63
       }
     },
     {
@@ -1728,9 +1728,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 500000,
-        "output": 3000000,
-        "cacheRead": 100000
+        "input": 0.5,
+        "output": 3,
+        "cacheRead": 0.1
       }
     },
     {
@@ -1750,9 +1750,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 300000,
-        "output": 1200000,
-        "cacheRead": 6000
+        "input": 0.3,
+        "output": 1.2,
+        "cacheRead": 0.006
       }
     },
     {
@@ -1778,9 +1778,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1000000,
-        "output": 2700000,
-        "cacheRead": 50000
+        "input": 1,
+        "output": 2.7,
+        "cacheRead": 0.05
       }
     },
     {
@@ -1802,9 +1802,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 200000,
-        "output": 1150000,
-        "cacheRead": 40000
+        "input": 0.2,
+        "output": 1.15,
+        "cacheRead": 0.04
       }
     },
     {
@@ -1825,9 +1825,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 90000,
-        "output": 300000,
-        "cacheRead": 20000
+        "input": 0.09,
+        "output": 0.3,
+        "cacheRead": 0.02
       }
     },
     {
@@ -1848,9 +1848,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 140000,
-        "output": 580000,
-        "cacheRead": 35000
+        "input": 0.14,
+        "output": 0.58,
+        "cacheRead": 0.035
       }
     },
     {
@@ -1874,9 +1874,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 834000,
-        "output": 2501000,
-        "cacheRead": 42000
+        "input": 0.834,
+        "output": 2.501,
+        "cacheRead": 0.042
       }
     },
     {
@@ -1902,9 +1902,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 2000000,
-        "output": 10000000,
-        "cacheRead": 100000
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.1
       }
     },
     {
@@ -1930,9 +1930,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 2000000,
-        "output": 10000000,
-        "cacheRead": 100000
+        "input": 2,
+        "output": 10,
+        "cacheRead": 0.1
       }
     },
     {
@@ -1958,9 +1958,9 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 1500000,
-        "output": 7500000,
-        "cacheRead": 150000
+        "input": 1.5,
+        "output": 7.5,
+        "cacheRead": 0.15
       }
     },
     {
@@ -1985,10 +1985,10 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 1500000,
-        "output": 7500000,
-        "cacheRead": 150000,
-        "cacheWrite": 83340
+        "input": 1.5,
+        "output": 7.5,
+        "cacheRead": 0.15,
+        "cacheWrite": 0.08334
       }
     },
     {
@@ -2014,9 +2014,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 1500000,
-        "output": 7500000,
-        "cacheRead": 150000
+        "input": 1.5,
+        "output": 7.5,
+        "cacheRead": 0.15
       }
     },
     {
@@ -2042,9 +2042,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 1500000,
-        "output": 9000000,
-        "cacheRead": 150000
+        "input": 1.5,
+        "output": 9,
+        "cacheRead": 0.15
       }
     },
     {
@@ -2070,9 +2070,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 300000,
-        "output": 2500000,
-        "cacheRead": 30000
+        "input": 0.3,
+        "output": 2.5,
+        "cacheRead": 0.03
       }
     },
     {
@@ -2098,9 +2098,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 250000,
-        "output": 1500000,
-        "cacheRead": 30000
+        "input": 0.25,
+        "output": 1.5,
+        "cacheRead": 0.03
       }
     },
     {
@@ -2125,9 +2125,9 @@
       "hidden": false,
       "minimumPlan": "individual-provider",
       "pricing": {
-        "input": 5000000,
-        "output": 30000000,
-        "cacheRead": 500000
+        "input": 5,
+        "output": 30,
+        "cacheRead": 0.5
       }
     },
     {
@@ -2148,9 +2148,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 600000,
-        "output": 2400000,
-        "cacheRead": 120000
+        "input": 0.6,
+        "output": 2.4,
+        "cacheRead": 0.12
       }
     },
     {
@@ -2176,9 +2176,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 200000,
-        "output": 500000,
-        "cacheRead": 40000
+        "input": 0.2,
+        "output": 0.5,
+        "cacheRead": 0.04
       }
     },
     {
@@ -2200,9 +2200,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1000000,
-        "output": 4050000,
-        "cacheRead": 170000
+        "input": 1,
+        "output": 4.05,
+        "cacheRead": 0.17
       }
     },
     {
@@ -2224,9 +2224,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 500000,
-        "output": 1200000,
-        "cacheRead": 100000
+        "input": 0.5,
+        "output": 1.2,
+        "cacheRead": 0.1
       }
     },
     {
@@ -2278,9 +2278,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 300000,
-        "output": 900000,
-        "cacheRead": 60000
+        "input": 0.3,
+        "output": 0.9,
+        "cacheRead": 0.06
       }
     },
     {
@@ -2304,9 +2304,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 300000,
-        "output": 900000,
-        "cacheRead": 60000
+        "input": 0.3,
+        "output": 0.9,
+        "cacheRead": 0.06
       }
     },
     {
@@ -2333,9 +2333,9 @@
       "hidden": false,
       "minimumPlan": "individual-pro",
       "pricing": {
-        "input": 1250000,
-        "output": 4250000,
-        "cacheRead": 150000
+        "input": 1.25,
+        "output": 4.25,
+        "cacheRead": 0.15
       }
     },
     {
@@ -2362,9 +2362,9 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 1250000,
-        "output": 4250000,
-        "cacheRead": 150000
+        "input": 1.25,
+        "output": 4.25,
+        "cacheRead": 0.15
       }
     },
     {
@@ -2391,9 +2391,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 100000,
-        "output": 200000,
-        "cacheRead": 2000
+        "input": 0.1,
+        "output": 0.2,
+        "cacheRead": 0.002
       }
     },
     {
@@ -2421,9 +2421,9 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 1250000,
-        "output": 4250000,
-        "cacheRead": 150000
+        "input": 1.25,
+        "output": 4.25,
+        "cacheRead": 0.15
       }
     },
     {
@@ -2450,9 +2450,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 100000,
-        "output": 200000,
-        "cacheRead": 2000
+        "input": 0.1,
+        "output": 0.2,
+        "cacheRead": 0.002
       }
     },
     {
@@ -2478,9 +2478,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1250000,
-        "output": 4250000,
-        "cacheRead": 150000
+        "input": 1.25,
+        "output": 4.25,
+        "cacheRead": 0.15
       }
     },
     {
@@ -2507,9 +2507,9 @@
       "hidden": false,
       "minimumPlan": "individual-max",
       "pricing": {
-        "input": 4000000,
-        "output": 20000000,
-        "cacheRead": 200000
+        "input": 4,
+        "output": 20,
+        "cacheRead": 0.2
       }
     },
     {
@@ -2537,9 +2537,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 100000,
-        "output": 500000,
-        "cacheRead": 4000
+        "input": 0.1,
+        "output": 0.5,
+        "cacheRead": 0.004
       }
     },
     {
@@ -2565,9 +2565,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 2000000,
-        "output": 6000000,
-        "cacheRead": 500000
+        "input": 2,
+        "output": 6,
+        "cacheRead": 0.5
       }
     },
     {
@@ -2594,9 +2594,9 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 2000000,
-        "output": 6000000,
-        "cacheRead": 500000
+        "input": 2,
+        "output": 6,
+        "cacheRead": 0.5
       }
     },
     {
@@ -2623,9 +2623,9 @@
       "hidden": false,
       "minimumPlan": "individual-goat",
       "pricing": {
-        "input": 2000000,
-        "output": 6000000,
-        "cacheRead": 500000
+        "input": 2,
+        "output": 6,
+        "cacheRead": 0.5
       }
     },
     {
@@ -2651,9 +2651,9 @@
       "hidden": false,
       "minimumPlan": "individual-go",
       "pricing": {
-        "input": 1360000,
-        "output": 4179999.9999999995,
-        "cacheRead": 140000
+        "input": 1.36,
+        "output": 4.18,
+        "cacheRead": 0.14
       }
     }
   ]

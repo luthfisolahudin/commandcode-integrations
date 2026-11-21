@@ -3,9 +3,9 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { test } from "node:test";
 
-import { capabilityView, type RawRecord } from "@luthfisolahudin/commandcode-integrations-contract";
+import { capabilityView, type RawRecord } from "../../../engine/contract/index.ts";
 
-import { invariants, packs } from "@luthfisolahudin/commandcode-integrations-provider";
+import { invariants, packs } from "../../provider/src/index.ts";
 
 /**
  * Sanity gate for the vendor surface. It stays contract-only on purpose: the

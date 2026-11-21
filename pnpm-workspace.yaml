@@ -1,7 +1,6 @@
 packages:
   - "packages/*"
   - "adapters/*"
-  - "examples/*"
 
 # One version per dependency for the whole workspace. Package manifests reference
 # these with "catalog:" so a host SDK bump is a one-line change here, not a sweep
@@ -11,7 +10,7 @@ catalog:
   "@earendil-works/pi-coding-agent": "^1.5.2"
   "@opencode/ai": "^2.2.7"
   "@opencode/plugin": "^2.2.7"
-  "@types/node": "^24.10.1"
+  "@types/node": "^26.6.6"
   typescript: "^5.9.3"
 
 # Host SDKs are pinned to the versions the local harnesses run, and their

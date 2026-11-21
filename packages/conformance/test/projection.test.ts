@@ -3,11 +3,11 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { test } from "node:test";
 
-import { toOpencodeModels } from "@luthfisolahudin/commandcode-integrations-opencode/model";
-import { toPiModels } from "@luthfisolahudin/commandcode-integrations-pi/model";
-import { buildModels } from "@luthfisolahudin/commandcode-integrations-catalog";
-import type { RawRecord } from "@luthfisolahudin/commandcode-integrations-contract";
-import { MEASURED_WIRE_EFFORT, commandCodePack, measuredIds, mergeCatalog, packs } from "@luthfisolahudin/commandcode-integrations-provider";
+import { toOpencodeModels } from "../../../engine/opencode/model.ts";
+import { toPiModels } from "../../../engine/pi/model.ts";
+import { buildModels } from "../../../engine/catalog/index.ts";
+import type { RawRecord } from "../../../engine/contract/index.ts";
+import { MEASURED_WIRE_EFFORT, measuredIds, packs } from "../../provider/src/index.ts";
 
 const ROOT = join(import.meta.dirname, "../../..");
 const FIXTURE = join(ROOT, "packages/provider/fixtures/catalog.json");
@@ -65,7 +65,13 @@ for (const pack of packs) {
 
 	test(`${pack.id}: an effort menu exists only where a measurement does`, () => {
 		const models = buildModels(pack, records(), { measuredIds });
-		const host = { providerId: pack.id, baseUrl: pack.baseUrl };
+		// The Pi projection needs the same format overrides the runtime passes, or a
+		// pack that declares an equivalence would look unprojected here only.
+		const host = {
+			providerId: pack.id,
+			baseUrl: pack.baseUrl,
+			...(pack.thinkingFormatOverrides === undefined ? {} : { thinkingFormatOverrides: pack.thinkingFormatOverrides }),
+		};
 		const pi = new Map(toPiModels(models, MEASURED_WIRE_EFFORT, host).map((model) => [model.id, model]));
 		const opencode = new Map(toOpencodeModels(models, MEASURED_WIRE_EFFORT, pack.thinkingFormatOverrides).map((model) => [String(model.id), model]));
 
@@ -116,13 +122,3 @@ for (const pack of packs) {
 		}
 	});
 }
-
-test("a CommandCode catalog rate reaches Pi with catalog provenance", () => {
-	const raw = mergeCatalog({ schemaVersion: 1, catalogVersion: "fixture", data: [{
-		id: "fixture-priced", pricing: { inputCost: 0.000003, outputCost: 0.000015 },
-	}] }, []);
-	const models = buildModels(commandCodePack, raw);
-	const [pi] = toPiModels(models, {}, { providerId: commandCodePack.id, baseUrl: commandCodePack.baseUrl });
-	assert.deepEqual(pi?.cost, { input: 3, output: 15, cacheRead: 0, cacheWrite: 0 });
-	assert.deepEqual(models[0]?.pricingSources, { input: "catalog", output: "catalog", cacheRead: "default", cacheWrite: "default" });
-});

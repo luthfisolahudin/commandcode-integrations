@@ -85,15 +85,45 @@ test("efforts are filtered to the enum CommandCode accepts", () => {
 	assert.deepEqual(records[0]?.reasoningEfforts, ["low", "max"]);
 });
 
-test("pricing converts per-token to per-million and never borrows a cache price", () => {
-	assert.deepEqual(normalizePricing({ inputCost: 0.000003, outputCost: 0.000015, cacheReadCost: 0.0000003 }), {
-		input: 3,
-		output: 15,
-		cacheRead: 0.3,
+test("pricing passes the catalog's per-1M rates through unchanged", () => {
+	// Rates published at https://commandcode.ai/docs/plans/goat, which states
+	// "Rates are per 1M tokens": Claude Sonnet 5.5 $2.00 in / $10.00 out /
+	// $0.10 cache read / $2.50 cache write. The catalog reports exactly these,
+	// so any conversion here is a 1,000,000x pricing bug that still typechecks.
+	assert.deepEqual(normalizePricing({ inputCost: 2, outputCost: 10, cacheReadCost: 0.1, cacheWriteCost: 2.5 }), {
+		input: 2,
+		output: 10,
+		cacheRead: 0.1,
+		cacheWrite: 2.5,
+	});
+	// Claude Haiku 5.5: $0.10 / $0.50 / $0.01 / $0.125.
+	assert.deepEqual(normalizePricing({ inputCost: 0.1, outputCost: 0.5, cacheReadCost: 0.01, cacheWriteCost: 0.125 }), {
+		input: 0.1,
+		output: 0.5,
+		cacheRead: 0.01,
+		cacheWrite: 0.125,
 	});
 	assert.equal(normalizePricing({ contextTiers: [{ maxContext: 100 }] }), undefined);
 	assert.equal(normalizePricing(undefined), undefined);
 	assert.deepEqual(normalizePricing({ inputCost: 0, outputCost: 0 }), { input: 0, output: 0 });
+});
+
+test("the fixture's prices match the vendor's published table", () => {
+	// A price list is the one fact a typo makes silently wrong: it renders as a
+	// plausible number in every picker. Pin a few rows against the docs.
+	const published: Readonly<Record<string, readonly [number, number, number, number | undefined]>> = {
+		"claude-sonnet-5-5": [2, 10, 0.1, 2.5],
+		"claude-haiku-5-5": [0.1, 0.5, 0.01, 0.125],
+		"gpt-6-luna": [0.1, 0.5, 0.01, 0.125],
+	};
+	for (const [id, [input, output, cacheRead, cacheWrite]] of Object.entries(published)) {
+		const model = client.data.find((entry) => entry.id === id);
+		assert.ok(model?.pricing !== undefined, `${id} has no pricing in the captured client catalog`);
+		assert.equal(model.pricing.inputCost, input, `${id} input`);
+		assert.equal(model.pricing.outputCost, output, `${id} output`);
+		assert.equal(model.pricing.cacheReadCost, cacheRead, `${id} cache read`);
+		assert.equal(model.pricing.cacheWriteCost, cacheWrite, `${id} cache write`);
+	}
 });
 
 test("the captured catalog routes to both protocols and drops nothing visible", () => {

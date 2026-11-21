@@ -18,13 +18,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Versions come from the repo: .node-version pins Node and
+      # package.json#devEngines.packageManager pins pnpm (version + integrity).
       - uses: pnpm/action-setup@v4
-        with:
-          version: 12.18.0
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version-file: .node-version
           cache: pnpm
 
       - name: Install
@@ -40,8 +40,18 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          $modes = git ls-files -s CLAUDE.md, .claude/skills
-          if ($modes -notmatch '120000') {
-            Write-Error "CLAUDE.md / .claude/skills were checked out as regular files. Symlink support is required."
-            exit 1
+          # One `git ls-files` per path on purpose: `git ls-files -s a, b` treats
+          # "a, b" as a single literal path, matches nothing, and the check below
+          # would silently pass.
+          foreach ($path in 'CLAUDE.md', '.claude/skills') {
+            $mode = git ls-files -s -- $path
+            if (-not $mode) {
+              Write-Error "$path is not in the index."
+              exit 1
+            }
+            if ($mode -notmatch '^120000') {
+              Write-Error "$path was checked out as a regular file; symlink support is required."
+              exit 1
+            }
           }
+          Write-Output "CLAUDE.md and .claude/skills are symlinks"

@@ -1,12 +1,18 @@
 #!/usr/bin/env node
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-import { modelsDevCachePath, readCachedModelIndex } from "@luthfisolahudin/commandcode-integrations-catalog";
+import { modelsDevCachePath, readCachedModelIndex } from "../../../../engine/catalog/index.ts";
 
 import { excluded, inventoryRows, loadAll, unmeasured } from "../lib/packs.ts";
 
 const write = process.argv.includes("--write");
+const check = process.argv.includes("--check");
+if (write && check) {
+	console.error("report: --write and --check are mutually exclusive");
+	process.exit(2);
+}
+
 const cached = readCachedModelIndex(modelsDevCachePath());
 const loaded = loadAll(process.cwd(), cached === undefined ? {} : { modelsDev: cached });
 const lines: string[] = [
@@ -40,10 +46,41 @@ for (const entry of loaded) {
 }
 
 const markdown = `${lines.join("\n").trimEnd()}\n`;
+const path = join(process.cwd(), "docs", "PROVIDERS.md");
+
 if (write) {
-	const path = join(process.cwd(), "docs", "PROVIDERS.md");
 	writeFileSync(path, markdown);
 	console.log(`wrote docs/PROVIDERS.md (${markdown.split("\n").length} lines)`);
+} else if (check) {
+	// A generated file that drifts is worse than no generated file: it keeps
+	// reporting yesterday's facts with today's authority.
+	let current: string;
+	try {
+		current = readFileSync(path, "utf8");
+	} catch {
+		console.error("report: docs/PROVIDERS.md is missing. Run `task report --write`.");
+		process.exit(1);
+	}
+	if (current === markdown) {
+		console.log("report: docs/PROVIDERS.md matches the catalog");
+	} else {
+		const expected = markdown.split("\n");
+		const actual = current.split("\n");
+		const limit = Math.max(expected.length, actual.length);
+		let changed = 0;
+		for (let index = 0; index < limit; index++) {
+			if (expected[index] === actual[index]) continue;
+			if (changed === 0) console.error("report: docs/PROVIDERS.md is stale. First difference:");
+			if (changed < 10) {
+				console.error(`  line ${index + 1}`);
+				console.error(`    committed: ${actual[index] ?? "<end of file>"}`);
+				console.error(`    generated: ${expected[index] ?? "<end of file>"}`);
+			}
+			changed++;
+		}
+		console.error(`report: ${changed} line(s) differ. Run \`task report --write\` and commit the result.`);
+		process.exit(1);
+	}
 } else {
 	process.stdout.write(markdown);
 }

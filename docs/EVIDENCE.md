@@ -57,3 +57,19 @@ default user agent. The pack sends `commandcode-integrations/0.1` on every reque
 including the two catalog views.
 
 - 2026-11-21: engine v2.0.0 streamed chat in Pi 1.5.2 and OpenCode 2.3.2 with `stealth/glyph-cluster:free`. The live client catalog confirmed zero input and output token rates.
+
+## Pricing unit
+
+The client catalog's `pricing.*Cost` fields are **USD per 1M tokens**, not per
+token. The hosts also want per 1M, so `normalizePricing` passes the numbers through
+unchanged; any multiplication is a 1,000,000x error.
+
+- 2026-11-21: `https://commandcode.ai/docs/plans/goat` states "Rates are per 1M
+  tokens" and lists Claude Sonnet 5.5 at `$2.00 / $10.00 / $0.10 / $2.50` and
+  Claude Haiku 5.5 at `$0.10 / $0.50 / $0.01 / $0.125`. `packages/provider/fixtures/client-catalog.json`
+  reports exactly those four numbers for both models, so the capture and the
+  published table agree on the unit.
+- Consequence found and fixed: the earlier `perMillion()` helper multiplied by
+  `1_000_000`, so the committed `fixtures/catalog.json` carried `input: 3000000`
+  for a `$3` model. `packages/provider/test/catalog.test.ts` now pins three rows
+  against the vendor table, so the unit cannot silently drift again.

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { PACK_SCHEMA_VERSION, definePack } from "@luthfisolahudin/commandcode-integrations-contract";
+import { PACK_SCHEMA_VERSION, definePack } from "../../../engine/contract/index.ts";
 
 import { refreshCatalog, type Snapshot } from "../src/index.ts";
 

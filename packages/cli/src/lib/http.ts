@@ -1,1 +1,1 @@
-export { resolveApiKey as resolveKey } from "@luthfisolahudin/commandcode-integrations-catalog";
+export { resolveApiKey as resolveKey } from "../../../../engine/catalog/index.ts";

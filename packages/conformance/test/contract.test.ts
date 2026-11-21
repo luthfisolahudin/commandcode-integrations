@@ -3,9 +3,9 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import { join } from "node:path";
 import { test } from "node:test";
 
-import { checkAgentFiles, checkProviderShape, checkSkills } from "@luthfisolahudin/commandcode-integrations-cli";
-import { PACK_SCHEMA_VERSION, validatePack } from "@luthfisolahudin/commandcode-integrations-contract";
-import { packs } from "@luthfisolahudin/commandcode-integrations-provider";
+import { checkAgentFiles, checkProviderShape, checkSkills } from "../../cli/src/index.ts";
+import { PACK_SCHEMA_VERSION, validatePack } from "../../../engine/contract/index.ts";
+import { packs } from "../../provider/src/index.ts";
 
 const ROOT = join(import.meta.dirname, "../../..");
 
