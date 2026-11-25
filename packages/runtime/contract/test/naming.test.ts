@@ -41,3 +41,28 @@ test("a pack's brand map extends the shared table instead of replacing it", () =
 test("a pack can still override a default brand", () => {
 	assert.equal(displayName("gpt-6.1-terra", { brands: { gpt: "GPT-OpenAI" } }), "GPT-OpenAI 6.1 Terra");
 });
+
+test("a catalog variant stays visible as a qualifier", () => {
+	assert.equal(displayName("hy4-flash:free"), "Hy4 Flash (free)");
+	assert.equal(displayName("swe-2-high:free"), "SWE 2 High (free)");
+});
+
+test("a routing variant is dropped: the base entry describes the model", () => {
+	assert.equal(displayName("gpt-5.2:nitro"), "GPT 5.2");
+	assert.equal(displayName("gpt-5.2:nitro:exacto"), "GPT 5.2");
+});
+
+test("catalog variants survive alongside routing variants", () => {
+	assert.equal(displayName("laguna-s-2.1:free:nitro"), "Laguna S 2.1 (free)");
+	assert.equal(displayName("openai/gpt-5.2:free:nitro"), "GPT 5.2 (openai, free)");
+});
+
+test("an unrecognised tag is shown rather than swallowed", () => {
+	assert.equal(displayName("mystery-model:preview"), "Mystery Model (preview)");
+});
+
+test("a variant never leaks into the slug split", () => {
+	// The tag used to ride along on the last token and be capitalised into it.
+	assert.equal(displayName("hy4-flash:free"), "Hy4 Flash (free)");
+	assert.equal(displayName("vendor/hy4-flash:free", { owners: { vendor: "Vendor" } }), "Hy4 Flash (Vendor, free)");
+});

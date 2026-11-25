@@ -2,7 +2,7 @@ import { createCatalogRuntime, resolveApiKey } from "@luthfisolahudin/ai-integra
 import type { Pack } from "@luthfisolahudin/ai-integrations-contract";
 import { Plugin, Provider } from "@opencode/plugin";
 
-import { DEFAULT_PACKAGE, toOpencodeModels } from "./model.ts";
+import { DEFAULT_PACKAGE, providerSettings, toOpencodeModels } from "./model.ts";
 
 const REFRESH_MS = 10 * 60_000;
 
@@ -21,7 +21,7 @@ export function createOpenCodePlugin(pack: Pack, effort: Readonly<Record<string,
 				name: pack.name,
 				activation: "enabled" as const,
 				package: pack.hosts?.opencode?.package ?? DEFAULT_PACKAGE,
-				settings: { baseURL: pack.baseUrl, apiKey },
+				settings: providerSettings(pack.baseUrl, apiKey),
 				headers: pack.discovery.userAgent === undefined ? undefined : { "User-Agent": pack.discovery.userAgent },
 			};
 			const baseline = catalog.baseline(connection);

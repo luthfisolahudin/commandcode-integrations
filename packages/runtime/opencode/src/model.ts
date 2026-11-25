@@ -9,6 +9,25 @@ export const PACKAGE_BY_API: Readonly<Record<string, string>> = {
 	"openai-responses": "@opencode/ai/providers/openai-compatible/responses",
 };
 
+/**
+ * Builds the provider `settings` block, omitting `apiKey` when there is none.
+ *
+ * A keyless pack (a provider whose catalog is public, or one whose credential
+ * has not been exported into the host's environment) resolves to `undefined`.
+ * OpenCode encodes provider snapshots as JSON, and an `undefined` value fails
+ * that encode with `SchemaError: Expected JSON value at ["apiKey"]`. The error
+ * is not scoped to the offending provider: it invalidates the whole provider
+ * and model snapshot, so `GET /api/model` answers HTTP 500 and *every* plugin
+ * provider disappears from the picker.
+ *
+ * Omitting the field is the correct shape. A provider the host cannot
+ * authenticate is registered but unusable, which is honest and local, instead
+ * of taking the other providers down with it.
+ */
+export function providerSettings(baseURL: string, apiKey: string | undefined): Record<string, string> {
+	return apiKey === undefined ? { baseURL } : { baseURL, apiKey };
+}
+
 export function toOpencodeModel(
 	model: NormalizedModel,
 	forcedEffort?: string,

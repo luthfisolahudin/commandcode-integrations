@@ -3,7 +3,7 @@ import { test } from "node:test";
 
 import type { NormalizedModel } from "@luthfisolahudin/ai-integrations-contract";
 
-import { toOpencodeModel, toOpencodeModels } from "../src/model.ts";
+import { toOpencodeModel, toOpencodeModels, providerSettings } from "../src/model.ts";
 
 function model(overrides: Partial<NormalizedModel> = {}): NormalizedModel {
 	return {
@@ -80,4 +80,20 @@ test("a routed api selects the per-model host package", () => {
 	assert.equal(toOpencodeModel(model({ api: "anthropic-messages" }))?.package, "@opencode/ai/providers/anthropic-compatible");
 	assert.equal(toOpencodeModel(model({ api: "openai-responses" }))?.package, "@opencode/ai/providers/openai-compatible/responses");
 	assert.equal(toOpencodeModel(model())?.package, undefined);
+});
+
+test("provider settings carry the key when one resolves", () => {
+	assert.deepEqual(providerSettings("https://example.test/v1", "sk-key"), {
+		baseURL: "https://example.test/v1",
+		apiKey: "sk-key",
+	});
+});
+
+test("a keyless provider omits apiKey instead of carrying undefined", () => {
+	const settings = providerSettings("https://example.test/v1", undefined);
+	// OpenCode encodes provider snapshots as JSON; an undefined value throws
+	// SchemaError and invalidates every provider, not just this one.
+	assert.deepEqual(settings, { baseURL: "https://example.test/v1" });
+	assert.equal(Object.hasOwn(settings, "apiKey"), false);
+	assert.equal(JSON.stringify({ settings }).includes("undefined"), false);
 });
