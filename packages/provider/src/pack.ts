@@ -3,6 +3,7 @@ import { PACK_SCHEMA_VERSION, definePack } from "@luthfisolahudin/ai-integration
 import { mergeCatalog, type ClientCatalog, type CommandCodeRecord, type PublicModel } from "./catalog.ts";
 import { curated } from "./curated.ts";
 import { FALLBACK } from "./fallback.ts";
+import { readCommandCodeQuota } from "./quota.ts";
 
 const BASE_URL = "https://api.commandcode.ai/provider/v1";
 const USER_AGENT = "commandcode-integrations/0.1";
@@ -100,6 +101,9 @@ export const commandCodePack = definePack({
 				thinkingCanDisable: efforts.includes("off"),
 				...(pricing === undefined ? {} : { cost: pricing }),
 			};
+		},
+		quota(context) {
+			return readCommandCodeQuota(context);
 		},
 	},
 	hosts: {
