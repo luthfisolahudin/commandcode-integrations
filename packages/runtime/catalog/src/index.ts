@@ -6,3 +6,4 @@ export * from "./availability.ts";
 export * from "./provenance.ts";
 export * from "./refresh.ts";
 export * from "./runtime.ts";
+export * from "./quota.ts";

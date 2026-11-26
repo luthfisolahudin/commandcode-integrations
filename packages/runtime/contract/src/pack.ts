@@ -1,8 +1,9 @@
+import type { HttpQuotaAccount } from "./quota.ts";
 import type { ModelFacts, NormalizedModel, RawRecord } from "./record.ts";
 import { PI_THINKING_FORMATS } from "./thinking.ts";
 
 /** Bump when a pack needs new fields or renamed hooks. `provider-doctor` checks it. */
-export const PACK_SCHEMA_VERSION = 1;
+export const PACK_SCHEMA_VERSION = 2;
 
 /**
  * Dotted-path aliases: where this provider puts each fact, most specific first.
@@ -75,6 +76,8 @@ export interface PackHooks {
 	decorate?: (model: NormalizedModel) => NormalizedModel;
 	/** Request-time parameters for a thinking level. */
 	requestParams?: (input: { level: string; effort: string }) => Record<string, unknown>;
+	/** Read account subscription or credit quotas for T3 Code's HTTP quota source. */
+	quota?: (context: HookContext) => Promise<HttpQuotaAccount[]>;
 }
 
 export interface HostHints {

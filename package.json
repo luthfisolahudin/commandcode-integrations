@@ -30,6 +30,7 @@
     "probe:effort": "node packages/dev/cli/src/commands/probe-effort.ts",
     "probe:routes": "node packages/dev/cli/src/commands/probe-routes.ts",
     "pricing": "node packages/dev/cli/src/commands/pricing.ts",
+    "quota": "node packages/dev/cli/src/commands/quota.ts",
     "verify:live": "node verify-live.ts",
     "sync:upstream": "node scripts/sync-upstream.ts",
     "report:check": "node packages/dev/cli/src/commands/report.ts --check"

@@ -41,6 +41,11 @@ tasks:
     cmds:
       - pnpm pricing
 
+  quota:
+    desc: Print or serve T3 Code HTTP quota accounts for this repo
+    cmds:
+      - pnpm quota {{.CLI_ARGS}}
+
   doctor:
     desc: Verify repo invariants (symlinks, AGENTS.md, skills, pack shape)
     cmds:
