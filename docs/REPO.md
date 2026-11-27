@@ -28,3 +28,25 @@ Repo-owned. Things a future reader would otherwise rediscover the hard way.
   the billing endpoints gate on it, so a stale value can be refused. `task
   sync:cli-version` rewrites it from npm and a daily workflow keeps it current —
   do not hand-edit it in PRs.
+- **`zdr` is a capability, not a promise of price.** `true` means at least one
+  ZDR-capable upstream exists for that model; it does not mean ZDR is free. The
+  vendor's own docs split models into *included* (same price, same plan usage) and
+  *extra* (pass-through pricing, metered at the plan's default usage), and the
+  catalog does not say which is which. It can also change monthly as provider
+  agreements renew, so never cache the flag beyond the catalog snapshot.
+- **ZDR is fail-closed on the wire.** `x-cmd-zdr: 1` either routes to a ZDR-capable
+  upstream or answers `422 cmd_zdr_no_providers`. A model declared `zdr: false` may
+  still succeed (observed on `MiniMaxAI/MiniMax-M3`), so a live 200 is the only
+  proof of ZDR coverage.
+- **This integration captures `zdr` but does not enforce it.** `mergeCatalog`
+  forwards the flag into `fixtures/catalog.json`, and that is the end of it:
+  `ModelFacts` has no header field, so the Pi and OpenCode projections cannot turn
+  it into an `x-cmd-zdr` request header without an upstream `ai-integrations`
+  change. Until then, a ZDR session in Pi is configured by hand through
+  `~/.pi/agent/models.json` — `modelOverrides` accepts per-model `headers` for
+  extension-provided models. Filtering the picker to ZDR-capable models is not
+  available at all, so the *included vs extra cost* distinction in the vendor's
+  docs is invisible here.
+- **Prices are off-peak.** DeepSeek models cost roughly double for 7 hours a day
+  (01–04 and 06–10 UTC, Mon–Fri) and the catalog marks nothing. See
+  `docs/EVIDENCE.md` for the rates.

@@ -40,6 +40,16 @@ is not in the provider catalog stays absent.
 Guts AI publishes `price_per_1m` as a blended input and output rate in IDR.
 That rate has no direct mapping to the four USD cost fields.
 
+### Off-peak and peak
+
+When a vendor publishes time-of-day rates, the catalog holds one number and this
+repo carries it as-is. Command Code is the live example: its published DeepSeek
+rates are **off-peak**, and the same models cost roughly double for 7 hours a day
+(01–04 and 06–10 UTC, Mon–Fri). There is no field for the peak rate or the window,
+so nothing downstream can apply it — a T3 Code usage estimate built from this
+provider understates a peak-hour request. Treat catalog rates as a floor.
+See `docs/EVIDENCE.md#off-peak-and-peak-rates` for the numbers.
+
 ## 3. T3 Code usage estimates
 
 T3 Code keeps its own overrides in `~/.t3/userdata/settings.json`. Verified
