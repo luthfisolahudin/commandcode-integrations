@@ -19,6 +19,7 @@ The client catalog declares context, modalities, efforts and per-1M prices; the 
 - `docs/SYNC.md` — how a provider repo takes template updates.
 - `docs/ADDING-A-PROVIDER.md` — the long form of the `add-provider` skill.
 - `docs/THINKING.md` — declared formats, measured efforts, and the evidence rule.
+- `docs/AUDITING.md` — how to check a catalog against the vendor, and why a hint never decides a capability.
 - `docs/EVIDENCE.md` — this repo's probe log.
 
 ## Packages and layers
