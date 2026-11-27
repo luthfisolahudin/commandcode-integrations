@@ -8,6 +8,15 @@ export interface HttpQuotaWindow {
 	label: string;
 	usedPercent: number;
 	resetsAt?: string;
+	/**
+	 * Absolute amount as the vendor reported it. Omitted when the vendor only
+	 * publishes a percentage. T3 ignores these fields; the engine uses them to
+	 * fold several accounts of one product exactly instead of averaging
+	 * percentages.
+	 */
+	used?: number;
+	/** Absolute allowance paired with `used`. Same rules. */
+	limit?: number;
 }
 
 export interface HttpQuotaAccount {
@@ -36,6 +45,13 @@ export function validateQuotaWindow(window: HttpQuotaWindow, context: string): v
 	}
 	if (!Number.isFinite(window.usedPercent) || window.usedPercent < 0 || window.usedPercent > 100) {
 		throw new Error(`${context}.usedPercent must be a finite number between 0 and 100`);
+	}
+	for (const field of ["used", "limit"] as const) {
+		const value = window[field];
+		if (value === undefined) continue;
+		if (typeof value !== "number" || !Number.isFinite(value) || value < 0) {
+			throw new Error(`${context}.${field} must be a finite number greater than or equal to 0`);
+		}
 	}
 	if (window.resetsAt !== undefined) {
 		assertNonEmpty(window.resetsAt, `${context}.resetsAt`);
@@ -70,4 +86,41 @@ export function validateQuotaResponse(response: HttpQuotaResponse): void {
 	for (const [index, account] of response.accounts.entries()) {
 		validateQuotaAccount(account, index);
 	}
+}
+
+/**
+ * Ages reach the protocol in several shapes; one accepting parser keeps every
+ * pack honest. Epoch seconds (below 1e12) and epoch milliseconds both become an
+ * ISO string, as does a parseable date string. `undefined` means "the vendor
+ * gave us nothing usable", never "now".
+ */
+export function parseQuotaResetAt(value: unknown): string | undefined {
+	if (typeof value === "number") return isoFromEpoch(value);
+	if (typeof value !== "string") return undefined;
+	const trimmed = value.trim();
+	if (trimmed.length === 0) return undefined;
+	const numeric = Number(trimmed);
+	if (Number.isFinite(numeric)) return isoFromEpoch(numeric);
+	const parsed = Date.parse(trimmed);
+	return Number.isFinite(parsed) ? new Date(parsed).toISOString() : undefined;
+}
+
+function isoFromEpoch(value: number): string | undefined {
+	if (!Number.isFinite(value) || value <= 0) return undefined;
+	const date = new Date(value < 1e12 ? value * 1000 : value);
+	return Number.isFinite(date.getTime()) ? date.toISOString() : undefined;
+}
+
+/** T3 renders only `window.label` in its per-thread Limits row, so the source has to name itself there. */
+export const QUOTA_LABEL_SEPARATOR = "\u00b7";
+
+/**
+ * Builds a window label that names the provider: `Session · CommandCode`.
+ * `detail` distinguishes accounts or pools of one product, so it goes in the
+ * same trailing parenthetical the account label uses.
+ */
+export function quotaWindowLabel(period: string, source: string, detail?: string): string {
+	const label = `${period.trim()} ${QUOTA_LABEL_SEPARATOR} ${source.trim()}`;
+	const trimmed = detail?.trim();
+	return trimmed === undefined || trimmed.length === 0 ? label : `${label} (${trimmed})`;
 }
