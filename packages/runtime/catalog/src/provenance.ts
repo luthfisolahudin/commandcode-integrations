@@ -156,18 +156,18 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 	const reasoning = reasoningDeclared ? effective.reasoning === true : (hint?.reasoning ?? effective.reasoning === true);
 	const tools = declared.tools ? effective.tools : firstDefined(effective.tools, hint?.tools);
 
-	// A measured wire value always wins. Otherwise the levels the provider declares
-	// (via models.dev) are used, and recorded as a declaration, not a measurement.
+	// A measured wire value always wins. Otherwise only the provider's own
+	// declaration counts: a models.dev entry describes whichever upstream route
+	// the reseller publishing it runs, so it cannot speak for this one. See
+	// `docs/THINKING.md`.
 	const measured = options.measuredIds?.has(effective.id) === true;
-	// A declared enum can come from the provider's own catalog (the strongest
-	// declaration) or from models.dev.
-	const catalogEfforts = effective.efforts;
+	const catalogEfforts = catalog.efforts;
 	const declaredEfforts = measured
 		? undefined
-		: (catalogEfforts ?? hint?.efforts);
+		: (curated.efforts ?? catalogEfforts);
 	const canDisable =
 		effective.thinkingCanDisable ??
-		(declaredEfforts === undefined || hint?.toggle !== true ? undefined : true);
+		(declaredEfforts?.some((level) => /^(none|off|disabled?)$/i.test(level)) === true ? true : undefined);
 
 	const cost: ModelCost = { input: 0, output: 0, cacheRead: 0, cacheWrite: 0 };
 	const pricingSources: CatalogModel["pricingSources"] = {
@@ -213,9 +213,9 @@ export function buildModel(pack: Pack, merged: MergedFacts, options: BuildOption
 				? "measured"
 				: declaredEfforts === undefined
 					? "default"
-					: catalogEfforts !== undefined
-						? "catalog"
-						: "models.dev",
+					: curated.efforts !== undefined
+						? "curated"
+						: "catalog",
 		},
 	};
 	if (tools !== undefined) model.tools = tools;

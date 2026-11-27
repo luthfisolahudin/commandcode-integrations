@@ -234,6 +234,44 @@ test("efforts declared by the provider's own catalog win over models.dev", () =>
 	assert.equal(model?.provenance.effort, "catalog");
 });
 
+test("models.dev efforts never reach the runtime", () => {
+	// A models.dev entry counts votes across every reseller that publishes a
+	// model id, so it describes those routes, not this one.
+	const index = buildModelIndex({
+		p: { models: { "chat-plain": { reasoning: true, reasoning_options: [{ type: "effort", values: ["low", "high"] }] } } },
+	});
+	const pack = definePack({ ...tierA(), defaultThinkingFormat: "openai" });
+	const model = buildModels(pack, [{ id: "chat-plain", capabilities: { reasoning: true } }], { modelsDev: index }).find(
+		(entry) => entry.id === "chat-plain",
+	);
+	assert.equal(model?.thinking.efforts, undefined);
+	assert.equal(model?.thinking.canDisable, undefined);
+	assert.equal(model?.provenance.effort, "default");
+	// The hint still supplies metadata the catalog is silent about.
+	assert.equal(model?.contextWindow, 128_000);
+});
+
+test("a curated effort enum is reported as curated, not as catalog", () => {
+	const pack = definePack({
+		...tierA(),
+		curated: { "chat-plain": { efforts: ["none", "high"], reasoning: true } },
+	});
+	const model = buildModels(pack, [{ id: "chat-plain" }]).find((entry) => entry.id === "chat-plain");
+	assert.deepEqual(model?.thinking.efforts, ["none", "high"]);
+	assert.equal(model?.provenance.effort, "curated");
+	// An enum that carries an off switch needs no separate flag to expose it.
+	assert.equal(model?.thinking.canDisable, true);
+});
+
+test("an explicit thinkingCanDisable beats the inferred one", () => {
+	const pack = definePack({
+		...tierA(),
+		curated: { "chat-plain": { efforts: ["none", "high"], thinkingCanDisable: false } },
+	});
+	const model = buildModels(pack, [{ id: "chat-plain" }]).find((entry) => entry.id === "chat-plain");
+	assert.equal(model?.thinking.canDisable, false);
+});
+
 test("the route hook picks the wire api per model", () => {
 	const pack = definePack({
 		...tierA(),

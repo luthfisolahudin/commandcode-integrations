@@ -1,6 +1,6 @@
 {
   "source": "luthfisolahudin/ai-integrations",
-  "tag": "v2.6.0",
+  "tag": "v2.7.0",
   "files": {
     "packages/runtime/catalog/package.json": "41eaeed2e5f719bcedebc05f7c9292179fc884b41e5493ca66505bd00c83254c",
     "packages/runtime/catalog/src/availability.ts": "3f02b7309e4023b22bc1f87091279db0210442d307854448ef896e95bd851216",
@@ -9,7 +9,7 @@
     "packages/runtime/catalog/src/index.ts": "a23c8def73854fa7efcc0905b1a515230fe427976ba092c7c00ba7b59092b35d",
     "packages/runtime/catalog/src/modelsdev.ts": "dc6b316c0cb4d410c0221f4308278a24a5492a04600d2756cb6b8abeb18343a6",
     "packages/runtime/catalog/src/parse.ts": "52e363006d886fb5be0330307cd7a25d4d04086a47c4325b17efb9c2cf5fb00b",
-    "packages/runtime/catalog/src/provenance.ts": "0d60ad7051b7b48a7b03f2dc6e0eb500a9ae8240dab57b4b19d4403e96192b6e",
+    "packages/runtime/catalog/src/provenance.ts": "59d5f4a88b929e9fd6d05f9796df35ec72d96f3d0f72e5c85f377eec6ea11247",
     "packages/runtime/catalog/src/quota.ts": "ba53cfe2c4135bf15c2c4c24dff348e123f7e48366ac2225ea838ccd24fa2ce4",
     "packages/runtime/catalog/src/refresh.ts": "7b79732b6378a0ada54ebd06ccb251b6dd3ff9b27ec2c0727d2d25adfb082640",
     "packages/runtime/catalog/src/runtime.ts": "1a2b4714af9cff4b6817e7e96d81a7a65d528c8703449f9f8ef5ad8236e15d11",
@@ -18,7 +18,7 @@
     "packages/runtime/catalog/test/modelsdev-loader.test.ts": "c91012db31152f4d88635c152965e2ae9e5dc5349568c41a85013aea81162033",
     "packages/runtime/catalog/test/modelsdev.test.ts": "3107cb3411a7309391487c7312317326389a60fccea1a9852e3971a982ae46eb",
     "packages/runtime/catalog/test/parse.test.ts": "e29a5a9b1bdb01a133787979990c061b31dabc0eef33c3a0ad08a6d9be89e59f",
-    "packages/runtime/catalog/test/provenance.test.ts": "589f47ed159a234174df7d40b758559ca10e5a1b83f76c527b3fede14d87a12e",
+    "packages/runtime/catalog/test/provenance.test.ts": "28b88a5f3dd7a487bd788b161f97abc1e9188c382ab060f0faff1ec52272ffd2",
     "packages/runtime/catalog/test/quota.test.ts": "3eb1db2d71aa43dc500037e67c76322b2740c0f8e493fb6b00fa42ea6aed2854",
     "packages/runtime/catalog/test/refresh.test.ts": "c0db93594703e57e605b0a0d8575ecef617fe6704cf294b5965c0fabe55b6c8c",
     "packages/runtime/contract/package.json": "db0b357730f77a8dde77728cb43946579d637ca8c3094115f3e70f6e6a1e0a0c",
