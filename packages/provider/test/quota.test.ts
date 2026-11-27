@@ -3,6 +3,7 @@ import { test } from "node:test";
 
 import { validateQuotaResponse, type HookContext } from "@luthfisolahudin/ai-integrations-contract";
 
+import { COMMAND_CODE_CLI_VERSION } from "../src/cliVersion.ts";
 import { readCommandCodeQuota } from "../src/quota.ts";
 
 function makeContext(apiKey = "user_test"): HookContext {
@@ -54,29 +55,36 @@ test("readCommandCodeQuota maps credits and 5h/weekly windows into HttpQuotaAcco
 	assert.equal(account.label, "Command Code (GOAT · luthfi@example.test)");
 	assert.deepEqual(account.windows, [
 		{
-			id: "monthly",
-			kind: "monthly",
-			label: "Credits",
-			usedPercent: 80,
-			resetsAt: "2026-10-01T00:00:00.000Z",
-		},
-		{
 			id: "5h",
 			kind: "session",
-			label: "Session (5h)",
+			label: "Session · CommandCode",
 			usedPercent: 20,
 			resetsAt: new Date(1792680000000).toISOString(),
 		},
 		{
 			id: "weekly",
 			kind: "weekly",
-			label: "Weekly",
+			label: "Weekly · CommandCode",
 			usedPercent: 28.57,
 			resetsAt: new Date(1792766400000).toISOString(),
 		},
+		{
+			id: "monthly",
+			kind: "monthly",
+			label: "Monthly · CommandCode",
+			usedPercent: 80,
+			resetsAt: "2026-10-01T00:00:00.000Z",
+		},
 	]);
+	for (const window of account.windows) {
+		assert.ok(window.label.endsWith(" · CommandCode"), `${window.id} label should name the provider`);
+		assert.ok(!window.label.includes("(5h)"), `${window.id} label should not carry the raw window id`);
+	}
 	assert.doesNotThrow(() => validateQuotaResponse({ version: 1, accounts }));
 	assert.ok(seen.some((entry) => entry.url.includes("orgId=org_1")));
+	for (const entry of seen) {
+		assert.equal((entry.headers as Record<string, string>)["x-command-code-version"], COMMAND_CODE_CLI_VERSION);
+	}
 });
 
 test("readCommandCodeQuota omits resetsAt when resetAt is 0 and throws on 401", async () => {
@@ -95,8 +103,8 @@ test("readCommandCodeQuota omits resetsAt when resetAt is 0 and throws on 401", 
 		return jsonResponse({}, 404);
 	});
 
-	assert.equal(accounts[0]!.windows[1]!.resetsAt, undefined);
-	assert.equal(accounts[0]!.windows[1]!.usedPercent, 0);
+	assert.equal(accounts[0]!.windows[0]!.resetsAt, undefined);
+	assert.equal(accounts[0]!.windows[0]!.usedPercent, 0);
 
 	await assert.rejects(
 		() => readCommandCodeQuota(makeContext("bad"), async () => jsonResponse({ error: "unauthorized" }, 401)),

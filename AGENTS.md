@@ -69,6 +69,7 @@ task probe:effort     # measure thinking/effort for one model (needs an API key)
 task probe:routes     # which wire routes the endpoint exposes
 task report --write   # regenerate docs/PROVIDERS.md
 task sync:upstream    # copy packages/runtime + packages/dev from a tagged release
+task sync:cli-version # rewrite the Command Code CLI version from npm (--check for drift)
 task doctor           # symlink pair, AGENTS.md, skills, vendor shape
 task pricing          # T3 Code price block: print, --check, or --write
 ```

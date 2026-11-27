@@ -1,0 +1,80 @@
+name: sync-cli-version
+
+on:
+  schedule:
+    # Daily, off the top of the hour: everybody piles up at :00.
+    - cron: '17 3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+# Serialise runs: a second run must see the branch the first one pushed.
+concurrency:
+  group: sync-cli-version
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Versions come from the repo: .node-version pins Node and
+      # package.json#devEngines.packageManager pins pnpm (version + integrity).
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .node-version
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync
+        id: sync
+        run: |
+          pnpm sync:cli-version
+          if git diff --quiet -- packages/provider/src/cliVersion.ts; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Open or update pull request
+        if: steps.sync.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          branch=chore/sync-cli-version
+          version=$(grep -oE 'COMMAND_CODE_CLI_VERSION[[:space:]]*=[[:space:]]*"[^"]+"' packages/provider/src/cliVersion.ts \
+            | head -n1 | sed -E 's/.*"([^"]+)"$/\1/')
+          if [ -z "$version" ]; then
+            echo "Could not read COMMAND_CODE_CLI_VERSION from packages/provider/src/cliVersion.ts" >&2
+            exit 1
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          # -B keeps this idempotent even if the runner already has the branch.
+          git checkout -B "$branch"
+          git add packages/provider/src/cliVersion.ts
+          git commit -m "chore(cli): sync Command Code CLI version to $version"
+          git push --force origin "$branch"
+
+          number=$(gh pr list --head "$branch" --state open --json number --jq '.[0].number')
+          # `--jq` prints the literal `null` for an empty list, which is non-empty text.
+          if [ -n "$number" ] && [ "$number" != "null" ]; then
+            gh pr edit "$number" --title "chore(cli): sync Command Code CLI version to $version"
+          else
+            gh pr create --base main --head "$branch" \
+              --title "chore(cli): sync Command Code CLI version to $version" \
+              --body "Automated by the \`sync-cli-version\` workflow; \`pnpm check\` runs on the pull request."
+          fi
+
+      - name: Nothing to sync
+        if: steps.sync.outputs.changed == 'false'
+        run: echo "CLI version is current; no pull request needed."

@@ -23,3 +23,8 @@ Repo-owned. Things a future reader would otherwise rediscover the hard way.
   is worse than no tier at all. `docs/PRICING.md` covers overrides.
 - Models with an empty or null `reasoningEfforts` get no effort menu, not a default
   one.
+- **The CLI version is a header, not metadata.** It lives in
+  `packages/provider/src/cliVersion.ts` and is sent as `x-command-code-version`;
+  the billing endpoints gate on it, so a stale value can be refused. `task
+  sync:cli-version` rewrites it from npm and a daily workflow keeps it current —
+  do not hand-edit it in PRs.

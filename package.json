@@ -33,6 +33,7 @@
     "quota": "node packages/dev/cli/src/commands/quota.ts",
     "verify:live": "node verify-live.ts",
     "sync:upstream": "node scripts/sync-upstream.ts",
+    "sync:cli-version": "node scripts/sync-cli-version.ts",
     "report:check": "node packages/dev/cli/src/commands/report.ts --check"
   },
   "devDependencies": {

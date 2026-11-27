@@ -1,6 +1,9 @@
 import type { HookContext, HttpQuotaAccount, HttpQuotaWindow } from "@luthfisolahudin/ai-integrations-contract";
 
-const COMMAND_CODE_CLI_VERSION = "1.88.5";
+import { COMMAND_CODE_CLI_VERSION } from "./cliVersion.ts";
+
+/** T3 renders only the window label in its per-thread Limits row, and several sources can be registered, so name the provider here. */
+const LABEL_SUFFIX = " · CommandCode";
 
 const PLAN_NAMES: Readonly<Record<string, string>> = {
 	"individual-go": "Go",
@@ -174,23 +177,24 @@ export async function readCommandCodeQuota(
 		(finiteNumber(c.freeCredits) ?? 0);
 
 	const windows: HttpQuotaWindow[] = [];
+
+	const fiveHour = windowFromLimit("5h", "session", `Session${LABEL_SUFFIX}`, credits.windowLimits?.fiveHour);
+	if (fiveHour !== undefined) windows.push(fiveHour);
+
+	const weekly = windowFromLimit("weekly", "weekly", `Weekly${LABEL_SUFFIX}`, credits.windowLimits?.weekly);
+	if (weekly !== undefined) windows.push(weekly);
+
 	if (cap > 0) {
 		const used = Math.max(0, cap - remaining);
 		const resetsAt = parseResetIso(subs.data?.currentPeriodEnd);
 		windows.push({
 			id: "monthly",
 			kind: "monthly",
-			label: "Credits",
+			label: `Monthly${LABEL_SUFFIX}`,
 			usedPercent: clampPercent((used / cap) * 100),
 			...(resetsAt === undefined ? {} : { resetsAt }),
 		});
 	}
-
-	const fiveHour = windowFromLimit("5h", "session", "Session (5h)", credits.windowLimits?.fiveHour);
-	if (fiveHour !== undefined) windows.push(fiveHour);
-
-	const weekly = windowFromLimit("weekly", "weekly", "Weekly", credits.windowLimits?.weekly);
-	if (weekly !== undefined) windows.push(weekly);
 
 	const email = typeof whoami.user?.email === "string" && whoami.user.email.trim().length > 0 ? whoami.user.email.trim() : undefined;
 	const identity = email ?? orgId ?? "default";

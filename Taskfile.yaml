@@ -65,3 +65,8 @@ tasks:
     desc: Copy packages/runtime and packages/dev from a tagged ai-integrations release
     cmds:
       - pnpm run sync:upstream {{.CLI_ARGS}}
+
+  sync:cli-version:
+    desc: Update the Command Code CLI version from npm, or --check for drift
+    cmds:
+      - pnpm sync:cli-version {{.CLI_ARGS}}
