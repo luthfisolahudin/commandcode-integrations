@@ -161,6 +161,17 @@ export function aggregateQuotaAccounts(
 
 	const aggregated: HttpQuotaAccount[] = [];
 	for (const [key, pool] of pools) {
+		const [only] = pool.accounts;
+		if (pool.accounts.length === 1 && only !== undefined) {
+			// A pool of one is not a pool: keep the source's own id and label, so a
+			// single-account vendor is not silently renamed. Only the engine-internal
+			// absolutes come off.
+			aggregated.push({
+				...only,
+				windows: only.windows.map(({ used: _used, limit: _limit, ...window }) => window),
+			});
+			continue;
+		}
 		const instance = sharedInstanceId(pool.accounts);
 		aggregated.push({
 			id: `quota-${key}`,

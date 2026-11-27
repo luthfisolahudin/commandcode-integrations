@@ -63,7 +63,7 @@ test("fetchQuota attaches providerInstanceId fallback, aggregates, and validates
 		version: 1,
 		accounts: [
 			{
-				id: "quota-test-account",
+				id: "acc-1",
 				label: "Test Account",
 				providerInstanceId: "opencode",
 				windows: [{ id: "5h", kind: "session", label: "5-hour limit", usedPercent: 40 }],
@@ -94,7 +94,7 @@ test("handleQuotaRequest enforces bearer token, method, and path", async () => {
 	assert.equal(ok.status, 200);
 	assert.deepEqual(JSON.parse(ok.body), {
 		version: 1,
-		accounts: [{ id: "quota-cc", label: "CC", windows: [{ id: "m", kind: "monthly", label: "Credits", usedPercent: 10 }] }],
+		accounts: [{ id: "acc-1", label: "CC", windows: [{ id: "m", kind: "monthly", label: "Credits", usedPercent: 10 }] }],
 	});
 });
 
@@ -132,7 +132,9 @@ test("accounts of different products stay separate", () => {
 		{ id: "codex-1", label: "OpenAI Codex (plus)", windows: [] },
 	]);
 
-	assert.deepEqual(accounts.map((account) => account.id), ["quota-antigravity", "quota-openai-codex"]);
+	assert.deepEqual(accounts.map((account) => account.id), ["9router-antigravity-a@example.test", "codex-1"]);
+	// Neither product absorbed the other's windows.
+	assert.equal(accounts.length, 2);
 });
 
 test("the pool id is stable across runs and input order", () => {
@@ -283,18 +285,16 @@ test("providerInstanceId is kept when every contributor agrees and dropped when 
 });
 
 test("windows are ordered session, weekly, monthly, other, then by id", () => {
+	const ordered: HttpQuotaWindow[] = [
+		{ id: "z_other", kind: "other", label: "Other · Pool", usedPercent: 1 },
+		{ id: "m", kind: "monthly", label: "Monthly · Pool", usedPercent: 1 },
+		{ id: "w", kind: "weekly", label: "Weekly · Pool", usedPercent: 1 },
+		{ id: "b_session", kind: "session", label: "Session · Pool", usedPercent: 1 },
+		{ id: "a_session", kind: "session", label: "Session · Pool", usedPercent: 1 },
+	];
 	const accounts = aggregateQuotaAccounts([
-		{
-			id: "a",
-			label: "Pool (a)",
-			windows: [
-				{ id: "z_other", kind: "other", label: "Other · Pool", usedPercent: 1 },
-				{ id: "m", kind: "monthly", label: "Monthly · Pool", usedPercent: 1 },
-				{ id: "w", kind: "weekly", label: "Weekly · Pool", usedPercent: 1 },
-				{ id: "b_session", kind: "session", label: "Session · Pool", usedPercent: 1 },
-				{ id: "a_session", kind: "session", label: "Session · Pool", usedPercent: 1 },
-			],
-		},
+		{ id: "a", label: "Pool (a)", windows: ordered },
+		{ id: "b", label: "Pool (b)", windows: ordered },
 	]);
 
 	assert.deepEqual(accounts[0]!.windows.map((window) => window.id), [
@@ -327,4 +327,28 @@ test("dropUnsummable drops only the approximate windows", () => {
 
 test("an empty account list aggregates to nothing", () => {
 	assert.deepEqual(aggregateQuotaAccounts([]), []);
+});
+
+test("a lone account keeps its own id and label instead of being renamed", () => {
+	// Regression: pooling ran for every source, so a single-account vendor such as
+	// CommandCode lost "(GOAT · someone@example.test)" and was renamed. A pool of
+	// one is not a pool.
+	const accounts = aggregateQuotaAccounts([
+		{
+			id: "commandcode-someone@example.test",
+			label: "Command Code (GOAT · someone@example.test)",
+			providerInstanceId: "opencode",
+			windows: [
+				{ id: "5h", kind: "session", label: "Session · CommandCode", usedPercent: 9, used: 1, limit: 10 },
+			],
+		},
+	]);
+
+	assert.equal(accounts.length, 1);
+	assert.equal(accounts[0]!.id, "commandcode-someone@example.test");
+	assert.equal(accounts[0]!.label, "Command Code (GOAT · someone@example.test)");
+	assert.equal(accounts[0]!.providerInstanceId, "opencode");
+	assert.deepEqual(accounts[0]!.windows, [
+		{ id: "5h", kind: "session", label: "Session · CommandCode", usedPercent: 9 },
+	]);
 });
