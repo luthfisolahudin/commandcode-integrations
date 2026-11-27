@@ -59,6 +59,8 @@ test("readCommandCodeQuota maps credits and 5h/weekly windows into HttpQuotaAcco
 			kind: "session",
 			label: "Session · CommandCode",
 			usedPercent: 20,
+			used: 2,
+			limit: 10,
 			resetsAt: new Date(1792680000000).toISOString(),
 		},
 		{
@@ -66,6 +68,8 @@ test("readCommandCodeQuota maps credits and 5h/weekly windows into HttpQuotaAcco
 			kind: "weekly",
 			label: "Weekly · CommandCode",
 			usedPercent: 28.57,
+			used: 20,
+			limit: 70,
 			resetsAt: new Date(1792766400000).toISOString(),
 		},
 		{
@@ -76,6 +80,14 @@ test("readCommandCodeQuota maps credits and 5h/weekly windows into HttpQuotaAcco
 			resetsAt: "2026-10-01T00:00:00.000Z",
 		},
 	]);
+
+	// The engine pools several accounts of one product from these absolutes, and
+	// strips them before the response leaves, so a pack that can report them must.
+	for (const window of account.windows.filter((window) => window.id !== "monthly")) {
+		assert.equal(typeof window.used, "number", `${window.id} should report the absolute used`);
+		assert.equal(typeof window.limit, "number", `${window.id} should report the absolute limit`);
+	}
+	assert.doesNotThrow(() => validateQuotaResponse({ version: 1, accounts }));
 	for (const window of account.windows) {
 		assert.ok(window.label.endsWith(" · CommandCode"), `${window.id} label should name the provider`);
 		assert.ok(!window.label.includes("(5h)"), `${window.id} label should not carry the raw window id`);

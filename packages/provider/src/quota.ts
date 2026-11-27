@@ -1,9 +1,15 @@
-import type { HookContext, HttpQuotaAccount, HttpQuotaWindow } from "@luthfisolahudin/ai-integrations-contract";
+import {
+	parseQuotaResetAt,
+	quotaWindowLabel,
+	type HookContext,
+	type HttpQuotaAccount,
+	type HttpQuotaWindow,
+} from "@luthfisolahudin/ai-integrations-contract";
 
 import { COMMAND_CODE_CLI_VERSION } from "./cliVersion.ts";
 
-/** T3 renders only the window label in its per-thread Limits row, and several sources can be registered, so name the provider here. */
-const LABEL_SUFFIX = " · CommandCode";
+/** T3 renders only the window label in its per-thread Limits row, and several sources can be registered. */
+const PROVIDER = "CommandCode";
 
 const PLAN_NAMES: Readonly<Record<string, string>> = {
 	"individual-go": "Go",
@@ -52,23 +58,6 @@ function finiteNumber(value: unknown): number | undefined {
 
 function clampPercent(value: number): number {
 	return Math.round(Math.min(100, Math.max(0, value)) * 100) / 100;
-}
-
-function parseResetIso(value: unknown): string | undefined {
-	if (typeof value === "number") {
-		if (!Number.isFinite(value) || value <= 0) return undefined;
-		const ms = value < 1e12 ? value * 1000 : value;
-		return new Date(ms).toISOString();
-	}
-	if (typeof value === "string") {
-		const trimmed = value.trim();
-		if (trimmed.length === 0) return undefined;
-		const asNum = Number(trimmed);
-		if (Number.isFinite(asNum)) return parseResetIso(asNum);
-		const parsed = Date.parse(trimmed);
-		return Number.isFinite(parsed) ? new Date(parsed).toISOString() : undefined;
-	}
-	return undefined;
 }
 
 function withQuery(base: string, route: string, params: Record<string, string | undefined>): string {
@@ -121,12 +110,14 @@ function windowFromLimit(
 	const used = finiteNumber(limit.used) ?? 0;
 	if (cap <= 0 && used <= 0) return undefined;
 	const usedPercent = cap > 0 ? clampPercent((used / cap) * 100) : 100;
-	const resetsAt = parseResetIso(limit.resetAt);
+	const resetsAt = parseQuotaResetAt(limit.resetAt);
 	return {
 		id,
 		kind,
 		label,
 		usedPercent,
+		// Absolutes are source-internal: the engine strips them before serving.
+		...(cap > 0 ? { used, limit: cap } : {}),
 		...(resetsAt === undefined ? {} : { resetsAt }),
 	};
 }
@@ -178,19 +169,19 @@ export async function readCommandCodeQuota(
 
 	const windows: HttpQuotaWindow[] = [];
 
-	const fiveHour = windowFromLimit("5h", "session", `Session${LABEL_SUFFIX}`, credits.windowLimits?.fiveHour);
+	const fiveHour = windowFromLimit("5h", "session", quotaWindowLabel("Session", PROVIDER), credits.windowLimits?.fiveHour);
 	if (fiveHour !== undefined) windows.push(fiveHour);
 
-	const weekly = windowFromLimit("weekly", "weekly", `Weekly${LABEL_SUFFIX}`, credits.windowLimits?.weekly);
+	const weekly = windowFromLimit("weekly", "weekly", quotaWindowLabel("Weekly", PROVIDER), credits.windowLimits?.weekly);
 	if (weekly !== undefined) windows.push(weekly);
 
 	if (cap > 0) {
 		const used = Math.max(0, cap - remaining);
-		const resetsAt = parseResetIso(subs.data?.currentPeriodEnd);
+		const resetsAt = parseQuotaResetAt(subs.data?.currentPeriodEnd);
 		windows.push({
 			id: "monthly",
 			kind: "monthly",
-			label: `Monthly${LABEL_SUFFIX}`,
+			label: quotaWindowLabel("Monthly", PROVIDER),
 			usedPercent: clampPercent((used / cap) * 100),
 			...(resetsAt === undefined ? {} : { resetsAt }),
 		});
