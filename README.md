@@ -51,6 +51,7 @@ Authentication, in order: `COMMANDCODE_API_KEY`, then
 task setup
 task check            # typecheck, unit tests, conformance, invariants, doctor
 task check:catalog    # project the merged fixture, assert the invariants
+task capture          # re-capture the fixtures from the live catalog (needs a key)
 task report --write   # regenerate docs/PROVIDERS.md
 task pricing          # print the T3 Code price block for this provider
 pnpm verify:live      # one request per protocol with a confirmed free model

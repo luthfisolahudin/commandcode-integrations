@@ -85,6 +85,32 @@ test("efforts are filtered to the enum CommandCode accepts", () => {
 	assert.deepEqual(records[0]?.reasoningEfforts, ["low", "max"]);
 });
 
+test("zdr is carried from the client view and stays absent when unstated", () => {
+	const records = mergeCatalog(
+		{
+			schemaVersion: 1,
+			catalogVersion: "v1",
+			data: [
+				{ id: "retained", zdr: true },
+				{ id: "logged", zdr: false },
+				{ id: "unstated" },
+			],
+		},
+		[
+			{ id: "retained", supported_endpoints: ["/chat/completions"] },
+			{ id: "logged", supported_endpoints: ["/chat/completions"] },
+			{ id: "public-only", supported_endpoints: ["/chat/completions"] },
+		],
+	);
+	const byId = new Map(records.map((record) => [record.id, record]));
+	assert.equal(byId.get("retained")?.zdr, true);
+	assert.equal(byId.get("logged")?.zdr, false);
+	// Absent stays absent: a model the client view never described is `unknown`,
+	// not "retains nothing". The pack must not promote silence into a guarantee.
+	assert.equal(byId.get("unstated")?.zdr, undefined);
+	assert.equal(byId.get("public-only")?.zdr, undefined);
+});
+
 test("pricing passes the catalog's per-1M rates through unchanged", () => {
 	// Rates published at https://commandcode.ai/docs/plans/goat, which states
 	// "Rates are per 1M tokens": Claude Sonnet 5.5 $2.00 in / $10.00 out /
@@ -137,6 +163,25 @@ test("the captured catalog routes to both protocols and drops nothing visible", 
 	assert.equal(responses.length, 0, "no model routes to Responses while chat is available");
 	assert.ok(anthropic.every((record) => record.id.toLowerCase().includes("claude")));
 	assert.equal(new Set(records.map((record) => record.id)).size, records.length, "ids are unique");
+});
+
+test("every visible model states its ZDR capability", () => {
+	// The client view is the only source of this fact, and every visible entry
+	// currently declares it. A missing flag would make the picker silently drop
+	// a guarantee it never had, so pin the declaration rate rather than a count.
+	const records = mergeCatalog(client, publicModels);
+	const undeclared = records.filter((record) => typeof record.zdr !== "boolean");
+	assert.deepEqual(undeclared.map((record) => record.id), [], "models with no declared zdr");
+	assert.ok(records.some((record) => record.zdr === true), "no ZDR-capable model at all");
+	assert.ok(records.some((record) => record.zdr === false), "no non-ZDR model at all");
+
+	// Anthropic retains Fable prompts for 30 days, so these can never be ZDR.
+	// https://commandcode.ai/docs/resources/zdr — "Claude Fable 5 and 5.1 are always
+	// in this group". A vendor doc that contradicts the catalog is exactly what this
+	// pin is for.
+	for (const id of ["claude-fable-5", "claude-fable-5-1", "claude-fable-5-2"]) {
+		assert.equal(records.find((record) => record.id === id)?.zdr, false, `${id} must not claim ZDR`);
+	}
 });
 
 test("the pack declares where its facts live and how to authenticate", () => {

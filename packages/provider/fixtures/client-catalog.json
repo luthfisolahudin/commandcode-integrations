@@ -1,5 +1,5 @@
 {
-  "catalogVersion": "b787063039eb4a47da76c74379dd177365b0ee57541e63a80b1ed316d8db36e8",
+  "catalogVersion": "014c3c66b8e861ba208656b17c5d94690aeebf4c3cafe70d08316e58a7f4937e",
   "data": [
     {
       "aliases": [],
@@ -12,7 +12,7 @@
         "group": "Anthropic",
         "label": "Claude Sonnet 5.5",
         "notice": null,
-        "order": 69
+        "order": 75
       },
       "id": "claude-sonnet-5-5",
       "inputModalities": [
@@ -51,7 +51,7 @@
         "group": "Anthropic",
         "label": "Claude Sonnet 5",
         "notice": null,
-        "order": 70
+        "order": 76
       },
       "id": "claude-sonnet-5",
       "inputModalities": [
@@ -93,7 +93,7 @@
         "group": "Anthropic",
         "label": "Claude Sonnet 4.6",
         "notice": null,
-        "order": 71
+        "order": 77
       },
       "id": "claude-sonnet-4-6",
       "inputModalities": [
@@ -132,7 +132,7 @@
         "group": "Anthropic",
         "label": "Claude Fable 5.2",
         "notice": null,
-        "order": 72
+        "order": 78
       },
       "id": "claude-fable-5-2",
       "inputModalities": [
@@ -171,7 +171,7 @@
         "group": "Anthropic",
         "label": "Claude Fable 5.1",
         "notice": null,
-        "order": 73
+        "order": 79
       },
       "id": "claude-fable-5-1",
       "inputModalities": [
@@ -210,7 +210,7 @@
         "group": "Anthropic",
         "label": "Claude Fable 5",
         "notice": null,
-        "order": 74
+        "order": 80
       },
       "id": "claude-fable-5",
       "inputModalities": [
@@ -249,7 +249,7 @@
         "group": "Anthropic",
         "label": "Claude Opus 5.5",
         "notice": null,
-        "order": 75
+        "order": 81
       },
       "id": "claude-opus-5-5",
       "inputModalities": [
@@ -288,7 +288,7 @@
         "group": "Anthropic",
         "label": "Claude Opus 5",
         "notice": null,
-        "order": 76
+        "order": 82
       },
       "id": "claude-opus-5",
       "inputModalities": [
@@ -327,7 +327,7 @@
         "group": "Anthropic",
         "label": "Claude Opus 4.8",
         "notice": null,
-        "order": 77
+        "order": 83
       },
       "id": "claude-opus-4-8",
       "inputModalities": [
@@ -369,7 +369,7 @@
         "group": "Anthropic",
         "label": "Claude Opus 4.7",
         "notice": null,
-        "order": 78
+        "order": 84
       },
       "id": "claude-opus-4-7",
       "inputModalities": [
@@ -408,7 +408,7 @@
         "group": "Anthropic",
         "label": "Claude Haiku 5.5",
         "notice": null,
-        "order": 79
+        "order": 85
       },
       "id": "claude-haiku-5-5",
       "inputModalities": [
@@ -470,7 +470,7 @@
         "group": "Anthropic",
         "label": "Claude Haiku 4.5",
         "notice": null,
-        "order": 80
+        "order": 86
       },
       "id": "claude-haiku-4-5-20251001",
       "inputModalities": [
@@ -503,7 +503,7 @@
         "group": "OpenAI",
         "label": "GPT-6 Astra",
         "notice": null,
-        "order": 81
+        "order": 87
       },
       "id": "gpt-6-astra",
       "inputModalities": [
@@ -559,11 +559,131 @@
       "context_length": 1050000,
       "display": {
         "badge": null,
+        "description": "OpenAI flagship for the hardest engineering & research",
+        "group": "OpenAI",
+        "label": "GPT-6.2 Astra",
+        "notice": null,
+        "order": 88
+      },
+      "id": "gpt-6.2-astra",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-provider",
+      "name": "GPT-6.2 Astra",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.4,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 10,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.4,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 10,
+              "inputCost": 8,
+              "outputCost": 40
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.8,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 20,
+              "inputCost": 16,
+              "outputCost": 60
+            }
+          }
+        ],
+        "inputCost": 8,
+        "outputCost": 40
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
+        "description": "efficient, versatile OpenAI model for everyday coding",
+        "group": "OpenAI",
+        "label": "GPT-6.2 Sol",
+        "notice": null,
+        "order": 89
+      },
+      "id": "gpt-6.2-sol",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "GPT-6.2 Sol",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.1,
+        "cacheWrite1hCost": 0,
+        "cacheWriteCost": 2.5,
+        "contextTiers": [
+          {
+            "maxContext": 272000,
+            "rates": {
+              "cacheReadCost": 0.1,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 2.5,
+              "inputCost": 2,
+              "outputCost": 10
+            }
+          },
+          {
+            "rates": {
+              "cacheReadCost": 0.2,
+              "cacheWrite1hCost": 0,
+              "cacheWriteCost": 5,
+              "inputCost": 4,
+              "outputCost": 15
+            }
+          }
+        ],
+        "inputCost": 2,
+        "outputCost": 10
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1050000,
+      "display": {
+        "badge": null,
         "description": "near-Astra performance for complex work at a lower cost",
         "group": "OpenAI",
         "label": "GPT-6.1 Sol",
         "notice": null,
-        "order": 82
+        "order": 90
       },
       "id": "gpt-6.1-sol",
       "inputModalities": [
@@ -623,7 +743,7 @@
         "group": "OpenAI",
         "label": "GPT-6.1 Terra",
         "notice": null,
-        "order": 83
+        "order": 91
       },
       "id": "gpt-6.1-terra",
       "inputModalities": [
@@ -683,7 +803,7 @@
         "group": "OpenAI",
         "label": "GPT-6 Sol",
         "notice": null,
-        "order": 84
+        "order": 92
       },
       "id": "gpt-6-sol",
       "inputModalities": [
@@ -743,7 +863,7 @@
         "group": "OpenAI",
         "label": "GPT-6 Luna",
         "notice": null,
-        "order": 85
+        "order": 93
       },
       "id": "gpt-6-luna",
       "inputModalities": [
@@ -803,7 +923,7 @@
         "group": "OpenAI",
         "label": "GPT-5.6 Sol",
         "notice": null,
-        "order": 86
+        "order": 94
       },
       "id": "gpt-5.6-sol",
       "inputModalities": [
@@ -860,7 +980,7 @@
         "group": "OpenAI",
         "label": "GPT-5.6 Terra",
         "notice": null,
-        "order": 87
+        "order": 95
       },
       "id": "gpt-5.6-terra",
       "inputModalities": [
@@ -917,7 +1037,7 @@
         "group": "OpenAI",
         "label": "GPT-5.6 Luna",
         "notice": null,
-        "order": 88
+        "order": 96
       },
       "id": "gpt-5.6-luna",
       "inputModalities": [
@@ -974,7 +1094,7 @@
         "group": "OpenAI",
         "label": "GPT-5.5",
         "notice": null,
-        "order": 89
+        "order": 97
       },
       "id": "gpt-5.5",
       "inputModalities": [
@@ -1012,7 +1132,7 @@
         "group": "OpenAI",
         "label": "GPT-5.4",
         "notice": null,
-        "order": 90
+        "order": 98
       },
       "id": "gpt-5.4",
       "inputModalities": [
@@ -1050,7 +1170,7 @@
         "group": "OpenAI",
         "label": "GPT-5.3 Codex",
         "notice": null,
-        "order": 91
+        "order": 99
       },
       "id": "gpt-5.3-codex",
       "inputModalities": [
@@ -1088,7 +1208,7 @@
         "group": "OpenAI",
         "label": "GPT-5.4 Mini",
         "notice": null,
-        "order": 92
+        "order": 100
       },
       "id": "gpt-5.4-mini",
       "inputModalities": [
@@ -1657,7 +1777,7 @@
         "high",
         "max"
       ],
-      "zdr": false
+      "zdr": true
     },
     {
       "aliases": [],
@@ -2268,6 +2388,43 @@
     },
     {
       "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "flagship coding, agentic & knowledge work",
+        "group": "Open Source",
+        "label": "Qwen 4 Max",
+        "notice": null,
+        "order": 35
+      },
+      "id": "Qwen/Qwen4-Max",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Qwen 4 Max",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.075,
+        "cacheWriteCost": 1.875,
+        "inputCost": 1.5,
+        "outputCost": 4.5
+      },
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
       "behaviorProfile": "standard-v1",
       "category": "opensource",
       "context_length": 1000000,
@@ -2277,7 +2434,7 @@
         "group": "Open Source",
         "label": "Qwen 3.8 Omni Flash",
         "notice": null,
-        "order": 35
+        "order": 36
       },
       "id": "Qwen/Qwen3.8-Omni-Flash",
       "inputModalities": [
@@ -2312,7 +2469,7 @@
         "group": "Open Source",
         "label": "Qwen 3.8 Max Prime",
         "notice": null,
-        "order": 36
+        "order": 37
       },
       "id": "Qwen/Qwen3.8-Max-Prime",
       "inputModalities": [
@@ -2348,7 +2505,7 @@
         "group": "Open Source",
         "label": "Qwen 3.8 Max 0902",
         "notice": null,
-        "order": 37
+        "order": 38
       },
       "id": "Qwen/Qwen3.8-Max-0902",
       "inputModalities": [
@@ -2383,7 +2540,7 @@
         "group": "Open Source",
         "label": "Qwen 3.8 Max",
         "notice": null,
-        "order": 38
+        "order": 39
       },
       "id": "Qwen/Qwen3.8-Max",
       "inputModalities": [
@@ -2419,7 +2576,7 @@
         "group": "Open Source",
         "label": "Qwen 3.8 27B",
         "notice": null,
-        "order": 39
+        "order": 40
       },
       "id": "Qwen/Qwen3.8-27B",
       "inputModalities": [
@@ -2454,7 +2611,7 @@
         "group": "Open Source",
         "label": "Qwen 3.8 Flash",
         "notice": null,
-        "order": 40
+        "order": 41
       },
       "id": "Qwen/Qwen3.8-Flash",
       "inputModalities": [
@@ -2489,7 +2646,7 @@
         "group": "Open Source",
         "label": "Qwen 3.7 Max",
         "notice": null,
-        "order": 41
+        "order": 42
       },
       "id": "Qwen/Qwen3.7-Max",
       "inputModalities": [
@@ -2520,7 +2677,7 @@
         "group": "Open Source",
         "label": "Qwen 3.7 Plus",
         "notice": null,
-        "order": 42
+        "order": 43
       },
       "id": "Qwen/Qwen3.7-Plus",
       "inputModalities": [
@@ -2571,7 +2728,7 @@
         "group": "Open Source",
         "label": "Qwen 3.7 Flash",
         "notice": null,
-        "order": 43
+        "order": 44
       },
       "id": "Qwen/Qwen3.7-Flash",
       "inputModalities": [
@@ -2631,7 +2788,7 @@
         "group": "Open Source",
         "label": "Qwen 3.6 Max Preview",
         "notice": null,
-        "order": 44
+        "order": 45
       },
       "id": "Qwen/Qwen3.6-Max-Preview",
       "inputModalities": [
@@ -2662,7 +2819,7 @@
         "group": "Open Source",
         "label": "Qwen 3.6 Plus",
         "notice": null,
-        "order": 45
+        "order": 46
       },
       "id": "Qwen/Qwen3.6-Plus",
       "inputModalities": [
@@ -2710,7 +2867,7 @@
         "group": "Open Source",
         "label": "LongCat 2.0",
         "notice": null,
-        "order": 46
+        "order": 47
       },
       "id": "meituan/LongCat-2.0",
       "inputModalities": [
@@ -2740,7 +2897,7 @@
         "group": "Open Source",
         "label": "LongCat 2.0",
         "notice": null,
-        "order": 47
+        "order": 48
       },
       "hidden": true,
       "id": "meituan/LongCat-2.0:free",
@@ -2766,7 +2923,7 @@
         "group": "Open Source",
         "label": "Step 5 Preview",
         "notice": null,
-        "order": 48
+        "order": 49
       },
       "id": "stepfun/Step-5-Preview",
       "inputModalities": [
@@ -2801,7 +2958,7 @@
         "group": "Open Source",
         "label": "Step 3.7 Flash",
         "notice": null,
-        "order": 49
+        "order": 50
       },
       "id": "stepfun/Step-3.7-Flash",
       "inputModalities": [
@@ -2832,7 +2989,7 @@
         "group": "Open Source",
         "label": "Step 3.5 Flash",
         "notice": null,
-        "order": 50
+        "order": 51
       },
       "id": "stepfun/Step-3.5-Flash",
       "inputModalities": [
@@ -2864,7 +3021,7 @@
         "group": "Open Source",
         "label": "Tencent Hy3 (Free)",
         "notice": null,
-        "order": 51
+        "order": 52
       },
       "hidden": true,
       "id": "tencent/Hy3",
@@ -2895,7 +3052,7 @@
         "group": "Open Source",
         "label": "Tencent Hy3",
         "notice": null,
-        "order": 52
+        "order": 53
       },
       "id": "tencent/hy3-paid",
       "inputModalities": [
@@ -2916,6 +3073,75 @@
     },
     {
       "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1024000,
+      "display": {
+        "badge": null,
+        "description": "long-horizon agentic coding with image understanding",
+        "group": "Open Source",
+        "label": "Tencent Hy4",
+        "notice": null,
+        "order": 54
+      },
+      "id": "tencent/hy4",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Tencent Hy4",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.042,
+        "inputCost": 0.834,
+        "outputCost": 2.501
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1024000,
+      "display": {
+        "badge": null,
+        "description": "low-cost Hy4 for coding, reasoning & agentic work",
+        "group": "Open Source",
+        "label": "Tencent Hy4 Flash",
+        "notice": null,
+        "order": 55
+      },
+      "id": "tencent/hy4-flash",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Tencent Hy4 Flash",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.003,
+        "inputCost": 0.07,
+        "outputCost": 0.281
+      },
+      "reasoningEfforts": [
+        "off",
+        "high"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
       "behaviorProfile": "standard-v1",
       "category": "opensource",
       "context_length": 1048576,
@@ -2925,7 +3151,7 @@
         "group": "Open Source",
         "label": "Tencent Hy4 Preview",
         "notice": null,
-        "order": 53
+        "order": 56
       },
       "id": "tencent/hy4-preview",
       "inputModalities": [
@@ -2946,7 +3172,7 @@
         "medium",
         "high"
       ],
-      "zdr": false
+      "zdr": true
     },
     {
       "aliases": [],
@@ -2959,7 +3185,7 @@
         "group": "Google",
         "label": "Gemini 4 Carbon",
         "notice": null,
-        "order": 93
+        "order": 101
       },
       "id": "google/gemini-4-carbon",
       "inputModalities": [
@@ -2985,6 +3211,42 @@
     },
     {
       "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "premium",
+      "context_length": 1000000,
+      "display": {
+        "badge": null,
+        "description": "fast multimodal reasoning for coding & agents",
+        "group": "Google",
+        "label": "Gemini 4 Neon",
+        "notice": null,
+        "order": 102
+      },
+      "id": "google/gemini-4-neon",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-pro",
+      "name": "Gemini 4 Neon",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.15,
+        "inputCost": 3,
+        "outputCost": 15
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "xhigh"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
       "behaviorProfile": "standard-v1",
       "category": "premium",
       "context_length": 1000000,
@@ -2994,7 +3256,7 @@
         "group": "Google",
         "label": "Gemini 4 Argon",
         "notice": null,
-        "order": 94
+        "order": 103
       },
       "id": "google/gemini-4-argon",
       "inputModalities": [
@@ -3029,7 +3291,7 @@
         "group": "Google",
         "label": "Gemini 3.8 Flash",
         "notice": null,
-        "order": 95
+        "order": 104
       },
       "id": "google/gemini-3.8-flash",
       "inputModalities": [
@@ -3064,7 +3326,7 @@
         "group": "Google",
         "label": "Gemini 3.7 Flash",
         "notice": null,
-        "order": 96
+        "order": 105
       },
       "id": "google/gemini-3.7-flash",
       "inputModalities": [
@@ -3100,7 +3362,7 @@
         "group": "Google",
         "label": "Gemini 3.6 Flash",
         "notice": null,
-        "order": 97
+        "order": 106
       },
       "id": "google/gemini-3.6-flash",
       "inputModalities": [
@@ -3135,7 +3397,7 @@
         "group": "Google",
         "label": "Gemini 3.5 Flash",
         "notice": null,
-        "order": 98
+        "order": 107
       },
       "id": "google/gemini-3.5-flash",
       "inputModalities": [
@@ -3170,7 +3432,7 @@
         "group": "Google",
         "label": "Gemini 3.5 Flash Lite",
         "notice": null,
-        "order": 99
+        "order": 108
       },
       "id": "google/gemini-3.5-flash-lite",
       "inputModalities": [
@@ -3205,7 +3467,7 @@
         "group": "Google",
         "label": "Gemini 3.1 Flash Lite",
         "notice": null,
-        "order": 100
+        "order": 109
       },
       "id": "google/gemini-3.1-flash-lite",
       "inputModalities": [
@@ -3240,7 +3502,7 @@
         "group": "Sakana",
         "label": "Fugu Ultra",
         "notice": null,
-        "order": 101
+        "order": 110
       },
       "id": "sakana/fugu-ultra",
       "inputModalities": [
@@ -3274,7 +3536,7 @@
         "group": "Open Source",
         "label": "Nemotron 3 Ultra",
         "notice": null,
-        "order": 54
+        "order": 57
       },
       "id": "nvidia/nemotron-3-ultra-550b-a55b",
       "inputModalities": [
@@ -3304,7 +3566,7 @@
         "group": "Open Source",
         "label": "Nemotron 3.5 Super VL",
         "notice": null,
-        "order": 55
+        "order": 58
       },
       "id": "nvidia/nemotron-3.5-super-vl",
       "inputModalities": [
@@ -3339,7 +3601,7 @@
         "group": "Open Source",
         "label": "Inkling",
         "notice": null,
-        "order": 56
+        "order": 59
       },
       "id": "thinkingmachines/inkling",
       "inputModalities": [
@@ -3370,7 +3632,7 @@
         "group": "Open Source",
         "label": "Inkling Small",
         "notice": null,
-        "order": 57
+        "order": 60
       },
       "id": "thinkingmachines/inkling-small",
       "inputModalities": [
@@ -3392,6 +3654,110 @@
     },
     {
       "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": null,
+        "description": "compact multimodal reasoning with 1M context",
+        "group": "Open Source",
+        "label": "Inkling 2 Mini",
+        "notice": null,
+        "order": 61
+      },
+      "id": "thinkingmachines/inkling-2-mini",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Inkling 2 Mini",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0.015,
+        "inputCost": 0.075,
+        "outputCost": 0.3
+      },
+      "reasoningEfforts": [
+        "off",
+        "low",
+        "medium",
+        "high",
+        "max"
+      ],
+      "zdr": true
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 1048576,
+      "display": {
+        "badge": "free",
+        "description": "multimodal MoE reasoning with 1M context",
+        "group": "Open Source",
+        "label": "Inkling 2 Small",
+        "notice": null,
+        "order": 62
+      },
+      "hidden": true,
+      "id": "thinkingmachines/inkling-2-small:free",
+      "inputModalities": [
+        "text",
+        "image"
+      ],
+      "maxOutputTokens": 131072,
+      "minimumPlan": "individual-go",
+      "name": "Inkling 2 Small",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": [
+        "low",
+        "medium",
+        "high",
+        "max"
+      ],
+      "zdr": false
+    },
+    {
+      "aliases": [],
+      "behaviorProfile": "no-deferred-tools-v1",
+      "category": "opensource",
+      "context_length": 262144,
+      "display": {
+        "badge": "free",
+        "description": "open-weight MoE coding model, 2.5B active",
+        "group": "Open Source",
+        "label": "Flint",
+        "notice": "Flint is free and uses shared capacity, so limits may apply during busy periods. 1000 requests a day per account",
+        "order": 63
+      },
+      "id": "recursive/flint-v1.0:free",
+      "inputModalities": [
+        "text"
+      ],
+      "maxOutputTokens": null,
+      "minimumPlan": "individual-go",
+      "name": "Flint",
+      "object": "model",
+      "owned_by": "command-code",
+      "pricing": {
+        "cacheReadCost": 0,
+        "inputCost": 0,
+        "outputCost": 0
+      },
+      "reasoningEfforts": null,
+      "zdr": false
+    },
+    {
+      "aliases": [],
       "behaviorProfile": "standard-v1",
       "category": "opensource",
       "context_length": 1000000,
@@ -3401,7 +3767,7 @@
         "group": "Stealth",
         "label": "Space Bunny Alpha",
         "notice": null,
-        "order": 65
+        "order": 71
       },
       "hidden": true,
       "id": "stealth/space-bunny-alpha",
@@ -3428,7 +3794,7 @@
         "group": "Stealth",
         "label": "Pixel Canary",
         "notice": null,
-        "order": 66
+        "order": 72
       },
       "hidden": true,
       "id": "stealth/pixel-canary",
@@ -3455,7 +3821,7 @@
         "group": "Stealth",
         "label": "Glyph Cluster",
         "notice": "Glyph Cluster is free and uses shared capacity, so limits may apply during busy periods. 1000 requests a day per account",
-        "order": 67
+        "order": 73
       },
       "id": "stealth/glyph-cluster:free",
       "inputModalities": [
@@ -3490,7 +3856,7 @@
         "group": "Stealth",
         "label": "Crouton Alpha",
         "notice": null,
-        "order": 68
+        "order": 74
       },
       "hidden": true,
       "id": "stealth/crouton-alpha",
@@ -3528,7 +3894,7 @@
         "group": "Open Source",
         "label": "Beam 1.0",
         "notice": null,
-        "order": 58
+        "order": 64
       },
       "hidden": true,
       "id": "reflection/beam:free",
@@ -3565,7 +3931,7 @@
         "group": "Open Source",
         "label": "Laguna S 2.1",
         "notice": null,
-        "order": 59
+        "order": 65
       },
       "hidden": true,
       "id": "poolside/laguna-s-2.1-free",
@@ -3596,7 +3962,7 @@
         "group": "Open Source",
         "label": "Ling 3.1 Flash",
         "notice": null,
-        "order": 60
+        "order": 66
       },
       "hidden": true,
       "id": "inclusionai/ling-3.1-flash:free",
@@ -3622,7 +3988,7 @@
         "group": "Open Source",
         "label": "Ling 3.1 Flash",
         "notice": null,
-        "order": 61
+        "order": 67
       },
       "id": "inclusionai/ling-3.1-flash",
       "inputModalities": [
@@ -3656,7 +4022,7 @@
         "group": "Open Source",
         "label": "Ling 3.1 Flash 1019",
         "notice": null,
-        "order": 62
+        "order": 68
       },
       "id": "inclusionai/ling-3.1-flash-1019",
       "inputModalities": [
@@ -3690,7 +4056,7 @@
         "group": "Open Source",
         "label": "Ling 3.1 Flash 1019",
         "notice": "Ling 3.1 Flash 1019 is free and uses shared capacity, so limits may apply during busy periods. 100 requests a day per account",
-        "order": 63
+        "order": 69
       },
       "hidden": true,
       "id": "inclusionai/ling-3.1-flash-1019:free",
@@ -3725,7 +4091,7 @@
         "group": "Meta",
         "label": "Muse Spark 1.1",
         "notice": null,
-        "order": 102
+        "order": 111
       },
       "id": "meta/muse-spark-1.1",
       "inputModalities": [
@@ -3761,7 +4127,7 @@
         "group": "Meta",
         "label": "Muse Spark 1.2",
         "notice": "Muse Spark 1.2 is going through upstream inference issues at Meta, not Command Code. Expect slower responses and occasional rate limits.",
-        "order": 103
+        "order": 112
       },
       "id": "meta/muse-spark-1.2",
       "inputModalities": [
@@ -3797,7 +4163,7 @@
         "group": "Meta",
         "label": "Muse Spark 1.2 Contributor",
         "notice": "Muse Spark 1.2 Contributor is going through upstream inference issues at Meta, not Command Code. Expect slower responses and occasional rate limits.",
-        "order": 104
+        "order": 113
       },
       "id": "meta/muse-spark-1.2-contributor",
       "inputModalities": [
@@ -3833,7 +4199,7 @@
         "group": "Meta",
         "label": "Muse Spark 1.3",
         "notice": null,
-        "order": 105
+        "order": 114
       },
       "id": "meta/muse-spark-1.3",
       "inputModalities": [
@@ -3870,7 +4236,7 @@
         "group": "Meta",
         "label": "Muse Spark 1.3 Contributor",
         "notice": null,
-        "order": 106
+        "order": 115
       },
       "id": "meta/muse-spark-1.3-contributor",
       "inputModalities": [
@@ -3906,7 +4272,7 @@
         "group": "Meta",
         "label": "Muse Spark Open",
         "notice": null,
-        "order": 107
+        "order": 116
       },
       "id": "meta/muse-spark-open",
       "inputModalities": [
@@ -3941,7 +4307,7 @@
         "group": "Meta",
         "label": "Muse Wonder",
         "notice": null,
-        "order": 108
+        "order": 117
       },
       "id": "meta/muse-wonder-1.0",
       "inputModalities": [
@@ -3978,7 +4344,7 @@
         "group": "Meta",
         "label": "Muse Ember",
         "notice": null,
-        "order": 109
+        "order": 118
       },
       "id": "meta/muse-ember",
       "inputModalities": [
@@ -4016,7 +4382,7 @@
         "group": "xAI",
         "label": "Grok 4.5",
         "notice": null,
-        "order": 110
+        "order": 119
       },
       "id": "xai/grok-4.5",
       "inputModalities": [
@@ -4051,7 +4417,7 @@
         "group": "xAI",
         "label": "Grok 4.6",
         "notice": null,
-        "order": 111
+        "order": 120
       },
       "id": "xai/grok-4.6",
       "inputModalities": [
@@ -4104,7 +4470,7 @@
         "group": "xAI",
         "label": "Grok 4.7",
         "notice": null,
-        "order": 112
+        "order": 121
       },
       "id": "xai/grok-4.7",
       "inputModalities": [
@@ -4157,7 +4523,7 @@
         "group": "Open Source",
         "label": "Mistral Large 4",
         "notice": null,
-        "order": 64
+        "order": 70
       },
       "id": "mistral/mistral-large-4",
       "inputModalities": [

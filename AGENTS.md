@@ -68,6 +68,7 @@ task check:catalog    # project the fixture/live catalog, assert invariants
 task probe:effort     # measure thinking/effort for one model (needs an API key)
 task probe:routes     # which wire routes the endpoint exposes
 task report --write   # regenerate docs/PROVIDERS.md
+task capture          # re-capture the catalog fixtures from the live API (needs a key)
 task sync:upstream    # copy packages/runtime + packages/dev from a tagged release
 task sync:cli-version # rewrite the Command Code CLI version from npm (--check for drift)
 task doctor           # symlink pair, AGENTS.md, skills, vendor shape

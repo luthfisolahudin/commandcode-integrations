@@ -68,6 +68,12 @@ export interface CommandCodeRecord {
 	protocolReason: string;
 	hidden: boolean;
 	minimumPlan: string | null;
+	/**
+	 * Zero-data-retention capability as the client catalog declares it. Absent for a
+	 * public-only model, which is `unknown`, not `false`.
+	 * See `docs/EVIDENCE.md` for the wire check behind this field.
+	 */
+	zdr?: boolean;
 	pricing?: Partial<Record<"input" | "output" | "cacheRead" | "cacheWrite", number>>;
 	[key: string]: unknown;
 }
@@ -164,6 +170,7 @@ function toRecord(input: {
 	pricing?: CommandCodeRecord["pricing"];
 	minimumPlan: string | null;
 	hidden: boolean;
+	zdr?: boolean;
 }): CommandCodeRecord | undefined {
 	const routed = resolveProtocol({ id: input.id, group: input.group, endpoints: input.endpoints });
 	if (routed.protocol === undefined) return undefined;
@@ -179,6 +186,7 @@ function toRecord(input: {
 		protocolReason: routed.reason,
 		hidden: input.hidden,
 		minimumPlan: input.minimumPlan,
+		...(input.zdr === undefined ? {} : { zdr: input.zdr }),
 		...(input.pricing === undefined ? {} : { pricing: input.pricing }),
 	};
 }
@@ -213,6 +221,7 @@ export function mergeCatalog(client: ClientCatalog, publicModels: readonly Publi
 			...(pricing === undefined ? {} : { pricing }),
 			minimumPlan: model.minimumPlan ?? null,
 			hidden: false,
+			...(typeof model.zdr === "boolean" ? { zdr: model.zdr } : {}),
 		});
 		if (record !== undefined) records.push(record);
 	}

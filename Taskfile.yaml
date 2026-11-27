@@ -36,6 +36,11 @@ tasks:
     cmds:
       - pnpm report
 
+  capture:
+    desc: Re-capture the catalog fixtures from the live Provider API (needs a key)
+    cmds:
+      - pnpm capture:fixtures
+
   pricing:
     desc: Emit or apply the T3 Code pricing block for this repo
     cmds:
