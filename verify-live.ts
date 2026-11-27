@@ -6,7 +6,7 @@
  *
  * Reads the key exactly like the integration does, and never prints it.
  */
-import { discover, resolveApiKey } from "@luthfisolahudin/commandcode-integrations-catalog";
+import { discover, resolveApiKey } from "./packages/runtime/catalog/src/index.ts";
 
 import { commandCodePack, type CommandCodeRecord } from "./packages/provider/src/index.ts";
 
